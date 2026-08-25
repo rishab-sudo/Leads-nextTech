@@ -1,0 +1,569 @@
+/* =========================================================
+   STRATEGIC PARTNERSHIP
+========================================================= */
+
+.strategic-section {
+  width: 100%;
+
+  /* background: #061114; */
+
+  padding: 35px 20px;
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   MAIN WRAPPER
+========================================================= */
+
+.strategic-wrapper {
+  width: 100%;
+
+  max-width: 1180px;
+
+  min-height: 110px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1.25fr 0.95fr;
+
+  border: 1px solid rgba(60, 95, 101, 0.35);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 22, 26, 0.98),
+      rgba(7, 25, 29, 0.96)
+    );
+
+  position: relative;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.strategic-content {
+  min-width: 0;
+
+  padding: 11px 40px 12px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  border-right: 1px solid rgba(62, 101, 107, 0.32);
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.strategic-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-bottom: 4px;
+
+  color: #1595a5;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+}
+
+.strategic-eyebrow span {
+  width: 11px;
+  height: 11px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #1595a5;
+
+  border-radius: 50%;
+
+  font-size: 6px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.strategic-content h2 {
+  margin: 0;
+
+  color: #f0f3f3;
+
+  font-size: 18px;
+
+  line-height: 1.1;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1px;
+}
+
+
+/* =========================================================
+   CAPABILITIES
+========================================================= */
+
+.capabilities-list {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 15px;
+}
+
+
+/* =========================================================
+   CAPABILITY ITEM
+========================================================= */
+
+.capability-item {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   CAPABILITY ICON
+========================================================= */
+
+.capability-icon {
+  width: 21px;
+  height: 21px;
+
+  flex: 0 0 21px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(21, 149, 165, 0.6);
+
+  border-radius: 6px;
+
+  color: #1595a5;
+
+  font-size: 9px;
+
+  background: rgba(11, 47, 53, 0.35);
+
+  box-shadow:
+    inset 0 0 7px rgba(21, 149, 165, 0.06);
+}
+
+
+/* =========================================================
+   CAPABILITY TEXT
+========================================================= */
+
+.capability-text {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1.15;
+}
+
+.capability-text span {
+  color: #89999b;
+
+  font-size: 6.5px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.25px;
+
+  white-space: nowrap;
+}
+
+.capability-text span:last-child {
+  color: #536c70;
+
+  margin-top: 2px;
+}
+
+
+/* =========================================================
+   RIGHT CTA
+========================================================= */
+
+.strategic-cta {
+  min-width: 0;
+
+  min-height: 110px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background-image:
+    url("../assets//soldier-img.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+
+/* =========================================================
+   CTA OVERLAY
+========================================================= */
+
+.cta-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 22, 26, 0.85),
+      rgba(8, 26, 31, 0.58)
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   CTA CONTENT
+========================================================= */
+
+.cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  height: 100%;
+
+  padding: 12px 17px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   CTA HEADING
+========================================================= */
+
+.cta-content h3 {
+  margin: 0;
+
+  color: #dce2e2;
+
+  font-size: 17px;
+
+  line-height: 1.05;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1px;
+}
+
+
+/* =========================================================
+   CTA DESCRIPTION
+========================================================= */
+
+.cta-content p {
+  max-width: 330px;
+
+  margin: 5px 0 8px;
+
+  color: #89999b;
+
+  font-size: 7px;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.cta-button {
+  width: fit-content;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 5px 9px;
+
+  border: 1px solid rgba(191, 208, 210, 0.65);
+
+  background: rgba(4, 17, 20, 0.4);
+
+  color: #d7dddd;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cta-button strong {
+  font-size: 14px;
+
+  line-height: 8px;
+
+  font-weight: 400;
+}
+
+.cta-button:hover {
+  background: rgba(21, 149, 165, 0.18);
+
+  border-color: #1595a5;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .strategic-section {
+    padding: 30px 18px;
+  }
+
+  .strategic-content {
+    padding:
+      12px 25px;
+  }
+
+  .strategic-content h2 {
+    font-size: 16px;
+  }
+
+  .capabilities-list {
+    gap: 10px;
+  }
+
+  .capability-text span {
+    font-size: 6px;
+  }
+
+  .cta-content h3 {
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .strategic-section {
+    padding:
+      30px 14px;
+  }
+
+  .strategic-wrapper {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: auto;
+  }
+
+
+  /* LEFT */
+
+  .strategic-content {
+    width: 100%;
+
+    padding:
+      18px 17px;
+
+    border-right: none;
+
+    border-bottom:
+      1px solid rgba(62, 101, 107, 0.32);
+  }
+
+  .strategic-content h2 {
+    font-size: 18px;
+
+    line-height: 1.2;
+  }
+
+
+  /* CAPABILITIES */
+
+  .capabilities-list {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    column-gap: 18px;
+
+    row-gap: 14px;
+
+    margin-top: 17px;
+  }
+
+  .capability-item {
+    gap: 9px;
+  }
+
+  .capability-icon {
+    width: 24px;
+    height: 24px;
+
+    flex-basis: 24px;
+  }
+
+  .capability-text span {
+    font-size: 7px;
+  }
+
+
+  /* CTA */
+
+  .strategic-cta {
+    width: 100%;
+
+    min-height: 150px;
+  }
+
+  .cta-content {
+    padding:
+      22px 18px;
+  }
+
+  .cta-content h3 {
+    font-size: 19px;
+
+    line-height: 1.1;
+  }
+
+  .cta-content p {
+    max-width: 90%;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+
+    margin:
+      7px 0 11px;
+  }
+
+  .cta-button {
+    padding:
+      7px 10px;
+
+    font-size: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .strategic-section {
+    padding:
+      25px 10px;
+  }
+
+  .strategic-content {
+    padding:
+      16px 14px;
+  }
+
+  .strategic-eyebrow {
+    font-size: 8px;
+  }
+
+  .strategic-content h2 {
+    font-size: 16px;
+  }
+
+  .capabilities-list {
+    column-gap: 10px;
+
+    row-gap: 13px;
+  }
+
+  .capability-item {
+    gap: 7px;
+  }
+
+  .capability-icon {
+    width: 22px;
+    height: 22px;
+
+    flex-basis: 22px;
+  }
+
+  .capability-text span {
+    font-size: 6px;
+  }
+
+  .cta-content h3 {
+    font-size: 17px;
+  }
+
+}

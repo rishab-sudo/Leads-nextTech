@@ -1,0 +1,1161 @@
+/* =========================================================
+   EXPLORE TECHNOLOGY SECTION
+========================================================= */
+
+.explore-tech {
+  width: 100%;
+
+  /* background: #061114; */
+
+  color: #ffffff;
+
+  padding: 55px 45px 70px;
+
+  overflow: hidden;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HEADING
+   OUTSIDE THE BORDERED BOX
+========================================================= */
+
+.explore-tech-heading {
+  width: 100%;
+  max-width: 1450px;
+
+  margin: 0 auto 16px;
+
+  padding: 0 10px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.explore-tech-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-bottom: 6px;
+
+  color: #1595a5;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+}
+
+.brand-dot {
+  width: 13px;
+  height: 13px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #1595a5;
+
+  border-radius: 50%;
+
+  font-size: 7px;
+
+  color: #1595a5;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.explore-tech-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 24px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   BORDERED CONTENT BOX
+========================================================= */
+
+.explore-tech-inner {
+  width: 100%;
+
+  max-width: 1450px;
+
+  margin: 0 auto;
+
+  border: 1px solid rgba(83, 116, 122, 0.35);
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(24, 67, 72, 0.12),
+      transparent 45%
+    ),
+    #081316;
+
+  position: relative;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.explore-tech-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 0.9fr)
+    minmax(450px, 1.7fr)
+    minmax(250px, 0.9fr);
+
+  min-height: 430px;
+}
+
+
+/* =========================================================
+   LEFT PANEL
+========================================================= */
+
+.explore-left {
+  min-width: 0;
+
+  border-right: 1px solid rgba(83, 116, 122, 0.35);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 24, 28, 0.75),
+      rgba(4, 15, 18, 0.7)
+    );
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.explore-tabs {
+  height: 64px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  border-bottom: 1px solid rgba(83, 116, 122, 0.25);
+}
+
+.explore-tabs button {
+  position: relative;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #3f5c61;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.explore-tabs button span {
+  color: #1595a5;
+
+  margin-right: 5px;
+}
+
+.explore-tabs button.active {
+  color: #ffffff;
+}
+
+.explore-tabs button.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+
+  bottom: -1px;
+
+  height: 2px;
+
+  background: #1595a5;
+
+  box-shadow:
+    0 0 10px rgba(21, 149, 165, 0.6);
+}
+
+
+/* =========================================================
+   PRODUCT LIST
+========================================================= */
+
+.product-list {
+  padding: 7px 10px;
+}
+
+.product-item {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 7px;
+
+  margin-bottom: 5px;
+
+  border: 1px solid transparent;
+
+  background: transparent;
+
+  color: white;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border 0.3s ease,
+    background 0.3s ease;
+}
+
+.product-item:hover {
+  border-color: rgba(21, 149, 165, 0.35);
+
+  background: rgba(16, 49, 55, 0.35);
+}
+
+.product-item.selected {
+  border-color: rgba(21, 149, 165, 0.65);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(21, 99, 108, 0.3),
+      rgba(12, 43, 48, 0.15)
+    );
+}
+
+
+/* =========================================================
+   PRODUCT THUMB
+========================================================= */
+
+.product-thumb {
+  width: 55px;
+  height: 48px;
+
+  flex: 0 0 55px;
+
+  overflow: hidden;
+
+  border: 1px solid #187c89;
+
+  background: #101c1f;
+}
+
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   PRODUCT INFO
+========================================================= */
+
+.product-info {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.product-name {
+  font-size: 10px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  color: #e5eeee;
+}
+
+.product-model {
+  font-size: 9px;
+
+  color: #5f7c81;
+}
+
+
+/* =========================================================
+   SONAR
+========================================================= */
+
+.sonar-message {
+  padding: 30px 15px;
+
+  color: #3e6970;
+
+  font-size: 11px;
+}
+
+.sonar-message span {
+  color: #1595a5;
+
+  font-weight: 700;
+}
+
+.sonar-message p {
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   CENTER
+========================================================= */
+
+.explore-center {
+  min-width: 0;
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(31, 63, 68, 0.2),
+      transparent 60%
+    );
+}
+
+
+/* =========================================================
+   CENTER CONTROLS
+========================================================= */
+
+.center-controls {
+  position: absolute;
+
+  top: 10px;
+
+  right: 12px;
+
+  display: flex;
+
+  gap: 7px;
+
+  z-index: 5;
+}
+
+.center-controls button {
+  border: 1px solid rgba(69, 107, 112, 0.35);
+
+  background: rgba(7, 24, 28, 0.8);
+
+  color: #8ca6a9;
+
+  padding: 6px 9px;
+
+  font-size: 8px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   PRODUCT VIEWER
+========================================================= */
+
+.product-viewer {
+  position: relative;
+
+  flex: 1;
+
+  min-height: 360px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+.main-product-image {
+  position: relative;
+
+  z-index: 3;
+
+  width: 72%;
+
+  max-width: 480px;
+
+  max-height: 290px;
+
+  object-fit: contain;
+
+  display: block;
+
+  filter:
+    drop-shadow(
+      0 15px 30px rgba(0, 0, 0, 0.7)
+    );
+}
+
+
+/* =========================================================
+   RINGS
+========================================================= */
+
+.viewer-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.ring-one {
+  width: 300px;
+  height: 300px;
+
+  border:
+    1px dashed rgba(22, 139, 153, 0.4);
+
+  transform:
+    perspective(500px)
+    rotateX(64deg);
+}
+
+.ring-two {
+  width: 380px;
+  height: 190px;
+
+  border:
+    1px solid rgba(21, 149, 165, 0.13);
+
+  border-top-color: rgba(21, 149, 165, 0.55);
+
+  transform:
+    perspective(500px)
+    rotateX(65deg);
+}
+
+
+/* =========================================================
+   VIEWER ARROWS
+========================================================= */
+
+.ring-arrow {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(21, 149, 165, 0.6);
+
+  border-radius: 50%;
+
+  color: #1595a5;
+
+  font-size: 25px;
+
+  background: rgba(6, 17, 20, 0.55);
+}
+
+.left-arrow {
+  left: 12%;
+}
+
+.right-arrow {
+  right: 12%;
+}
+
+
+/* =========================================================
+   VIEWER BASE
+========================================================= */
+
+.viewer-base {
+  position: absolute;
+
+  bottom: 38px;
+
+  left: 15%;
+  right: 15%;
+
+  height: 2px;
+
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(21, 149, 165, 0.25),
+      #1595a5,
+      rgba(21, 149, 165, 0.25),
+      transparent
+    );
+
+  box-shadow:
+    0 0 8px rgba(21, 149, 165, 0.45);
+}
+
+.viewer-base span {
+  position: absolute;
+
+  width: 20%;
+
+  height: 100%;
+
+  left: 40%;
+
+  background: #5ce9f7;
+
+  box-shadow:
+    0 0 10px #1595a5;
+}
+
+
+/* =========================================================
+   VIEWER INSTRUCTION
+========================================================= */
+
+.viewer-instruction {
+  height: 38px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #7c9396;
+
+  font-size: 9px;
+}
+
+.viewer-instruction b {
+  color: #1595a5;
+}
+
+
+/* =========================================================
+   RIGHT PANEL
+========================================================= */
+
+.explore-right {
+  min-width: 0;
+
+  border-left: 1px solid rgba(83, 116, 122, 0.25);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 24, 28, 0.65),
+      rgba(4, 15, 18, 0.7)
+    );
+}
+
+
+/* =========================================================
+   SPECIFICATION
+========================================================= */
+
+.specification-box {
+  padding: 18px 20px 17px;
+
+  border-bottom:
+    1px solid rgba(83, 116, 122, 0.3);
+}
+
+.panel-heading {
+  position: relative;
+
+  display: inline-block;
+
+  padding-bottom: 7px;
+
+  color: #1595a5;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.panel-heading::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 100%;
+
+  height: 1px;
+
+  background: #1595a5;
+
+  box-shadow:
+    0 0 7px rgba(21, 149, 165, 0.5);
+}
+
+
+/* =========================================================
+   SPEC LIST
+========================================================= */
+
+.spec-list {
+  margin-top: 15px;
+}
+
+.spec-row {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1.35fr;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+.spec-label {
+  color: #4e7479;
+
+  font-size: 9px;
+}
+
+.spec-value {
+  color: #819397;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   HOTSPOT
+========================================================= */
+
+.hotspot-box {
+  padding: 17px 20px;
+}
+
+.hotspot-content {
+  display: grid;
+
+  grid-template-columns:
+    30px 1fr 18px;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 16px;
+
+  animation:
+    hotspotFade 0.35s ease;
+}
+
+@keyframes hotspotFade {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+/* =========================================================
+   HOTSPOT ICON
+========================================================= */
+
+.hotspot-icon {
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid rgba(21, 149, 165, 0.45);
+
+  border-radius: 50%;
+
+  color: #1595a5;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   HOTSPOT TEXT
+========================================================= */
+
+.hotspot-text {
+  min-width: 0;
+}
+
+.hotspot-text strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 9px;
+
+  color: #c2d0d1;
+}
+
+.hotspot-text p {
+  margin: 0;
+
+  color: #61797d;
+
+  font-size: 8px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   HOTSPOT RIGHT ARROW
+========================================================= */
+
+.hotspot-single-arrow {
+  width: 25px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #1595a5;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  padding: 0;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.hotspot-single-arrow:hover {
+  color: #5ce9f7;
+
+  transform:
+    translateX(3px);
+}
+
+
+/* =========================================================
+   HOTSPOT BOTTOM
+========================================================= */
+
+.hotspot-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 20px;
+
+  color: #8a9c9f;
+
+  font-size: 8px;
+}
+
+.hotspot-navigation {
+  display: flex;
+
+  gap: 12px;
+}
+
+.hotspot-navigation button {
+  width: 18px;
+
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #668387;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  padding: 0;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hotspot-navigation button:hover {
+  color: #1595a5;
+
+  transform: scale(1.2);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .explore-tech {
+    padding:
+      50px 25px 60px;
+  }
+
+  .explore-tech-grid {
+    grid-template-columns:
+      220px
+      minmax(350px, 1fr)
+      220px;
+  }
+
+  .main-product-image {
+    width: 75%;
+  }
+
+  .ring-one {
+    width: 260px;
+    height: 260px;
+  }
+
+  .ring-two {
+    width: 320px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .explore-tech {
+    padding:
+      35px 14px 45px;
+  }
+
+
+  /* HEADING OUTSIDE */
+
+  .explore-tech-heading {
+    margin-bottom: 14px;
+
+    padding:
+      0 5px;
+  }
+
+  .explore-tech-heading h2 {
+    font-size: 19px;
+  }
+
+  .explore-tech-brand {
+    font-size: 9px;
+  }
+
+
+  /* MAIN CONTENT */
+
+  .explore-tech-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+  }
+
+
+  /* =====================================================
+     LEFT
+  ===================================================== */
+
+  .explore-left {
+    order: 1;
+
+    width: 100%;
+
+    border-right: none;
+
+    border-bottom:
+      1px solid rgba(83, 116, 122, 0.3);
+  }
+
+  .explore-tabs {
+    height: 55px;
+  }
+
+  .product-list {
+    padding: 8px;
+  }
+
+  .product-item {
+    min-height: 62px;
+
+    padding:
+      7px 8px;
+
+    gap: 12px;
+  }
+
+
+  /* =====================================================
+     CENTER
+  ===================================================== */
+
+  .explore-center {
+    order: 2;
+
+    width: 100%;
+
+    min-height: 390px;
+
+    border-bottom:
+      1px solid rgba(83, 116, 122, 0.3);
+  }
+
+  .product-viewer {
+    min-height: 340px;
+
+    padding-top: 25px;
+  }
+
+  .main-product-image {
+    width: 85%;
+
+    max-width: 390px;
+
+    max-height: 260px;
+  }
+
+  .ring-one {
+    width: 250px;
+    height: 250px;
+  }
+
+  .ring-two {
+    width: 310px;
+    height: 155px;
+  }
+
+  .left-arrow {
+    left: 4%;
+  }
+
+  .right-arrow {
+    right: 4%;
+  }
+
+
+  /* =====================================================
+     RIGHT
+  ===================================================== */
+
+  .explore-right {
+    order: 3;
+
+    width: 100%;
+
+    border-left: none;
+  }
+
+  .specification-box {
+    padding:
+      20px 18px;
+  }
+
+  .hotspot-box {
+    padding:
+      20px 18px;
+  }
+
+  .spec-row {
+    grid-template-columns:
+      1fr 1fr;
+
+    margin-bottom: 14px;
+  }
+
+  .hotspot-content {
+    grid-template-columns:
+      34px 1fr 25px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .explore-tech {
+    padding:
+      25px 10px 35px;
+  }
+
+  .explore-tech-heading {
+    padding: 0 4px;
+  }
+
+  .explore-tech-heading h2 {
+    font-size: 17px;
+  }
+
+  .explore-tech-brand {
+    font-size: 8px;
+  }
+
+  .explore-center {
+    min-height: 350px;
+  }
+
+  .product-viewer {
+    min-height: 300px;
+  }
+
+  .main-product-image {
+    width: 88%;
+
+    max-height: 230px;
+  }
+
+  .ring-one {
+    width: 210px;
+    height: 210px;
+  }
+
+  .ring-two {
+    width: 260px;
+    height: 130px;
+  }
+
+  .ring-arrow {
+    width: 27px;
+    height: 27px;
+
+    font-size: 20px;
+  }
+
+  .viewer-instruction {
+    font-size: 7px;
+
+    gap: 5px;
+  }
+
+  .spec-label,
+  .spec-value {
+    font-size: 8px;
+  }
+
+  .panel-heading {
+    font-size: 9px;
+  }
+
+}

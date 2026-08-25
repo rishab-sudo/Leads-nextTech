@@ -1,0 +1,679 @@
+/* =========================================================
+   INFRASTRUCTURE SECTION
+========================================================= */
+
+.infrastructure-section {
+  width: 100%;
+  padding: 120px 32px;
+  background: #061114;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   Heading is OUTSIDE the cards
+========================================================= */
+
+.infrastructure-header {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 45px;
+}
+
+.infrastructure-eyebrow {
+  display: block;
+  margin-bottom: 14px;
+
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+
+  color: #4e9eac;
+  text-transform: uppercase;
+}
+
+.infrastructure-header h2 {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+  font-size: clamp(34px, 4vw, 62px);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -2px;
+
+  color: #ffffff;
+}
+
+.infrastructure-header p {
+  margin: 22px 0 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 400;
+
+  color: #8da0a5;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.infrastructure-grid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 16px;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.infrastructure-card {
+  position: relative;
+
+  min-height: 440px;
+
+  border: 1px solid rgba(87, 132, 141, 0.45);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(19, 37, 42, 0.8),
+      rgba(5, 17, 20, 0.95)
+    );
+
+  overflow: hidden;
+}
+
+
+/* subtle inner border */
+
+.infrastructure-card::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+
+  border: 1px solid rgba(255, 255, 255, 0.025);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD LABEL
+========================================================= */
+
+.card-top-label {
+  position: absolute;
+
+  top: 13px;
+  left: 14px;
+
+  z-index: 5;
+
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+
+  color: #4d9eac;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.infrastructure-card h3 {
+  position: absolute;
+
+  top: 29px;
+  left: 14px;
+
+  z-index: 5;
+
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  color: #e9edef;
+}
+
+
+/* =========================================================
+   FACILITY CARD
+========================================================= */
+
+.facility-card {
+  padding: 0;
+}
+
+.facility-content {
+  position: absolute;
+
+  top: 73px;
+  left: 9px;
+  right: 9px;
+  bottom: 9px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 158px;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   FACILITY IMAGE
+========================================================= */
+
+.facility-image-wrap {
+  position: relative;
+
+  min-width: 0;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.facility-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+.facility-image-wrap:hover .facility-image {
+  transform: scale(1.035);
+}
+
+
+/* image dark overlay */
+
+.facility-image-wrap::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.03) 30%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FEATURE LIST
+========================================================= */
+
+.facility-features {
+  height: 100%;
+
+  border: 1px solid rgba(70, 112, 121, 0.5);
+
+  background: rgba(9, 24, 28, 0.85);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.facility-feature {
+  position: relative;
+
+  flex: 1;
+
+  min-height: 0;
+
+  padding: 10px 8px 8px 10px;
+
+  display: flex;
+  align-items: flex-start;
+
+  border-bottom: 1px solid rgba(70, 112, 121, 0.38);
+
+  transition:
+    background 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.facility-feature:last-child {
+  border-bottom: none;
+}
+
+.facility-feature:hover {
+  padding-left: 13px;
+
+  background: rgba(48, 105, 116, 0.1);
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.feature-icon {
+  width: 19px;
+  height: 19px;
+
+  margin-right: 8px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(67, 148, 163, 0.5);
+  border-radius: 50%;
+
+  color: #5aaaba;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+========================================================= */
+
+.feature-content {
+  min-width: 0;
+}
+
+.feature-content h4 {
+  margin: 1px 0 4px;
+
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  color: #dbe4e6;
+}
+
+.feature-content p {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 7px;
+  line-height: 1.35;
+
+  color: #71868b;
+}
+
+
+/* =========================================================
+   FEATURE ARROW
+========================================================= */
+
+.feature-arrow {
+  position: absolute;
+
+  right: 8px;
+  top: 12px;
+
+  font-size: 10px;
+
+  color: #678b92;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.facility-feature:hover .feature-arrow {
+  color: #76c3d0;
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.infrastructure-btn {
+  position: absolute;
+
+  z-index: 4;
+
+  height: 32px;
+
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  border: 1px solid rgba(214, 230, 233, 0.75);
+
+  background: rgba(5, 20, 24, 0.9);
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.infrastructure-btn span {
+  font-size: 13px;
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+.infrastructure-btn:hover {
+  background: #102d33;
+  border-color: #69b5c2;
+}
+
+.infrastructure-btn:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   FACILITY BUTTON
+========================================================= */
+
+.facility-btn {
+  left: 15px;
+  bottom: 14px;
+}
+
+
+/* =========================================================
+   AI CARD
+========================================================= */
+
+.ai-card {
+  min-height: 440px;
+}
+
+
+/* =========================================================
+   AI IMAGE
+========================================================= */
+
+.ai-image-wrap {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+}
+
+.ai-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.ai-image-wrap:hover .ai-image {
+  transform: scale(1.025);
+}
+
+
+/* dark overlay to make heading readable */
+
+.ai-image-wrap::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 17, 20, 0.38) 0%,
+      rgba(5, 17, 20, 0.02) 35%,
+      rgba(5, 17, 20, 0.32) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   AI BUTTON
+========================================================= */
+
+.ai-btn {
+  left: 17px;
+  bottom: 15px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .infrastructure-section {
+    padding: 90px 24px;
+  }
+
+  .infrastructure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-card,
+  .ai-card {
+    min-height: 420px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .infrastructure-section {
+    padding: 75px 16px;
+  }
+
+  .infrastructure-header {
+    margin-bottom: 30px;
+  }
+
+  .infrastructure-eyebrow {
+    font-size: 9px;
+  }
+
+  .infrastructure-header h2 {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+  }
+
+  .infrastructure-header p {
+    font-size: 13px;
+  }
+
+  .infrastructure-grid {
+    gap: 12px;
+  }
+
+  .facility-card,
+  .ai-card {
+    min-height: 500px;
+  }
+
+  .facility-content {
+    grid-template-columns: minmax(0, 1fr) 145px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+  .infrastructure-section {
+    padding: 60px 12px;
+  }
+
+  .infrastructure-header {
+    margin-bottom: 24px;
+  }
+
+  .infrastructure-header h2 {
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .infrastructure-header p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .infrastructure-header p br {
+    display: none;
+  }
+
+
+  /* Facility card */
+
+  .facility-card {
+    min-height: auto;
+    padding-bottom: 12px;
+  }
+
+  .infrastructure-card h3 {
+    font-size: 13px;
+    top: 30px;
+  }
+
+  .facility-content {
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    margin-top: 68px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .facility-image-wrap {
+    height: 260px;
+  }
+
+  .facility-features {
+    height: auto;
+  }
+
+  .facility-feature {
+    min-height: 70px;
+    flex: none;
+  }
+
+  .facility-btn {
+    bottom: 13px;
+    left: 13px;
+  }
+
+
+  /* AI card */
+
+  .ai-card {
+    min-height: 400px;
+  }
+
+  .ai-card h3 {
+    font-size: 13px;
+  }
+
+  .ai-image-wrap {
+    position: absolute;
+    inset: 0;
+  }
+
+  .ai-btn {
+    bottom: 14px;
+    left: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .infrastructure-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .infrastructure-header h2 {
+    font-size: 27px;
+  }
+
+  .facility-image-wrap {
+    height: 220px;
+  }
+
+  .facility-card {
+    min-height: auto;
+  }
+
+  .ai-card {
+    min-height: 350px;
+  }
+
+  .facility-content {
+    margin-top: 65px;
+  }
+
+}

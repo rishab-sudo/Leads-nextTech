@@ -1,0 +1,565 @@
+.strength-section {
+  width: 100%;
+  padding: 20px 17px 15px;
+  box-sizing: border-box;
+/* 
+  background:
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(0, 105, 130, 0.055),
+      transparent 35%
+    ),
+    #031116; */
+background-color: #010306;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.strength-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.strength-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 0 43px 21px;
+  box-sizing: border-box;
+}
+
+.strength-heading {
+  padding-top: 0;
+}
+
+.strength-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  margin-bottom: 4px;
+
+  color: #13b7d0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.45px;
+}
+
+.eyebrow-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #16bfd8;
+  box-shadow: 0 0 7px rgba(22, 191, 216, 0.55);
+}
+
+.strength-heading h2 {
+  margin: 0;
+
+  color: #f4f7f8;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 20px;
+  line-height: 0.98;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1px;
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.strength-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  padding-top: 0;
+}
+
+.strength-intro p {
+  margin: 0 0 7px;
+
+  color: #64777d;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 8px;
+  line-height: 1.45;
+
+  font-weight: 400;
+
+  text-align: left;
+}
+
+.strength-button {
+  height: 23px;
+  padding: 0 11px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  border: 1px solid #4d6971;
+
+  background: rgba(5, 25, 31, 0.65);
+
+  color: #dbe5e7;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 6px;
+  font-weight: 600;
+
+  letter-spacing: 0.15px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.strength-button span {
+  font-size: 10px;
+  line-height: 1;
+}
+
+.strength-button:hover {
+  color: #ffffff;
+  border-color: #0eb8d5;
+  background: rgba(0, 133, 160, 0.12);
+}
+
+/* =========================================
+   SWIPER
+========================================= */
+
+.strength-swiper {
+  width: 100%;
+  overflow: visible !important;
+}
+
+.strength-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.strength-swiper .swiper-slide {
+  height: auto;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.strength-card {
+  height: 153px;
+  box-sizing: border-box;
+
+  padding: 17px 21px 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #193944;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 28, 34, 0.96),
+      rgba(4, 18, 23, 0.96)
+    );
+
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Card subtle top glow */
+.strength-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(17, 176, 205, 0.35),
+    transparent
+  );
+}
+
+/* Card subtle background */
+.strength-card::after {
+  content: "";
+
+  position: absolute;
+  width: 100px;
+  height: 100px;
+
+  top: -55px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(0, 165, 193, 0.035);
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+.strength-card:hover {
+  border-color: #285765;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(9, 33, 40, 0.98),
+      rgba(4, 20, 26, 0.98)
+    );
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   CARD ICON
+========================================= */
+
+.strength-card-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 10px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 151, 183, 0.15),
+      rgba(0, 100, 125, 0.025) 70%
+    );
+
+  position: relative;
+  z-index: 1;
+}
+
+.strength-card-icon svg {
+  width: 25px;
+  height: 25px;
+
+  fill: none;
+
+  stroke: #10b9d4;
+
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  filter: drop-shadow(
+    0 0 4px rgba(0, 184, 214, 0.22)
+  );
+}
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.strength-card h3 {
+  margin: 0 0 8px;
+
+  color: #e8eef0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.strength-card p {
+  margin: 0;
+
+  color: #647a80;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 6.4px;
+  line-height: 1.42;
+
+  font-weight: 400;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   VIEW SOLUTIONS
+========================================= */
+
+.strength-card-link {
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  width: fit-content;
+
+  color: #dce6e8;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 6px;
+  line-height: 1;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  position: relative;
+  z-index: 2;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.strength-card-link span {
+  font-size: 10px;
+  line-height: 1;
+
+  transition: transform 0.2s ease;
+}
+
+.strength-card-link:hover {
+  color: #0fc1df;
+  gap: 7px;
+}
+
+.strength-card-link:hover span {
+  transform: translateX(2px);
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (max-width: 1150px) {
+  .strength-header {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .strength-card {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .strength-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .strength-header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .strength-heading h2 {
+    font-size: 18px;
+  }
+
+  .strength-intro p {
+    font-size: 7px;
+  }
+
+  .strength-card {
+    height: 155px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .strength-section {
+    padding: 27px 0 20px;
+  }
+
+  .strength-container {
+    width: 100%;
+  }
+
+  .strength-header {
+    padding: 0 24px 24px;
+
+    display: block;
+  }
+
+  .strength-heading h2 {
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .strength-eyebrow {
+    font-size: 8px;
+    margin-bottom: 6px;
+  }
+
+  .strength-intro {
+    margin-top: 15px;
+
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .strength-intro p {
+    font-size: 8px;
+    line-height: 1.5;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .strength-button {
+    margin-top: 5px;
+  }
+
+  /* Important:
+     Keeps one card centered on mobile */
+  .strength-swiper {
+    width: 100%;
+    padding: 0 0 3px;
+  }
+
+  .strength-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .strength-card {
+    width: calc(100vw - 48px);
+    max-width: 360px;
+
+    height: 185px;
+
+    padding: 24px 25px 21px;
+
+    transform: none !important;
+  }
+
+  .strength-card:hover {
+    transform: none !important;
+  }
+
+  .strength-card-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 13px;
+  }
+
+  .strength-card-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .strength-card h3 {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .strength-card p {
+    font-size: 7.5px;
+    line-height: 1.55;
+  }
+
+  .strength-card-link {
+    font-size: 7px;
+  }
+
+  .strength-card-link span {
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .strength-header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .strength-heading h2 {
+    font-size: 20px;
+  }
+
+  .strength-card {
+    width: calc(100vw - 40px);
+    height: 180px;
+
+    padding: 22px;
+  }
+}
