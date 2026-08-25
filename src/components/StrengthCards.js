@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "./StrengthCards.css";
 
@@ -220,10 +220,11 @@ const StrengthCards = () => {
 
                 <p>{card.description}</p>
 
-                <a href="#" className="strength-card-link">
+                
+<Link to="/contact" className="strength-card-link">
                   VIEW SOLUTIONS
                   <span>→</span>
-                </a>
+                </Link>
 
               </div>
             </SwiperSlide>
