@@ -21,15 +21,15 @@ const Footer = () => {
           </p>
 
           <div className="footer-socials">
-            <a href="#" aria-label="LinkedIn">
+            <a href="/contact" aria-label="LinkedIn">
               in
             </a>
 
-            <a href="#" aria-label="YouTube">
+            <a href="/contact" aria-label="YouTube">
               ▶
             </a>
 
-            <a href="#" aria-label="X">
+            <a href="/contact" aria-label="X">
               X
             </a>
           </div>
@@ -40,10 +40,10 @@ const Footer = () => {
           <h4>COMPANY</h4>
 
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">News &amp; Media</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="/contact">About Us</a></li>
+            <li><a href="/contact">Careers</a></li>
+            <li><a href="/contact">News &amp; Media</a></li>
+            <li><a href="/contact">Contact Us</a></li>
           </ul>
         </div>
 
@@ -52,11 +52,11 @@ const Footer = () => {
           <h4>CAPABILITIES</h4>
 
           <ul>
-            <li><a href="#">Air</a></li>
-            <li><a href="#">Land</a></li>
-            <li><a href="#">Naval</a></li>
-            <li><a href="#">Underwater</a></li>
-            <li><a href="#">AI &amp; Autonomy</a></li>
+            <li><a href="/contact">Air</a></li>
+            <li><a href="/contact">Land</a></li>
+            <li><a href="/contact">Naval</a></li>
+            <li><a href="/contact">Underwater</a></li>
+            <li><a href="/contact">AI &amp; Autonomy</a></li>
           </ul>
         </div>
 
@@ -65,11 +65,11 @@ const Footer = () => {
           <h4>SOLUTIONS</h4>
 
           <ul>
-            <li><a href="#">Gun Systems</a></li>
-            <li><a href="#">Sonar Systems</a></li>
-            <li><a href="#">UAV Systems</a></li>
-            <li><a href="#">Surveillance</a></li>
-            <li><a href="#">Communication</a></li>
+            <li><a href="/contact">Gun Systems</a></li>
+            <li><a href="/contact">Sonar Systems</a></li>
+            <li><a href="/contact">UAV Systems</a></li>
+            <li><a href="/contact">Surveillance</a></li>
+            <li><a href="/contact">Communication</a></li>
           </ul>
         </div>
 
@@ -78,11 +78,11 @@ const Footer = () => {
           <h4>TECHNOLOGIES</h4>
 
           <ul>
-            <li><a href="#">Fire Control</a></li>
-            <li><a href="#">Acoustic Warfare</a></li>
-            <li><a href="#">Sensor Fusion</a></li>
-            <li><a href="#">Autonomous Systems</a></li>
-            <li><a href="#">AI/ML</a></li>
+            <li><a href="/contact">Fire Control</a></li>
+            <li><a href="/contact">Acoustic Warfare</a></li>
+            <li><a href="/contact">Sensor Fusion</a></li>
+            <li><a href="/contact">Autonomous Systems</a></li>
+            <li><a href="/contact">AI/ML</a></li>
           </ul>
         </div>
 
@@ -91,10 +91,10 @@ const Footer = () => {
           <h4>SUPPORT</h4>
 
           <ul>
-            <li><a href="#">24/7 On-cycle Support</a></li>
-            <li><a href="#">Training</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Customer Portal</a></li>
+            <li><a href="/contact">24/7 On-cycle Support</a></li>
+            <li><a href="/contact">Training</a></li>
+            <li><a href="/contact">Documentation</a></li>
+            <li><a href="/contact">Customer Portal</a></li>
           </ul>
         </div>
       </div>
@@ -106,9 +106,9 @@ const Footer = () => {
         </p>
 
         <div className="footer-legal">
-          <a href="#">Privacy Policy</a>
+          <a href="/contact">Privacy Policy</a>
           <span>|</span>
-          <a href="#">Terms of Use</a>
+          <a href="/contact">Terms of Use</a>
         </div>
       </div>
     </footer>
