@@ -26,7 +26,7 @@ const StrategicPartnership = () => {
   ];
 
   return (
-    <section className="strategic-section">
+    <section className="strategic-section container">
       <div className="strategic-wrapper">
 
         {/* =========================================
@@ -35,12 +35,12 @@ const StrategicPartnership = () => {
 
         <div className="strategic-content">
 
-          <div className="strategic-eyebrow">
+          <div className="strategic-eyebrow eyebrow-text">
             <span>✦</span>
             CRAFTED BY
           </div>
 
-          <h2>
+          <h2 className="section-heading">
             STRATEGIC PARTNERSHIP &amp; CAPABILITIES
           </h2>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
@@ -116,31 +116,103 @@ const strengthCards = [
       </svg>
     ),
   },
+
+  {
+    title: "UNDERWATER",
+    description: (
+      <>
+        Acoustic Warfare, UUVs
+        <br />
+        &amp; Underwater
+        <br />
+        Communications
+      </>
+    ),
+    icon: (
+      <svg viewBox="0 0 64 64">
+        <path d="M8 37H56L48 44H16Z" />
+        <path d="M18 37V31H46V37" />
+        <path d="M25 31L32 24L39 31" />
+        <path d="M13 51C19 47 25 55 31 51C37 47 43 55 51 51" />
+      </svg>
+    ),
+  },
 ];
 
 const StrengthCards = () => {
-  return (
-    <section className="strength-section">
-      <div className="strength-container">
+  const swiperRef = useRef(null);
+  const sectionRef = useRef(null);
 
-        {/* Header */}
+  /*
+   * Start animation only when section enters viewport.
+   */
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            section.classList.add("strength-visible");
+            observer.unobserve(section);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  /*
+   * Arrow controls
+   */
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
+
+  return (
+    <section
+      ref={sectionRef}
+      className="strength-section"
+    >
+      <div className="container strength-container">
+
+        {/* ================= HEADER ================= */}
         <div className="strength-header">
 
           <div className="strength-heading">
+
             <div className="strength-eyebrow">
               <span className="eyebrow-dot"></span>
-              OUR STRENGTH
+             <span className="eyebrow-text"> OUR STRENGTH</span>
             </div>
 
-            <h2>
+            <h2 className="section-heading">
               A MULTI-DOMAIN
               <br />
               DEFENCE ECOSYSTEM
             </h2>
+
           </div>
 
           <div className="strength-intro">
-            <p>
+
+            <p className="section-subHeading">
               LeadNXT develops mission-critical systems across air, land,
               <br className="desktop-break" />
               surface and underwater domains using advanced engineering,
@@ -148,88 +220,132 @@ const StrengthCards = () => {
               AI and deep domain expertise.
             </p>
 
-            <button className="strength-button">
-              EXPLORE CAPABILITIES
-              <span>→</span>
-            </button>
+            {/* ARROWS */}
+            <div className="strength-arrows">
+
+              <button
+                type="button"
+                className="strength-arrow strength-arrow-prev"
+                onClick={handlePrev}
+                aria-label="Previous slide"
+              >
+                &lt;
+              </button>
+
+              <button
+                type="button"
+                className="strength-arrow strength-arrow-next"
+                onClick={handleNext}
+                aria-label="Next slide"
+              >
+                &gt;
+              </button>
+
+            </div>
+
           </div>
 
         </div>
 
-        {/* Cards */}
-        <Swiper
-          className="strength-swiper"
-          modules={[Autoplay]}
-          slidesPerView={5}
-          spaceBetween={7}
-          speed={900}
-          loop={true}
-          grabCursor={true}
-          autoplay={{
-            delay: 2800,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-              spaceBetween: 14,
-              centeredSlides: true,
-            },
+        {/* ================= SLIDER ================= */}
+        <div className="strength-slider-wrapper">
 
-            500: {
-              slidesPerView: 1.35,
-              spaceBetween: 14,
-              centeredSlides: true,
-            },
+          <Swiper
+            className="strength-swiper"
+            modules={[Autoplay]}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            slidesPerView={4}
+            spaceBetween={8}
+            speed={900}
+            loop={true}
+            grabCursor={true}
+            watchSlidesProgress={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            breakpoints={{
 
-            650: {
-              slidesPerView: 2,
-              spaceBetween: 12,
-              centeredSlides: false,
-            },
+              /* Mobile */
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 14,
+                centeredSlides: true,
+              },
 
-            900: {
-              slidesPerView: 3,
-              spaceBetween: 10,
-              centeredSlides: false,
-            },
+              /* Large Mobile */
+              500: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+                centeredSlides: true,
+              },
 
-            1150: {
-              slidesPerView: 4,
-              spaceBetween: 8,
-              centeredSlides: false,
-            },
+              /* Tablet */
+              650: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+                centeredSlides: false,
+              },
 
-            1350: {
-              slidesPerView: 5,
-              spaceBetween: 7,
-              centeredSlides: false,
-            },
-          }}
-        >
-          {strengthCards.map((card) => (
-            <SwiperSlide key={card.title}>
-              <div className="strength-card">
+              /* Small Desktop */
+              900: {
+                slidesPerView: 3,
+                spaceBetween: 12,
+                centeredSlides: false,
+              },
 
-                <div className="strength-card-icon">
-                  {card.icon}
+              /* Desktop */
+              1150: {
+                slidesPerView: 4,
+                spaceBetween: 8,
+                centeredSlides: false,
+              },
+
+              /* Large Desktop */
+              1350: {
+                slidesPerView: 4,
+                spaceBetween: 12,
+                centeredSlides: false,
+              },
+            }}
+          >
+
+            {strengthCards.map((card, index) => (
+              <SwiperSlide key={`${card.title}-${index}`}>
+
+                <div className="strength-card">
+
+                  <div className="strength-card-icon">
+                    {card.icon}
+                  </div>
+
+                  <h3 className="cards-title">
+                    {card.title}
+                  </h3>
+
+                  <p className="cards-descp">
+                    {card.description}
+                  </p>
+
+                  <Link
+                    to="/contact"
+                    className="strength-card-link"
+                  >
+                    VIEW SOLUTIONS
+                    <span>→</span>
+                  </Link>
+
                 </div>
 
-                <h3>{card.title}</h3>
+              </SwiperSlide>
+            ))}
 
-                <p>{card.description}</p>
+          </Swiper>
 
-                
-<Link to="/contact" className="strength-card-link">
-                  VIEW SOLUTIONS
-                  <span>→</span>
-                </Link>
-
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        </div>
 
       </div>
     </section>

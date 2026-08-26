@@ -1,3 +1,109 @@
 .App{
     background-color: #010306;
 }
+html {
+  scroll-behavior: auto;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   LARGE DEVICE — 1200px+
+========================================= */
+.eyebrow-text{
+  font-size: 18px;
+}
+.section-heading {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.section-subHeading {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.cards-title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.cards-descp {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   MEDIUM DEVICE — 768px to 1199px
+========================================= */
+
+@media (max-width: 1199px) {
+.eyebrow-text{
+  font-size: 18px;
+}
+  .section-heading {
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  .section-subHeading {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .cards-title {
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  .cards-descp {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+
+/* =========================================
+   SMALL DEVICE — 767px and below
+========================================= */
+
+@media (max-width: 767px) {
+.eyebrow-text{
+  font-size: 16px;
+}
+  .section-heading {
+    font-size: 38px;
+    font-weight: 700;
+  }
+
+  .section-subHeading {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .cards-title {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .cards-descp {
+    font-size: 15px;
+    font-weight: 400;
+  }
+}

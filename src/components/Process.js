@@ -78,24 +78,24 @@ const processData = [
 
 const Process = () => {
   return (
-    <section className="process-section">
+    <section className="process-section container">
 
       {/* =========================
           HEADING - OUTSIDE BOX
       ========================== */}
       <div className="process-heading">
-        <div className="process-eyebrow">
+        <div className="process-eyebrow eyebrow-text">
           <span className="eyebrow-dot"></span>
           OUR PROCESS
         </div>
 
-        <h2>FROM CONCEPT TO MISSION</h2>
+        <h2 className="section-heading">FROM CONCEPT TO MISSION</h2>
       </div>
 
       {/* =========================
           PROCESS RECTANGLE
       ========================== */}
-      <div className="process-box">
+      <div className="process-box ">
 
         {/* =========================
             TIMELINE
@@ -125,9 +125,9 @@ const Process = () => {
 
               {/* TITLE + DESCRIPTION */}
               <div className="process-info">
-                <h3>{item.title}</h3>
+                <h3 className="cards-title">{item.title}</h3>
 
-                <p>{item.description}</p>
+                <p className="cards-descp ">{item.description}</p>
               </div>
 
             </div>

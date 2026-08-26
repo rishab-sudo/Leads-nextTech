@@ -4,37 +4,23 @@
 
 .explore-tech {
   width: 100%;
-
-  /* background: #061114; */
-
   color: #ffffff;
-
-  padding: 55px 45px 70px;
-
   overflow: hidden;
-
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 
 /* =========================================================
    HEADING
-   OUTSIDE THE BORDERED BOX
 ========================================================= */
 
 .explore-tech-heading {
   width: 100%;
-  max-width: 1450px;
+  max-width: 100%;
 
   margin: 0 auto 16px;
 
   padding: 0 10px;
 }
-
-
-/* =========================================================
-   BRAND
-========================================================= */
 
 .explore-tech-brand {
   display: flex;
@@ -46,12 +32,6 @@
   margin-bottom: 6px;
 
   color: #1595a5;
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.6px;
 }
 
 .brand-dot {
@@ -72,28 +52,15 @@
   color: #1595a5;
 }
 
-
-/* =========================================================
-   MAIN HEADING
-========================================================= */
-
 .explore-tech-heading h2 {
   margin: 0;
 
   color: #ffffff;
-
-  font-size: 24px;
-
-  line-height: 1.15;
-
-  font-weight: 700;
-
-  letter-spacing: -0.5px;
 }
 
 
 /* =========================================================
-   BORDERED CONTENT BOX
+   MAIN BORDERED BOX
 ========================================================= */
 
 .explore-tech-inner {
@@ -103,7 +70,8 @@
 
   margin: 0 auto;
 
-  border: 1px solid rgba(83, 116, 122, 0.35);
+  border:
+    1px solid rgba(83, 116, 122, 0.35);
 
   background:
     radial-gradient(
@@ -129,7 +97,7 @@
     minmax(450px, 1.7fr)
     minmax(250px, 0.9fr);
 
-  min-height: 430px;
+  min-height: 470px;
 }
 
 
@@ -140,7 +108,8 @@
 .explore-left {
   min-width: 0;
 
-  border-right: 1px solid rgba(83, 116, 122, 0.35);
+  border-right:
+    1px solid rgba(83, 116, 122, 0.35);
 
   background:
     linear-gradient(
@@ -160,9 +129,11 @@
 
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    1fr 1fr;
 
-  border-bottom: 1px solid rgba(83, 116, 122, 0.25);
+  border-bottom:
+    1px solid rgba(83, 116, 122, 0.25);
 }
 
 .explore-tabs button {
@@ -184,7 +155,8 @@
 
   cursor: pointer;
 
-  transition: 0.3s ease;
+  transition:
+    color 0.3s ease;
 }
 
 .explore-tabs button span {
@@ -203,6 +175,7 @@
   position: absolute;
 
   left: 18px;
+
   right: 18px;
 
   bottom: -1px;
@@ -237,7 +210,8 @@
 
   margin-bottom: 5px;
 
-  border: 1px solid transparent;
+  border:
+    1px solid transparent;
 
   background: transparent;
 
@@ -253,13 +227,16 @@
 }
 
 .product-item:hover {
-  border-color: rgba(21, 149, 165, 0.35);
+  border-color:
+    rgba(21, 149, 165, 0.35);
 
-  background: rgba(16, 49, 55, 0.35);
+  background:
+    rgba(16, 49, 55, 0.35);
 }
 
 .product-item.selected {
-  border-color: rgba(21, 149, 165, 0.65);
+  border-color:
+    rgba(21, 149, 165, 0.65);
 
   background:
     linear-gradient(
@@ -276,19 +253,23 @@
 
 .product-thumb {
   width: 55px;
+
   height: 48px;
 
-  flex: 0 0 55px;
+  flex:
+    0 0 55px;
 
   overflow: hidden;
 
-  border: 1px solid #187c89;
+  border:
+    1px solid #187c89;
 
   background: #101c1f;
 }
 
 .product-thumb img {
   width: 100%;
+
   height: 100%;
 
   display: block;
@@ -372,40 +353,6 @@
     );
 }
 
-
-/* =========================================================
-   CENTER CONTROLS
-========================================================= */
-
-.center-controls {
-  position: absolute;
-
-  top: 10px;
-
-  right: 12px;
-
-  display: flex;
-
-  gap: 7px;
-
-  z-index: 5;
-}
-
-.center-controls button {
-  border: 1px solid rgba(69, 107, 112, 0.35);
-
-  background: rgba(7, 24, 28, 0.8);
-
-  color: #8ca6a9;
-
-  padding: 6px 9px;
-
-  font-size: 8px;
-
-  cursor: pointer;
-}
-
-
 /* =========================================================
    PRODUCT VIEWER
 ========================================================= */
@@ -415,7 +362,7 @@
 
   flex: 1;
 
-  min-height: 360px;
+  min-height: 400px;
 
   display: flex;
 
@@ -428,19 +375,82 @@
 
 
 /* =========================================================
-   MAIN IMAGE
+   PRODUCT IMAGE SLIDER
+========================================================= */
+
+.product-image-slider {
+  position: relative;
+
+  width: 86%;
+
+  max-width: 620px;
+
+  height: 350px;
+
+  overflow: hidden;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   IMAGE TRACK
+========================================================= */
+
+.product-image-track {
+  width: 100%;
+
+  height: 100%;
+
+  display: flex;
+
+  transition:
+    transform 0.9s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   IMAGE SLIDE
+========================================================= */
+
+.product-image-slide {
+  min-width: 100%;
+
+  width: 100%;
+
+  height: 100%;
+
+  flex:
+    0 0 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   MAIN PRODUCT IMAGE
 ========================================================= */
 
 .main-product-image {
-  position: relative;
+  width: 100%;
 
-  z-index: 3;
+  height: 100%;
 
-  width: 72%;
+  max-width: none;
 
-  max-width: 480px;
-
-  max-height: 290px;
+  max-height: none;
 
   object-fit: contain;
 
@@ -448,7 +458,8 @@
 
   filter:
     drop-shadow(
-      0 15px 30px rgba(0, 0, 0, 0.7)
+      0 18px 35px
+      rgba(0, 0, 0, 0.75)
     );
 }
 
@@ -468,11 +479,13 @@
 }
 
 .ring-one {
-  width: 300px;
-  height: 300px;
+  width: 330px;
+
+  height: 330px;
 
   border:
-    1px dashed rgba(22, 139, 153, 0.4);
+    1px dashed
+    rgba(22, 139, 153, 0.4);
 
   transform:
     perspective(500px)
@@ -480,13 +493,16 @@
 }
 
 .ring-two {
-  width: 380px;
-  height: 190px;
+  width: 420px;
+
+  height: 210px;
 
   border:
-    1px solid rgba(21, 149, 165, 0.13);
+    1px solid
+    rgba(21, 149, 165, 0.13);
 
-  border-top-color: rgba(21, 149, 165, 0.55);
+  border-top-color:
+    rgba(21, 149, 165, 0.55);
 
   transform:
     perspective(500px)
@@ -501,10 +517,11 @@
 .ring-arrow {
   position: absolute;
 
-  z-index: 4;
+  z-index: 8;
 
-  width: 32px;
-  height: 32px;
+  width: 40px;
+
+  height: 40px;
 
   display: flex;
 
@@ -512,23 +529,55 @@
 
   justify-content: center;
 
-  border: 1px solid rgba(21, 149, 165, 0.6);
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(21, 149, 165, 0.6);
 
   border-radius: 50%;
 
   color: #1595a5;
 
-  font-size: 25px;
+  font-size: 30px;
 
-  background: rgba(6, 17, 20, 0.55);
+  line-height: 1;
+
+  background:
+    rgba(6, 17, 20, 0.7);
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ring-arrow:hover {
+  color: #5ce9f7;
+
+  border-color: #5ce9f7;
+
+  background:
+    rgba(21, 149, 165, 0.12);
+
+  transform:
+    scale(1.08);
+}
+
+.ring-arrow:active {
+  transform:
+    scale(0.94);
 }
 
 .left-arrow {
-  left: 12%;
+  left: 7%;
 }
 
 .right-arrow {
-  right: 12%;
+  right: 7%;
 }
 
 
@@ -542,6 +591,7 @@
   bottom: 38px;
 
   left: 15%;
+
   right: 15%;
 
   height: 2px;
@@ -559,7 +609,8 @@
     );
 
   box-shadow:
-    0 0 8px rgba(21, 149, 165, 0.45);
+    0 0 8px
+    rgba(21, 149, 165, 0.45);
 }
 
 .viewer-base span {
@@ -610,7 +661,9 @@
 .explore-right {
   min-width: 0;
 
-  border-left: 1px solid rgba(83, 116, 122, 0.25);
+  border-left:
+    1px solid
+    rgba(83, 116, 122, 0.25);
 
   background:
     linear-gradient(
@@ -626,10 +679,12 @@
 ========================================================= */
 
 .specification-box {
-  padding: 18px 20px 17px;
+  padding:
+    18px 20px 17px;
 
   border-bottom:
-    1px solid rgba(83, 116, 122, 0.3);
+    1px solid
+    rgba(83, 116, 122, 0.3);
 }
 
 .panel-heading {
@@ -664,7 +719,8 @@
   background: #1595a5;
 
   box-shadow:
-    0 0 7px rgba(21, 149, 165, 0.5);
+    0 0 7px
+    rgba(21, 149, 165, 0.5);
 }
 
 
@@ -705,7 +761,8 @@
 ========================================================= */
 
 .hotspot-box {
-  padding: 17px 20px;
+  padding:
+    17px 20px;
 }
 
 .hotspot-content {
@@ -749,6 +806,7 @@
 
 .hotspot-icon {
   width: 26px;
+
   height: 26px;
 
   display: flex;
@@ -758,7 +816,8 @@
   justify-content: center;
 
   border:
-    1px solid rgba(21, 149, 165, 0.45);
+    1px solid
+    rgba(21, 149, 165, 0.45);
 
   border-radius: 50%;
 
@@ -798,7 +857,7 @@
 
 
 /* =========================================================
-   HOTSPOT RIGHT ARROW
+   HOTSPOT SINGLE ARROW
 ========================================================= */
 
 .hotspot-single-arrow {
@@ -892,7 +951,8 @@
 .hotspot-navigation button:hover {
   color: #1595a5;
 
-  transform: scale(1.2);
+  transform:
+    scale(1.2);
 }
 
 
@@ -914,17 +974,30 @@
       220px;
   }
 
-  .main-product-image {
-    width: 75%;
+  .product-image-slider {
+    width: 90%;
+
+    max-width: 520px;
+
+    height: 320px;
   }
 
   .ring-one {
-    width: 260px;
-    height: 260px;
+    width: 290px;
+
+    height: 290px;
   }
 
   .ring-two {
-    width: 320px;
+    width: 350px;
+  }
+
+  .left-arrow {
+    left: 4%;
+  }
+
+  .right-arrow {
+    right: 4%;
   }
 
 }
@@ -940,9 +1013,6 @@
     padding:
       35px 14px 45px;
   }
-
-
-  /* HEADING OUTSIDE */
 
   .explore-tech-heading {
     margin-bottom: 14px;
@@ -983,7 +1053,8 @@
     border-right: none;
 
     border-bottom:
-      1px solid rgba(83, 116, 122, 0.3);
+      1px solid
+      rgba(83, 116, 122, 0.3);
   }
 
   .explore-tabs {
@@ -1013,42 +1084,60 @@
 
     width: 100%;
 
-    min-height: 390px;
+    min-height: 420px;
 
     border-bottom:
-      1px solid rgba(83, 116, 122, 0.3);
+      1px solid
+      rgba(83, 116, 122, 0.3);
   }
 
   .product-viewer {
-    min-height: 340px;
+    min-height: 370px;
 
     padding-top: 25px;
   }
 
-  .main-product-image {
-    width: 85%;
 
-    max-width: 390px;
+  /* BIG MOBILE IMAGE */
 
-    max-height: 260px;
+  .product-image-slider {
+    width: 94%;
+
+    max-width: 500px;
+
+    height: 320px;
   }
 
+
   .ring-one {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+
+    height: 280px;
   }
 
   .ring-two {
-    width: 310px;
-    height: 155px;
+    width: 350px;
+
+    height: 175px;
+  }
+
+
+  /* MOBILE ARROWS */
+
+  .ring-arrow {
+    width: 36px;
+
+    height: 36px;
+
+    font-size: 28px;
   }
 
   .left-arrow {
-    left: 4%;
+    left: 3%;
   }
 
   .right-arrow {
-    right: 4%;
+    right: 3%;
   }
 
 
@@ -1101,7 +1190,8 @@
   }
 
   .explore-tech-heading {
-    padding: 0 4px;
+    padding:
+      0 4px;
   }
 
   .explore-tech-heading h2 {
@@ -1113,35 +1203,54 @@
   }
 
   .explore-center {
-    min-height: 350px;
+    min-height: 390px;
   }
 
   .product-viewer {
-    min-height: 300px;
+    min-height: 330px;
   }
 
-  .main-product-image {
-    width: 88%;
 
-    max-height: 230px;
+  /* EXTRA LARGE IMAGE */
+
+  .product-image-slider {
+    width: 96%;
+
+    max-width: 420px;
+
+    height: 290px;
   }
+
 
   .ring-one {
-    width: 210px;
-    height: 210px;
+    width: 230px;
+
+    height: 230px;
   }
 
   .ring-two {
-    width: 260px;
-    height: 130px;
+    width: 290px;
+
+    height: 145px;
   }
+
 
   .ring-arrow {
-    width: 27px;
-    height: 27px;
+    width: 32px;
 
-    font-size: 20px;
+    height: 32px;
+
+    font-size: 24px;
   }
+
+  .left-arrow {
+    left: 2%;
+  }
+
+  .right-arrow {
+    right: 2%;
+  }
+
 
   .viewer-instruction {
     font-size: 7px;

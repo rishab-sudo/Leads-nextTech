@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ExploreTech.css";
 
 const ExploreTech = () => {
@@ -19,17 +19,17 @@ const ExploreTech = () => {
     {
       name: "SMALL CALIBER SYSTEMS",
       model: "5.56mm – 30mm",
-        image: require("../assets/soldier-img.jpg"),
+      image: require("../assets/soldier-img.jpg"),
     },
     {
       name: "FIRE CONTROL SYSTEMS",
       model: "Intelligent FCS",
-   image: require("../assets/soldier-img.jpg"),
+      image: require("../assets/soldier-img.jpg"),
     },
     {
       name: "AMMUNITION HANDLING",
       model: "Smart Loaders",
-   image: require("../assets/soldier-img.jpg"),
+      image: require("../assets/soldier-img.jpg"),
     },
   ];
 
@@ -59,6 +59,44 @@ const ExploreTech = () => {
   ];
 
   /* =====================================================
+     PRODUCT NAVIGATION
+  ===================================================== */
+
+  const nextProduct = () => {
+    setActiveProduct((current) =>
+      current === products.length - 1 ? 0 : current + 1
+    );
+
+    setActiveHotspot(0);
+  };
+
+  const previousProduct = () => {
+    setActiveProduct((current) =>
+      current === 0 ? products.length - 1 : current - 1
+    );
+
+    setActiveHotspot(0);
+  };
+
+  /* =====================================================
+     AUTO PRODUCT SLIDER
+  ===================================================== */
+
+  useEffect(() => {
+    if (activeTab !== "gun") return;
+
+    const autoSlide = setInterval(() => {
+      setActiveProduct((current) =>
+        current === products.length - 1 ? 0 : current + 1
+      );
+
+      setActiveHotspot(0);
+    }, 4000);
+
+    return () => clearInterval(autoSlide);
+  }, [activeTab, products.length]);
+
+  /* =====================================================
      HOTSPOT NAVIGATION
   ===================================================== */
 
@@ -77,20 +115,25 @@ const ExploreTech = () => {
   const currentHotspot = hotspots[activeHotspot];
 
   return (
-    <section className="explore-tech">
+    <section className="explore-tech container">
 
       {/* =================================================
-          HEADING OUTSIDE THE BOX
+          HEADING
       ================================================= */}
 
       <div className="explore-tech-heading">
 
         <div className="explore-tech-brand">
           <span className="brand-dot">✦</span>
-          EXPLORE TECHNOLOGY
+
+          <span className="eyebrow-text">
+            EXPLORE TECHNOLOGY
+          </span>
         </div>
 
-        <h2>INTERACTIVE PRODUCT EXPLORER</h2>
+        <h2 className="section-heading">
+          INTERACTIVE PRODUCT EXPLORER
+        </h2>
 
       </div>
 
@@ -103,24 +146,38 @@ const ExploreTech = () => {
 
         <div className="explore-tech-grid">
 
+
           {/* =================================================
               LEFT PANEL
           ================================================= */}
 
           <div className="explore-left">
 
+            {/* TABS */}
+
             <div className="explore-tabs">
 
               <button
-                className={activeTab === "gun" ? "active" : ""}
+                type="button"
+                className={
+                  activeTab === "gun"
+                    ? "active"
+                    : ""
+                }
                 onClick={() => setActiveTab("gun")}
               >
                 <span>✦</span>
                 GUN SYSTEMS
               </button>
 
+
               <button
-                className={activeTab === "sonar" ? "active" : ""}
+                type="button"
+                className={
+                  activeTab === "sonar"
+                    ? "active"
+                    : ""
+                }
                 onClick={() => setActiveTab("sonar")}
               >
                 SONAR SYSTEMS
@@ -129,13 +186,19 @@ const ExploreTech = () => {
             </div>
 
 
+            {/* PRODUCT LIST */}
+
             <div className="product-list">
 
               {activeTab === "gun" &&
                 products.map((product, index) => (
+
                   <button
+                    type="button"
                     className={`product-item ${
-                      activeProduct === index ? "selected" : ""
+                      activeProduct === index
+                        ? "selected"
+                        : ""
                     }`}
                     key={index}
                     onClick={() => {
@@ -167,19 +230,24 @@ const ExploreTech = () => {
                     </div>
 
                   </button>
+
                 ))}
 
 
               {activeTab === "sonar" && (
+
                 <div className="sonar-message">
 
-                  <span>SONAR SYSTEMS</span>
+                  <span>
+                    SONAR SYSTEMS
+                  </span>
 
                   <p>
                     Advanced sonar technologies
                   </p>
 
                 </div>
+
               )}
 
             </div>
@@ -188,48 +256,89 @@ const ExploreTech = () => {
 
 
           {/* =================================================
-              CENTER IMAGE / VIEWER
+              CENTER IMAGE VIEWER
           ================================================= */}
 
           <div className="explore-center">
 
-            <div className="center-controls">
+            {/* CENTER CONTROLS */}
 
-              <button>
-                ◉ &nbsp; 360° VIEW
-              </button>
+      
 
-              <button>
-                ◉ &nbsp; EXPLODED VIEW
-              </button>
 
-            </div>
-
+            {/* PRODUCT VIEWER */}
 
             <div className="product-viewer">
+
+              {/* RINGS */}
 
               <div className="viewer-ring ring-one"></div>
 
               <div className="viewer-ring ring-two"></div>
 
 
-              <div className="ring-arrow left-arrow">
+              {/* LEFT ARROW */}
+
+              <button
+                type="button"
+                className="ring-arrow left-arrow"
+                onClick={previousProduct}
+                aria-label="Previous product"
+              >
                 ‹
-              </div>
+              </button>
 
-              <div className="ring-arrow right-arrow">
+
+              {/* RIGHT ARROW */}
+
+              <button
+                type="button"
+                className="ring-arrow right-arrow"
+                onClick={nextProduct}
+                aria-label="Next product"
+              >
                 ›
+              </button>
+
+
+              {/* =================================================
+                  IMAGE SLIDER
+              ================================================= */}
+
+              <div className="product-image-slider">
+
+                <div
+                  className="product-image-track"
+                  style={{
+                    transform: `translateX(-${
+                      activeProduct * 100
+                    }%)`,
+                  }}
+                >
+
+                  {products.map((product, index) => (
+
+                    <div
+                      className="product-image-slide"
+                      key={index}
+                    >
+
+                      <img
+                        className="main-product-image"
+                        src={product.image}
+                        alt={product.name}
+                      />
+
+                    </div>
+
+                  ))}
+
+                </div>
+
               </div>
 
 
-              {/* YOUR PRODUCT IMAGE */}
-
-              <img
-                className="main-product-image"
-                src={products[activeProduct].image}
-                alt={products[activeProduct].name}
-              />
-
+              {/* VIEWER BASE */}
 
               <div className="viewer-base">
                 <span></span>
@@ -238,17 +347,25 @@ const ExploreTech = () => {
             </div>
 
 
+            {/* INSTRUCTION */}
+
             <div className="viewer-instruction">
 
-              <span>Drag to rotate</span>
+              <span>
+                Drag to rotate
+              </span>
 
               <b>•</b>
 
-              <span>Scroll to zoom</span>
+              <span>
+                Scroll to zoom
+              </span>
 
               <b>•</b>
 
-              <span>Click on hotspots</span>
+              <span>
+                Click on hotspots
+              </span>
 
             </div>
 
@@ -274,6 +391,7 @@ const ExploreTech = () => {
 
 
               <div className="spec-list">
+
 
                 <div className="spec-row">
 
@@ -339,6 +457,7 @@ const ExploreTech = () => {
 
                 </div>
 
+
               </div>
 
             </div>
@@ -378,9 +497,8 @@ const ExploreTech = () => {
                 </div>
 
 
-                {/* RIGHT ARROW */}
-
                 <button
+                  type="button"
                   className="hotspot-single-arrow"
                   onClick={nextHotspot}
                   aria-label="Next hotspot"
@@ -391,27 +509,36 @@ const ExploreTech = () => {
               </div>
 
 
-              {/* BOTTOM NAVIGATION */}
+              {/* HOTSPOT BOTTOM */}
 
               <div className="hotspot-bottom">
 
                 <span>
-                  {String(activeHotspot + 1).padStart(2, "0")}
+                  {String(
+                    activeHotspot + 1
+                  ).padStart(2, "0")}
+
                   {" / "}
-                  {String(hotspots.length).padStart(2, "0")}
+
+                  {String(
+                    hotspots.length
+                  ).padStart(2, "0")}
                 </span>
 
 
                 <div className="hotspot-navigation">
 
                   <button
+                    type="button"
                     onClick={previousHotspot}
                     aria-label="Previous hotspot"
                   >
                     ‹
                   </button>
 
+
                   <button
+                    type="button"
                     onClick={nextHotspot}
                     aria-label="Next hotspot"
                   >

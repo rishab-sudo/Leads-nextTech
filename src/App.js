@@ -1,36 +1,27 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+// import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css"
-import  Navbar  from "./components/Navbar";
+import "./App.css";
+
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Stats from "./components/Stats";
-import StrengthCards from "./components/StrengthCards";
-import Process from "./components/Process";
-import ExploreTech from "./components/ExploreTech";
-import StrategicPartnership from "./components/StrategicPartnership";
-import Infrastructure from "./components/Infrastructure";
 
-
+import SmoothScroll from "./components/SmoothScroll";
+import Home  from "./components/Home";
 
 function App() {
   return (
     <>
-        <div className="App">
-<Navbar/>
+      {/* Smooth scrolling for the complete website */}
+      <SmoothScroll />
 
-   <Stats/>
-   <StrengthCards/>
-   <Process/>
-   <ExploreTech/>
-   <Infrastructure/>
-   <StrategicPartnership/>
-    </div>
-  <Footer/>
+      <div className="App">
+        <Navbar />
+<Home/>
+      <Footer />
+      </div>
     </>
-
   );
 }
 
 export default App;
-

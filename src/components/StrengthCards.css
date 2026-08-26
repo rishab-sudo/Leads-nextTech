@@ -1,39 +1,69 @@
+/* =========================================================
+   STRENGTH SECTION
+========================================================= */
+
 .strength-section {
   width: 100%;
-  padding: 20px 17px 15px;
+  padding: 20px 0 15px;
   box-sizing: border-box;
-/* 
-  background:
-    radial-gradient(
-      circle at 70% 20%,
-      rgba(0, 105, 130, 0.055),
-      transparent 35%
-    ),
-    #031116; */
-background-color: #010306;
+
+  background-color: #010306;
   color: #ffffff;
+
   overflow: hidden;
 }
 
+
+/* =========================================================
+   BOOTSTRAP CONTAINER
+========================================================= */
+
 .strength-container {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
-/* =========================================
+
+/* =========================================================
    HEADER
-========================================= */
+========================================================= */
 
 .strength-header {
   width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 
-  padding: 0 43px 21px;
+  padding: 0 20px 21px;
   box-sizing: border-box;
+
+  opacity: 0;
+  transform: translateX(70px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+
+/* =========================================================
+   COMPONENT ENTRY ANIMATION
+========================================================= */
+
+.strength-visible .strength-header {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.strength-visible .strength-swiper {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
 
 .strength-heading {
   padding-top: 0;
@@ -43,16 +73,9 @@ background-color: #010306;
   display: flex;
   align-items: center;
   gap: 5px;
-
   margin-bottom: 4px;
+ color: #13b7d0;
 
-  color: #13b7d0;
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 8px;
-  font-weight: 700;
-
-  letter-spacing: 0.45px;
 }
 
 .eyebrow-dot {
@@ -62,30 +85,22 @@ background-color: #010306;
   border-radius: 50%;
 
   background: #16bfd8;
-  box-shadow: 0 0 7px rgba(22, 191, 216, 0.55);
+
+  box-shadow:
+    0 0 7px rgba(22, 191, 216, 0.55);
 }
 
 .strength-heading h2 {
   margin: 0;
+color: #f4f7f8;
 
-  color: #f4f7f8;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size: 20px;
-  line-height: 0.98;
-
-  font-weight: 700;
-
-  letter-spacing: 0.1px;
+ 
 }
 
-/* =========================================
+
+/* =========================================================
    INTRO
-========================================= */
+========================================================= */
 
 .strength-intro {
   display: flex;
@@ -96,27 +111,31 @@ background-color: #010306;
 }
 
 .strength-intro p {
-  margin: 0 0 7px;
-
-  color: #64777d;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  font-size: 8px;
-  line-height: 1.45;
-
-  font-weight: 400;
-
-  text-align: left;
+  margin: 0 0 9px;
+ color: #64777d;
+text-align: left;
 }
 
-.strength-button {
+
+/* =========================================================
+   ARROWS
+========================================================= */
+
+.strength-arrows {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.strength-arrow {
+  width: 25px;
   height: 23px;
-  padding: 0 11px;
 
   display: flex;
   align-items: center;
-  gap: 7px;
+  justify-content: center;
+
+  padding: 0;
 
   border: 1px solid #4d6971;
 
@@ -125,38 +144,63 @@ background-color: #010306;
   color: #dbe5e7;
 
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
 
-  font-size: 6px;
-  font-weight: 600;
-
-  letter-spacing: 0.15px;
+  line-height: 1;
 
   cursor: pointer;
 
   transition:
-    border-color 0.25s ease,
     background 0.25s ease,
-    color 0.25s ease;
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
 }
 
-.strength-button span {
-  font-size: 10px;
-  line-height: 1;
-}
-
-.strength-button:hover {
+.strength-arrow:hover {
   color: #ffffff;
+
   border-color: #0eb8d5;
-  background: rgba(0, 133, 160, 0.12);
+
+  background: rgba(0, 133, 160, 0.15);
 }
 
-/* =========================================
+.strength-arrow:active {
+  transform: scale(0.92);
+}
+
+.strength-arrow:focus-visible {
+  outline: 1px solid #0eb8d5;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   SLIDER WRAPPER
+========================================================= */
+
+.strength-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* =========================================================
    SWIPER
-========================================= */
+========================================================= */
 
 .strength-swiper {
   width: 100%;
+
   overflow: visible !important;
+
+  opacity: 0;
+  transform: translateX(120px);
+
+  transition:
+    opacity 1.2s ease 0.15s,
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
 }
 
 .strength-swiper .swiper-wrapper {
@@ -167,15 +211,18 @@ background-color: #010306;
   height: auto;
 }
 
-/* =========================================
+
+/* =========================================================
    CARD
-========================================= */
+========================================================= */
 
 .strength-card {
-  height: 153px;
+  width: 100%;
+  height: 225px;
+
   box-sizing: border-box;
 
-  padding: 17px 21px 15px;
+  padding: 15px;
 
   display: flex;
   flex-direction: column;
@@ -190,6 +237,7 @@ background-color: #010306;
     );
 
   position: relative;
+
   overflow: hidden;
 
   transition:
@@ -198,30 +246,41 @@ background-color: #010306;
     transform 0.3s ease;
 }
 
-/* Card subtle top glow */
+
+/* =========================================================
+   CARD TOP GLOW
+========================================================= */
+
 .strength-card::before {
   content: "";
 
   position: absolute;
+
   top: 0;
   left: 0;
   right: 0;
 
   height: 1px;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(17, 176, 205, 0.35),
-    transparent
-  );
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(17, 176, 205, 0.35),
+      transparent
+    );
 }
 
-/* Card subtle background */
+
+/* =========================================================
+   CARD BACKGROUND GLOW
+========================================================= */
+
 .strength-card::after {
   content: "";
 
   position: absolute;
+
   width: 100px;
   height: 100px;
 
@@ -239,6 +298,11 @@ background-color: #010306;
   pointer-events: none;
 }
 
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
 .strength-card:hover {
   border-color: #285765;
 
@@ -252,13 +316,14 @@ background-color: #010306;
   transform: translateY(-2px);
 }
 
-/* =========================================
-   CARD ICON
-========================================= */
+
+/* =========================================================
+   ICON
+========================================================= */
 
 .strength-card-icon {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
 
   display: flex;
   align-items: center;
@@ -280,8 +345,8 @@ background-color: #010306;
 }
 
 .strength-card-icon svg {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
 
   fill: none;
 
@@ -292,14 +357,16 @@ background-color: #010306;
   stroke-linecap: round;
   stroke-linejoin: round;
 
-  filter: drop-shadow(
-    0 0 4px rgba(0, 184, 214, 0.22)
-  );
+  filter:
+    drop-shadow(
+      0 0 4px rgba(0, 184, 214, 0.22)
+    );
 }
 
-/* =========================================
+
+/* =========================================================
    CARD TEXT
-========================================= */
+========================================================= */
 
 .strength-card h3 {
   margin: 0 0 8px;
@@ -311,13 +378,6 @@ background-color: #010306;
     Helvetica,
     sans-serif;
 
-  font-size: 9px;
-  line-height: 1;
-
-  font-weight: 700;
-
-  letter-spacing: 0.15px;
-
   position: relative;
   z-index: 1;
 }
@@ -325,31 +385,25 @@ background-color: #010306;
 .strength-card p {
   margin: 0;
 
+  min-width: 100% !important;
+
   color: #647a80;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  font-size: 6.4px;
-  line-height: 1.42;
-
-  font-weight: 400;
 
   position: relative;
   z-index: 1;
 }
 
-/* =========================================
+
+/* =========================================================
    VIEW SOLUTIONS
-========================================= */
+========================================================= */
 
 .strength-card-link {
   margin-top: auto;
 
   display: flex;
   align-items: center;
+
   gap: 5px;
 
   width: fit-content;
@@ -361,9 +415,8 @@ background-color: #010306;
     Helvetica,
     sans-serif;
 
-  font-size: 6px;
+  font-size: 12px;
   line-height: 1;
-
   font-weight: 600;
 
   text-decoration: none;
@@ -377,7 +430,7 @@ background-color: #010306;
 }
 
 .strength-card-link span {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1;
 
   transition: transform 0.2s ease;
@@ -392,30 +445,16 @@ background-color: #010306;
   transform: translateX(2px);
 }
 
-/* =========================================
-   LARGE DESKTOP
-========================================= */
 
-@media (max-width: 1150px) {
-  .strength-header {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-
-  .strength-card {
-    padding-left: 17px;
-    padding-right: 17px;
-  }
-}
-
-/* =========================================
+/* =========================================================
    TABLET
-========================================= */
+========================================================= */
 
 @media (max-width: 900px) {
+
   .strength-section {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-top: 20px;
+    padding-bottom: 15px;
   }
 
   .strength-header {
@@ -434,25 +473,29 @@ background-color: #010306;
   .strength-card {
     height: 155px;
   }
+
+  .strength-card-link {
+    font-size: 9px;
+  }
 }
 
-/* =========================================
+
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 650px) {
+
   .strength-section {
     padding: 27px 0 20px;
-  }
-
-  .strength-container {
-    width: 100%;
   }
 
   .strength-header {
     padding: 0 24px 24px;
 
     display: block;
+
+    transform: translateX(50px);
   }
 
   .strength-heading h2 {
@@ -475,21 +518,41 @@ background-color: #010306;
   .strength-intro p {
     font-size: 8px;
     line-height: 1.5;
+
+    margin-bottom: 10px;
   }
 
   .desktop-break {
     display: none;
   }
 
-  .strength-button {
-    margin-top: 5px;
+
+  /* =========================
+     MOBILE ARROWS
+  ========================= */
+
+  .strength-arrows {
+    align-self: flex-end;
+
+    margin-top: 2px;
   }
 
-  /* Important:
-     Keeps one card centered on mobile */
+  .strength-arrow {
+    width: 30px;
+    height: 25px;
+
+    font-size: 14px;
+  }
+
+
+  /* =========================
+     MOBILE SWIPER
+  ========================= */
+
   .strength-swiper {
-    width: 100%;
     padding: 0 0 3px;
+
+    transform: translateX(80px);
   }
 
   .strength-swiper .swiper-slide {
@@ -497,8 +560,14 @@ background-color: #010306;
     justify-content: center;
   }
 
+
+  /* =========================
+     MOBILE CARD
+  ========================= */
+
   .strength-card {
     width: calc(100vw - 48px);
+
     max-width: 360px;
 
     height: 185px;
@@ -515,6 +584,7 @@ background-color: #010306;
   .strength-card-icon {
     width: 46px;
     height: 46px;
+
     margin-bottom: 13px;
   }
 
@@ -542,11 +612,13 @@ background-color: #010306;
   }
 }
 
-/* =========================================
+
+/* =========================================================
    SMALL MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 380px) {
+
   .strength-header {
     padding-left: 20px;
     padding-right: 20px;
@@ -558,6 +630,7 @@ background-color: #010306;
 
   .strength-card {
     width: calc(100vw - 40px);
+
     height: 180px;
 
     padding: 22px;
