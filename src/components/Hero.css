@@ -1,0 +1,447 @@
+/* ==========================================================================
+   NXTTECH HERO SECTION (FULLSCREEN ANIMATED TEXT & SYNCHRONIZED VISUALS)
+   ========================================================================== */
+
+.nxt-hero-fullscreen {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #010306;
+  color: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Fullscreen Submarine Background & Overlays
+   -------------------------------------------------------------------------- */
+.nxt-hero-bg-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.nxt-hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Dark gradient mask - dark left side for text readability with ambient submarine atmosphere */
+.nxt-bg-overlay-dark {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(1, 3, 6, 0.94) 0%,
+    rgba(1, 3, 6, 0.85) 45%,
+    rgba(1, 3, 6, 0.6) 80%,
+    rgba(1, 3, 6, 0.45) 100%
+  );
+}
+
+/* Top and bottom subtle vignette */
+.nxt-bg-overlay-radial {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(180deg, rgba(1, 3, 6, 0.8) 0%, transparent 20%, transparent 80%, rgba(1, 3, 6, 0.95) 100%),
+    radial-gradient(ellipse 90% 70% at 75% 50%, transparent 40%, rgba(1, 3, 6, 0.8) 100%);
+}
+
+/* Subtle tactical grid */
+.nxt-bg-overlay-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 90% 80% at 30% 50%, #000 50%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 30% 50%, #000 50%, transparent 100%);
+}
+
+/* Ambient glow */
+.nxt-bg-glow-cyan {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.12) 0%, transparent 70%);
+  filter: blur(120px);
+}
+
+/* --------------------------------------------------------------------------
+   Main 2-Column Container Layout
+   -------------------------------------------------------------------------- */
+.nxt-hero-main-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 130px 48px 70px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: Headings & Content
+   -------------------------------------------------------------------------- */
+.nxt-hero-left-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Tactical Eyebrow Badge */
+.nxt-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  border-radius: 100px;
+  margin-bottom: 28px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nxt-badge-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00f2fe;
+  box-shadow: 0 0 12px #00f2fe;
+  animation: nxtPulse 2s infinite ease-in-out;
+}
+
+@keyframes nxtPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.nxt-badge-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  color: #79e0ff;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+/* Slide Viewport */
+.nxt-slide-viewport {
+  position: relative;
+  min-height: 270px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.nxt-slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Domain Label */
+.nxt-title-domain {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+/* Hero Title */
+.nxt-hero-title {
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin: 0 0 18px 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.nxt-title-line-1 {
+  display: block;
+  color: #ffffff;
+}
+
+.nxt-title-line-2 {
+  display: block;
+}
+
+.nxt-gradient-cyan {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 35px rgba(0, 242, 254, 0.4);
+}
+
+.nxt-gradient-gold {
+  background: linear-gradient(135deg, #ffd200 0%, #f7971e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 35px rgba(255, 210, 0, 0.35);
+}
+
+/* Description */
+.nxt-hero-description {
+  font-size: 1.12rem;
+  line-height: 1.7;
+  color: #a0aec0;
+  max-width: 580px;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Slide Progress Indicators */
+.nxt-slide-indicators {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.nxt-indicator-bar {
+  position: relative;
+  width: 48px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 4px;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.nxt-indicator-bar.active {
+  width: 72px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.nxt-indicator-fill {
+  height: 100%;
+  width: 0%;
+  background: #00f2fe;
+  border-radius: 4px;
+}
+
+.nxt-indicator-bar.active .nxt-indicator-fill {
+  animation: nxtFillProgress 5s linear forwards;
+}
+
+@keyframes nxtFillProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Visual Showcase (Sonar / Naval Gun)
+   -------------------------------------------------------------------------- */
+.nxt-hero-right-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 380px;
+}
+
+.nxt-right-visual-card {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dynamic Aura Glow behind asset */
+.nxt-visual-glow {
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glow-cyan {
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.28) 0%, rgba(0, 114, 255, 0.08) 60%, transparent 80%);
+}
+
+.glow-gold {
+  background: radial-gradient(circle, rgba(255, 210, 0, 0.28) 0%, rgba(247, 151, 30, 0.08) 60%, transparent 80%);
+}
+
+/* Floating Image Box */
+.nxt-visual-img-box {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nxt-showcase-img {
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 25px rgba(0, 242, 254, 0.2));
+  transition: transform 0.4s ease;
+}
+
+.theme-gold .nxt-showcase-img {
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 25px rgba(255, 210, 0, 0.22));
+}
+
+.nxt-right-visual-card:hover .nxt-showcase-img {
+  transform: scale(1.05);
+}
+
+/* HUD Overlay Badge */
+.nxt-visual-hud {
+  position: relative;
+  z-index: 3;
+  margin-top: -15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(3, 10, 20, 0.78);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  padding: 10px 18px;
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.theme-gold .nxt-visual-hud {
+  border-color: rgba(255, 210, 0, 0.3);
+}
+
+.nxt-hud-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: nxtPulse 1.8s infinite ease-in-out;
+}
+
+.dot-cyan {
+  background: #00f2fe;
+  box-shadow: 0 0 10px #00f2fe;
+}
+
+.dot-gold {
+  background: #ffd200;
+  box-shadow: 0 0 10px #ffd200;
+}
+
+.nxt-hud-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.nxt-hud-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #79e0ff;
+  letter-spacing: 1.5px;
+}
+
+.theme-gold .nxt-hud-tag {
+  color: #ffd200;
+}
+
+.nxt-hud-stat {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .nxt-hero-main-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 120px 32px 60px;
+  }
+
+  .nxt-hero-left-wrapper {
+    align-items: center;
+    text-align: center;
+  }
+
+  .nxt-slide-content {
+    align-items: center;
+  }
+
+  .nxt-hero-description {
+    text-align: center;
+  }
+
+  .nxt-slide-indicators {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nxt-hero-main-container {
+    padding: 100px 20px 50px;
+  }
+
+  .nxt-slide-viewport {
+    min-height: 240px;
+  }
+
+  .nxt-hero-title {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
+
+  .nxt-hero-description {
+    font-size: 1rem;
+  }
+
+  .nxt-showcase-img {
+    max-height: 280px;
+  }
+}
