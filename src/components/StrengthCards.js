@@ -190,7 +190,7 @@ const StrengthCards = () => {
       ref={sectionRef}
       className="strength-section"
     >
-      <div className="container strength-container">
+      <div className="container strength-container g-0">
 
         {/* ================= HEADER ================= */}
         <div className="strength-header">

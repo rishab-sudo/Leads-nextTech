@@ -3,11 +3,20 @@
 ===================================================== */
 
 .process-section {
- height: fit-content;
- padding: 50px 25px;
-overflow: hidden;
-color: #ffffff;
- box-sizing: border-box;
+  height: fit-content;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  /* Bootstrap container already controls width */
+  padding-left: 0;
+  padding-right: 0;
+
+  overflow: hidden;
+
+
+  color: #ffffff;
+
+  box-sizing: border-box;
 }
 
 
@@ -18,8 +27,6 @@ color: #ffffff;
 
 .process-heading {
   width: 100%;
-  max-width: 1400px;
-
   margin: 0 auto 35px auto;
 
   padding: 0 12px 9px;
@@ -27,7 +34,6 @@ color: #ffffff;
   box-sizing: border-box;
 
   position: relative;
-
   z-index: 5;
 }
 
@@ -38,20 +44,27 @@ color: #ffffff;
 
 .process-eyebrow {
   display: flex;
-align-items: center;
-gap: 5px;
-color: #36cde2;
-text-transform: uppercase;
+  align-items: center;
+
+  gap: 5px;
+
+  color: #36cde2;
+
+  text-transform: uppercase;
 }
 
 
 .eyebrow-dot {
   width: 5px;
-height: 5px;
-display: inline-block;
-border-radius: 50%;
- background: #27d7ed;
-box-shadow:
+  height: 5px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+
+  background: #27d7ed;
+
+  box-shadow:
     0 0 4px #27d7ed,
     0 0 9px rgba(39, 215, 237, 0.7);
 }
@@ -63,27 +76,25 @@ box-shadow:
 
 .process-heading h2 {
   margin: 3px 0 0;
- color: #f3f6f7;
 
+  color: #f3f6f7;
 }
 
 
 /* =====================================================
    PROCESS RECTANGLE
-   TIMELINE ALWAYS CENTERED
+   EXACT SAME WIDTH AS CONTAINER
 ===================================================== */
 
 .process-box {
   width: 100%;
-  max-width: 1400px;
 
-  /*
-    Change this height to anything you want.
-    Timeline will ALWAYS remain vertically centered.
-  */
+  /* Do not add extra width */
+  max-width: none;
+
   height: 250px;
 
-  margin: 0 auto;
+  margin: 0;
 
   padding: 15px 30px;
 
@@ -97,20 +108,16 @@ box-shadow:
 
   overflow: hidden;
 
-  /*
-    IMPORTANT:
-    Keeps complete timeline exactly
-    in vertical + horizontal center.
-  */
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 }
 
 
 /* =====================================================
    MOVING BORDER SHINE
-   CSS ONLY
 ===================================================== */
 
 .process-box::before {
@@ -176,7 +183,6 @@ box-shadow:
 
 /* =====================================================
    TIMELINE
-   ALWAYS CENTERED INSIDE PROCESS BOX
 ===================================================== */
 
 .process-timeline {
@@ -196,17 +202,12 @@ box-shadow:
 
   box-sizing: border-box;
 
-  /*
-    Prevent timeline from shrinking.
-    Flex parent controls vertical centering.
-  */
   flex-shrink: 0;
 }
 
 
 /* =====================================================
    CONNECTING LINE
-   GOES THROUGH ICON CENTERS
 ===================================================== */
 
 .process-connector {
@@ -215,7 +216,6 @@ box-shadow:
   top: 26px;
 
   left: 7.5%;
-
   right: 7.5%;
 
   height: 1px;
@@ -260,7 +260,6 @@ box-shadow:
 
 .process-icon {
   width: 54px;
-
   height: 54px;
 
   position: relative;
@@ -268,7 +267,6 @@ box-shadow:
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   border-radius: 50%;
@@ -301,7 +299,6 @@ box-shadow:
   position: absolute;
 
   width: 43px;
-
   height: 43px;
 
   border-radius: 50%;
@@ -390,8 +387,10 @@ box-shadow:
 
 .process-info h3 {
   margin: 0 0 5px;
- color: #f4f6f7;
- white-space: nowrap;
+
+  color: #f4f6f7;
+
+  white-space: nowrap;
 }
 
 
@@ -401,8 +400,10 @@ box-shadow:
 
 .process-info p {
   margin: 0;
-color: rgba(201, 214, 217, 0.78);
- white-space: nowrap;
+
+  color: rgba(201, 214, 217, 0.78);
+
+  white-space: nowrap;
 }
 
 
@@ -416,20 +417,16 @@ color: rgba(201, 214, 217, 0.78);
     font-size: 22px;
   }
 
-
   .process-info h3 {
     font-size: 12px;
   }
-
 
   .process-info p {
     font-size: 8.5px;
   }
 
-
   .process-connector {
     left: 8%;
-
     right: 8%;
   }
 
@@ -444,9 +441,9 @@ color: rgba(201, 214, 217, 0.78);
 
   .process-section {
     padding-top: 10px;
+    padding-bottom: 20px;
 
     padding-left: 0;
-
     padding-right: 0;
   }
 
@@ -457,6 +454,7 @@ color: rgba(201, 214, 217, 0.78);
 
   .process-heading {
     padding-left: 12px;
+    padding-right: 12px;
 
     padding-bottom: 9px;
 
@@ -471,32 +469,20 @@ color: rgba(201, 214, 217, 0.78);
 
   /* ===================================================
      PROCESS BOX
-     TIMELINE VERTICALLY CENTERED
   =================================================== */
 
   .process-box {
     width: 100%;
 
-    /*
-      Aap yahan height increase kar sakte ho.
-      Timeline automatically center rahegi.
-    */
     height: 150px;
 
     padding: 15px 30px;
 
-    /*
-      Horizontal scrolling on mobile.
-    */
     overflow-x: auto;
-
     overflow-y: hidden;
 
     scrollbar-width: none;
 
-    /*
-      Important for vertical centering.
-    */
     display: flex;
 
     align-items: center;
@@ -523,12 +509,8 @@ color: rgba(201, 214, 217, 0.78);
 
     margin: 0;
 
-    grid-template-columns:
-      repeat(6, 140px);
+    grid-template-columns: repeat(6, 140px);
 
-    /*
-      Prevent shrinking inside flex container.
-    */
     flex-shrink: 0;
   }
 
@@ -539,7 +521,6 @@ color: rgba(201, 214, 217, 0.78);
 
   .process-connector {
     left: 70px;
-
     right: 70px;
   }
 
@@ -563,11 +544,9 @@ color: rgba(201, 214, 217, 0.78);
 
   .process-section {
     padding-top: 9px;
-
     padding-bottom: 20px;
 
     padding-left: 0;
-
     padding-right: 0;
   }
 
@@ -578,6 +557,7 @@ color: rgba(201, 214, 217, 0.78);
 
   .process-heading {
     padding-left: 10px;
+    padding-right: 10px;
 
     padding-bottom: 8px;
 
@@ -602,16 +582,11 @@ color: rgba(201, 214, 217, 0.78);
   .process-box {
     width: 100%;
 
-    /*
-      Increase this value if required.
-      Timeline remains vertically centered.
-    */
     height: 150px;
 
     padding: 15px 30px;
 
     overflow-x: auto;
-
     overflow-y: hidden;
 
     scrollbar-width: none;
@@ -642,8 +617,7 @@ color: rgba(201, 214, 217, 0.78);
 
     margin: 0;
 
-    grid-template-columns:
-      repeat(6, 135px);
+    grid-template-columns: repeat(6, 135px);
 
     flex-shrink: 0;
   }
@@ -657,7 +631,6 @@ color: rgba(201, 214, 217, 0.78);
     top: 26px;
 
     left: 67.5px;
-
     right: 67.5px;
   }
 
@@ -668,14 +641,12 @@ color: rgba(201, 214, 217, 0.78);
 
   .process-icon {
     width: 52px;
-
     height: 52px;
   }
 
 
   .process-icon::before {
     width: 42px;
-
     height: 42px;
   }
 
@@ -726,6 +697,7 @@ color: rgba(201, 214, 217, 0.78);
 
   .process-heading {
     padding-left: 10px;
+    padding-right: 10px;
   }
 
 
@@ -739,11 +711,9 @@ color: rgba(201, 214, 217, 0.78);
 
     min-width: 780px;
 
-    grid-template-columns:
-      repeat(6, 130px);
+    grid-template-columns: repeat(6, 130px);
 
     margin-left: 0;
-
     margin-right: 0;
 
     flex-shrink: 0;
@@ -752,7 +722,6 @@ color: rgba(201, 214, 217, 0.78);
 
   .process-connector {
     left: 65px;
-
     right: 65px;
   }
 

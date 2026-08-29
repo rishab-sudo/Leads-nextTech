@@ -11,7 +11,7 @@ import Home  from "./components/Home";
 
 function App() {
   return (
-    <>
+    <div className="App">
       {/* Smooth scrolling for the complete website */}
       <SmoothScroll />
 
@@ -20,7 +20,7 @@ function App() {
 <Home/>
       <Footer />
       </div>
-    </>
+    </div>
   );
 }
 

@@ -26,7 +26,7 @@ const StrategicPartnership = () => {
   ];
 
   return (
-    <section className="strategic-section container">
+    <section className="strategic-section container g-0">
       <div className="strategic-wrapper">
 
         {/* =========================================

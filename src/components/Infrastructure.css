@@ -15,29 +15,38 @@ padding:45px 32px;
    SECTION HEADER
    Heading is OUTSIDE the cards
 ========================================================= */
-
 .infrastructure-header {
-max-width: 100%;
-  margin: 0 auto 45px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
-.infrastructure-eyebrow {
+/* LEFT SIDE */
+.infrastructure-header .infrastructure-eyebrow {
   display: block;
-  margin-bottom: 14px;
-color: #4e9eac;
-  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
-.infrastructure-header h2 {
+.infrastructure-header .section-heading {
   margin: 0;
-  color: #ffffff;
 }
 
-.infrastructure-header p {
-  margin: 22px 0 0;
- color: #8da0a5;
-}
 
+/* RIGHT SIDE SUBHEADING */
+.infrastructure-header .section-subHeading {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  margin: 0;
+
+  text-align: left;
+
+  max-width: 430px;
+
+  line-height: 1.6;
+}
 
 /* =========================================================
    MAIN GRID
@@ -45,7 +54,7 @@ color: #4e9eac;
 
 .infrastructure-grid {
   width: 100%;
-  max-width: 1400px;
+
   margin: 0 auto;
 
   display: grid;

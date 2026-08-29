@@ -5,24 +5,23 @@ const Infrastructure = () => {
   return (
     <section className="infrastructure-section container">
       {/* ================= SECTION HEADING ================= */}
-      <div className="infrastructure-header">
-        <span className="infrastructure-eyebrow eyebrow-text OUR STRENGTH">
-          OUR INFRASTRUCTURE
-        </span>
+     <div className="infrastructure-header">
+  <span className="infrastructure-eyebrow eyebrow-text OUR STRENGTH">
+    OUR INFRASTRUCTURE
+  </span>
 
-        <h2 className="section-heading">
-          BUILT FOR INNOVATION.
-          <br />
-          READY FOR SCALE.
-        </h2>
+  <h2 className="section-heading">
+    BUILT FOR INNOVATION.
+    <br />
+    READY FOR SCALE.
+  </h2>
 
-        <p className="section-subHeading">
-          Advanced infrastructure and intelligent capabilities
-          <br />
-          engineered to accelerate innovation.
-        </p>
-      </div>
-
+  <p className="section-subHeading">
+    Advanced infrastructure and intelligent capabilities
+    <br />
+    engineered to accelerate innovation.
+  </p>
+</div>
       {/* ================= CARDS ================= */}
       <div className="infrastructure-grid">
 

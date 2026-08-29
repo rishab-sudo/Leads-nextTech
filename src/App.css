@@ -17,7 +17,9 @@ body {
   overflow-x: hidden;
 }
 
-
+.container{
+  min-width: 90% !important;
+}
 /* =========================================
    LARGE DEVICE — 1200px+
 ========================================= */
@@ -25,7 +27,7 @@ body {
   font-size: 18px;
 }
 .section-heading {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 1.1;
 }
@@ -37,13 +39,13 @@ body {
 }
 
 .cards-title {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
 }
 
 .cards-descp {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
 }

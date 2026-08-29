@@ -4,7 +4,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-container">
+      <div className="footer-container ">
 
         {/* Brand Section */}
         <div className="footer-brand">

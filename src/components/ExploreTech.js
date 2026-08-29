@@ -115,7 +115,7 @@ const ExploreTech = () => {
   const currentHotspot = hotspots[activeHotspot];
 
   return (
-    <section className="explore-tech container">
+    <section className="explore-tech container g-0">
 
       {/* =================================================
           HEADING

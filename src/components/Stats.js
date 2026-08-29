@@ -57,15 +57,15 @@ const statsData = [
 
 const Stats = () => {
   return (
-    <section className="stats-section">
+    <section className="stats-section container">
       <div className="stats-container">
         {statsData.map((stat, index) => (
           <div className="stat-item" key={stat.label}>
             <div className="stat-icon">{stat.icon}</div>
 
             <div className="stat-content">
-              <div className="stat-value">{stat.value}</div>
-              <div className="stat-label">{stat.label}</div>
+              <div className="stat-value cards-title">{stat.value}</div>
+              <div className="stat-label cards-descp">{stat.label}</div>
             </div>
 
             {index !== statsData.length - 1 && (

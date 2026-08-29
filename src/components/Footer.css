@@ -57,7 +57,7 @@
 
 .footer-logo {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 21px;
+  font-size: 24px;
   line-height: 1;
   font-weight: 800;
   letter-spacing: -1px;
@@ -72,7 +72,7 @@
 .footer-tagline {
   margin: 0;
   color: rgba(255, 255, 255, 0.58);
-  font-size: 9px;
+  font-size: 16px;
   line-height: 1.45;
   font-weight: 400;
   max-width: 190px;
@@ -99,7 +99,7 @@
   color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
 
-  font-size: 8px;
+  font-size: 16px;
   font-weight: 600;
 
   transition:
@@ -127,7 +127,7 @@
 
   color: #ffffff;
 
-  font-size: 9px;
+  font-size: 16px;
   line-height: 1;
   font-weight: 700;
 
@@ -149,7 +149,7 @@
   color: rgba(255, 255, 255, 0.57);
   text-decoration: none;
 
-  font-size: 9px;
+  font-size: 16px;
   line-height: 1.15;
   font-weight: 400;
 
@@ -189,7 +189,7 @@
   margin: 0;
 
   color: rgba(255, 255, 255, 0.52);
-  font-size: 8px;
+  font-size: 12px;
   line-height: 1.3;
 }
 
@@ -203,7 +203,7 @@
 .footer-legal a {
   color: rgba(255, 255, 255, 0.52);
   text-decoration: none;
-  font-size: 8px;
+  font-size: 12px;
 
   transition: color 0.2s ease;
 }

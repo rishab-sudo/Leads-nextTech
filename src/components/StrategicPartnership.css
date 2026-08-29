@@ -3,17 +3,12 @@
 ========================================================= */
 
 .strategic-section {
-
-
-  /* background: #061114; */
-
-  padding: 35px 20px;
-
-  color: #ffffff;
-
+ /* background: #061114; */
+ color: #ffffff;
+background-color: #f0f3f3;
   overflow: hidden;
+  margin: 3.5% auto 3.5% auto;
 
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -22,16 +17,10 @@
 ========================================================= */
 
 .strategic-wrapper {
-  width: 100%;
-
-min-height: 110px;
-
-  margin: 0 auto;
-
-  display: grid;
+margin: 0 auto;
+ display: grid;
 
   grid-template-columns: 1.25fr 0.95fr;
-
   border: 1px solid rgba(60, 95, 101, 0.35);
 
   background:
@@ -50,9 +39,9 @@ min-height: 110px;
 ========================================================= */
 
 .strategic-content {
-  min-width: 0;
 
-  padding: 11px 40px 12px;
+
+  padding: 15px 80px ;
 
   display: flex;
 
@@ -131,7 +120,7 @@ color: #f0f3f3;
 
 .capability-item {
   min-width: 0;
-
+margin-top: 25px;
   display: flex;
 
   align-items: center;
@@ -162,7 +151,7 @@ color: #f0f3f3;
 
   color: #1595a5;
 
-  font-size: 9px;
+  font-size: 11px;
 
   background: rgba(11, 47, 53, 0.35);
 
@@ -188,7 +177,7 @@ color: #f0f3f3;
 .capability-text span {
   color: #89999b;
 
-  font-size: 6.5px;
+  font-size: 14px;
 
   font-weight: 700;
 
@@ -276,7 +265,7 @@ color: #f0f3f3;
 
   color: #dce2e2;
 
-  font-size: 17px;
+  font-size: 18px;
 
   line-height: 1.05;
 
@@ -297,7 +286,7 @@ color: #f0f3f3;
 
   color: #89999b;
 
-  font-size: 7px;
+  font-size: 16px;
 
   line-height: 1.35;
 }
@@ -308,6 +297,7 @@ color: #f0f3f3;
 ========================================================= */
 
 .cta-button {
+  margin-top: 15px;
   width: fit-content;
 
   display: inline-flex;
@@ -324,7 +314,7 @@ color: #f0f3f3;
 
   color: #d7dddd;
 
-  font-size: 7px;
+  font-size: 14px;
 
   font-weight: 700;
 
