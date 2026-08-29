@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Stats from "./Stats";
 import StrengthCards from "./StrengthCards";
 import Process from "./Process";
+import WaterTech from "../components/WaterTech"
 import ExploreTech from "./ExploreTech";
 import StrategicPartnership from "./StrategicPartnership";
 import Infrastructure from "./Infrastructure";
@@ -61,6 +62,8 @@ const Home = () => {
       <RevealSection>
         <Process />
       </RevealSection>
+
+<WaterTech/>
 
       <RevealSection>
         <ExploreTech />
