@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
@@ -8,9 +9,11 @@ const Footer = () => {
 
         {/* Brand Section */}
         <div className="footer-brand">
-          <div className="footer-logo">
-            Lead<span>NXT</span>
-          </div>
+           <Link to="/" className="navbar-logo">
+            <div className="logo-main">
+          <img src={require("../assets/leadNext-logo.png")}alt=""/>
+            </div>
+          </Link>
 
           <p className="footer-tagline">
             Engineering the future of defense with
