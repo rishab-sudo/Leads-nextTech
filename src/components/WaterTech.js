@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./WaterTech.css";
+import "./Watertech.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,11 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
  * UnderwaterScrollSection
  * ------------------------
  * Scroll-triggered image-sequence section for "Underwater Technologies".
- * The whole thing plays out over 5 viewport-heights of scroll (500vh):
+ * The whole thing plays out over 4 viewport-heights of scroll (400vh):
  *  - the frame sequence scrubs from frame 0 -> last frame across that range
- *  - the heading fades in early and then stays fixed on screen ("permanent")
- *  - the 3 points reveal one by one as the user keeps scrolling, and stay
- *    visible once revealed (a building checklist, not a crossfade)
+ *  - the heading fades in (centered) early and then stays fixed on screen
+ *  - the 3 points reveal one by one, centered, as the user keeps scrolling,
+ *    and stay visible once revealed (a building checklist, not a crossfade)
+ *  - everything (heading + all points) finishes appearing by 95% scroll
+ *    progress, well inside the 4-scroll section
  *
  * Setup:
  * 1. npm install gsap
@@ -24,7 +26,7 @@ gsap.registerPlugin(ScrollTrigger);
  */
 
 const FRAME_COUNT = 41;
-const SCROLL_LENGTH_VH = 500; // 5 "scrolls" worth of height for the full sequence
+const SCROLL_LENGTH_VH = 400; // 4 "scrolls" worth of height for the full sequence
 const FRAME_PATH = (index) =>
   `/frames/ezgif-frame-${String(index + 1).padStart(3, "0")}.png`;
 
@@ -155,7 +157,9 @@ export default function UnderwaterScrollSection({
       gsap.set(pointRefs.current, { opacity: 0, y: 16 });
 
       // points occupy the back 70% of the scroll range, evenly spaced,
-      // each one appears and simply stays visible (no fade-out)
+      // each one appears and simply stays visible (no fade-out).
+      // rangeEnd is a % of scroll PROGRESS (not vh), so all points still
+      // finish appearing before the section ends, now compressed into 4vh.
       const rangeStart = 0.2;
       const rangeEnd = 0.95;
       const step = (rangeEnd - rangeStart) / n;

@@ -137,7 +137,6 @@ const ExploreTech = () => {
 
       </div>
 
-
       {/* =================================================
           BORDERED CONTENT BOX
       ================================================= */}
@@ -145,7 +144,6 @@ const ExploreTech = () => {
       <div className="explore-tech-inner">
 
         <div className="explore-tech-grid">
-
 
           {/* =================================================
               LEFT PANEL
@@ -159,32 +157,22 @@ const ExploreTech = () => {
 
               <button
                 type="button"
-                className={
-                  activeTab === "gun"
-                    ? "active"
-                    : ""
-                }
+                className={activeTab === "gun" ? "active" : ""}
                 onClick={() => setActiveTab("gun")}
               >
                 <span>✦</span>
                 GUN SYSTEMS
               </button>
 
-
               <button
                 type="button"
-                className={
-                  activeTab === "sonar"
-                    ? "active"
-                    : ""
-                }
+                className={activeTab === "sonar" ? "active" : ""}
                 onClick={() => setActiveTab("sonar")}
               >
                 SONAR SYSTEMS
               </button>
 
             </div>
-
 
             {/* PRODUCT LIST */}
 
@@ -196,9 +184,7 @@ const ExploreTech = () => {
                   <button
                     type="button"
                     className={`product-item ${
-                      activeProduct === index
-                        ? "selected"
-                        : ""
+                      activeProduct === index ? "selected" : ""
                     }`}
                     key={index}
                     onClick={() => {
@@ -208,14 +194,11 @@ const ExploreTech = () => {
                   >
 
                     <div className="product-thumb">
-
                       <img
                         src={product.image}
                         alt={product.name}
                       />
-
                     </div>
-
 
                     <div className="product-info">
 
@@ -232,7 +215,6 @@ const ExploreTech = () => {
                   </button>
 
                 ))}
-
 
               {activeTab === "sonar" && (
 
@@ -254,17 +236,11 @@ const ExploreTech = () => {
 
           </div>
 
-
           {/* =================================================
               CENTER IMAGE VIEWER
           ================================================= */}
 
           <div className="explore-center">
-
-            {/* CENTER CONTROLS */}
-
-      
-
 
             {/* PRODUCT VIEWER */}
 
@@ -275,7 +251,6 @@ const ExploreTech = () => {
               <div className="viewer-ring ring-one"></div>
 
               <div className="viewer-ring ring-two"></div>
-
 
               {/* LEFT ARROW */}
 
@@ -288,7 +263,6 @@ const ExploreTech = () => {
                 ‹
               </button>
 
-
               {/* RIGHT ARROW */}
 
               <button
@@ -299,7 +273,6 @@ const ExploreTech = () => {
               >
                 ›
               </button>
-
 
               {/* =================================================
                   IMAGE SLIDER
@@ -337,7 +310,6 @@ const ExploreTech = () => {
 
               </div>
 
-
               {/* VIEWER BASE */}
 
               <div className="viewer-base">
@@ -345,7 +317,6 @@ const ExploreTech = () => {
               </div>
 
             </div>
-
 
             {/* INSTRUCTION */}
 
@@ -371,13 +342,11 @@ const ExploreTech = () => {
 
           </div>
 
-
           {/* =================================================
               RIGHT PANEL
           ================================================= */}
 
           <div className="explore-right">
-
 
             {/* =================================================
                 KEY SPECIFICATIONS
@@ -389,9 +358,7 @@ const ExploreTech = () => {
                 KEY SPECIFICATIONS
               </div>
 
-
               <div className="spec-list">
-
 
                 <div className="spec-row">
 
@@ -405,7 +372,6 @@ const ExploreTech = () => {
 
                 </div>
 
-
                 <div className="spec-row">
 
                   <span className="spec-label">
@@ -417,7 +383,6 @@ const ExploreTech = () => {
                   </span>
 
                 </div>
-
 
                 <div className="spec-row">
 
@@ -431,7 +396,6 @@ const ExploreTech = () => {
 
                 </div>
 
-
                 <div className="spec-row">
 
                   <span className="spec-label">
@@ -443,7 +407,6 @@ const ExploreTech = () => {
                   </span>
 
                 </div>
-
 
                 <div className="spec-row">
 
@@ -457,11 +420,9 @@ const ExploreTech = () => {
 
                 </div>
 
-
               </div>
 
             </div>
-
 
             {/* =================================================
                 HOTSPOT VIEW
@@ -473,7 +434,6 @@ const ExploreTech = () => {
                 HOTSPOT VIEW
               </div>
 
-
               <div
                 className="hotspot-content"
                 key={activeHotspot}
@@ -482,7 +442,6 @@ const ExploreTech = () => {
                 <div className="hotspot-icon">
                   {currentHotspot.icon}
                 </div>
-
 
                 <div className="hotspot-text">
 
@@ -496,7 +455,6 @@ const ExploreTech = () => {
 
                 </div>
 
-
                 <button
                   type="button"
                   className="hotspot-single-arrow"
@@ -507,7 +465,6 @@ const ExploreTech = () => {
                 </button>
 
               </div>
-
 
               {/* HOTSPOT BOTTOM */}
 
@@ -525,7 +482,6 @@ const ExploreTech = () => {
                   ).padStart(2, "0")}
                 </span>
 
-
                 <div className="hotspot-navigation">
 
                   <button
@@ -535,7 +491,6 @@ const ExploreTech = () => {
                   >
                     ‹
                   </button>
-
 
                   <button
                     type="button"
