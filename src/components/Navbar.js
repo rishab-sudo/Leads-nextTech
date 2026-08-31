@@ -1,126 +1,243 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  /* -----------------------------------------
+     NAVIGATION LINKS
+  ----------------------------------------- */
   const navLinks = [
-    { name: "HOME", path: "/" },
-    { name: "CAPABILITIES", path: "/capabilities" },
-    { name: "SOLUTIONS", path: "/solutions" },
-    { name: "TECHNOLOGIES", path: "/technologies" },
-    { name: "FACILITY", path: "/facility" },
-    { name: "ABOUT US", path: "/about-us" },
-    { name: "CAREERS", path: "/careers" },
-    { name: "CONTACT", path: "/contact" },
+    {
+      name: "MAKE IN INDIA",
+      target: "MakeinIndia",
+    },
+    {
+      name: "PROCESS",
+      target: "Process",
+    },
+    {
+      name: "TECHNOLOGY",
+      target: "Technology",
+    },
+    {
+      name: "INFRASTRUCTURE",
+      target: "Infrastructure",
+    },
   ];
 
+  /* -----------------------------------------
+     CLOSE MOBILE MENU
+  ----------------------------------------- */
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
+  /* -----------------------------------------
+     SMOOTH SCROLL TO SECTION
+  ----------------------------------------- */
+  const scrollToSection = (targetId) => {
+    closeMenu();
+
+    if (location.pathname !== "/") {
+      navigate("/");
+
+      setTimeout(() => {
+        const section = document.getElementById(targetId);
+
+        if (section) {
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    } else {
+      const section = document.getElementById(targetId);
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  };
+
+  /* -----------------------------------------
+     HANDLE LOGO CLICK
+  ----------------------------------------- */
+  const handleLogoClick = () => {
+    closeMenu();
+
+    if (location.pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  /* -----------------------------------------
+     CONTACT PAGE
+  ----------------------------------------- */
+  const handleContactClick = () => {
+    closeMenu();
+    navigate("/contact");
+  };
+
   return (
     <>
+      {/* =========================================
+          NAVBAR
+      ========================================= */}
       <header className="navbar">
         <div className="navbar-container">
 
-          {/* Logo */}
-          <Link to="/" className="navbar-logo">
+          {/* =====================================
+              DESKTOP / MAIN LOGO
+          ===================================== */}
+          <Link
+            to="/"
+            className="navbar-logo"
+            onClick={handleLogoClick}
+          >
             <div className="logo-main">
-          <img src={require("../assets/leadNext-logo.png")}alt=""/>
+              <img
+                src={require("../assets/leadNext-logo.png")}
+                alt="LeadNXT"
+              />
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="desktop-nav">
+          {/* =====================================
+              DESKTOP NAVIGATION
+          ===================================== */}
+          <nav
+            className="desktop-nav"
+            aria-label="Main navigation"
+          >
             {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
+              <button
+                key={link.target}
+                type="button"
                 className={`nav-link ${
-                  link.name === "HOME" ? "active" : ""
+                  location.hash === `#${link.target}`
+                    ? "active"
+                    : ""
                 }`}
+                onClick={() =>
+                  scrollToSection(link.target)
+                }
               >
                 {link.name}
-              </Link>
+              </button>
             ))}
           </nav>
 
-          {/* Desktop Right */}
+          {/* =====================================
+              DESKTOP RIGHT ACTIONS
+          ===================================== */}
           <div className="navbar-actions">
-
-            <Link to="/contact" className="get-touch-btn">
+            <button
+              type="button"
+              className="get-touch-btn"
+              onClick={handleContactClick}
+            >
               <span>GET IN TOUCH</span>
               <ArrowUpRight size={15} />
-            </Link>
-
-            <button
-              className="desktop-menu-btn"
-              onClick={() => setMenuOpen(true)}
-              aria-label="Open menu"
-            >
-              <span></span>
-              <span></span>
             </button>
-
           </div>
 
-          {/* Mobile Hamburger */}
+          {/* =====================================
+              MOBILE HAMBURGER
+          ===================================== */}
           <button
             className="mobile-menu-btn"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
+            type="button"
           >
-            <Menu size={25} strokeWidth={1.5} />
+            <Menu
+              size={25}
+              strokeWidth={1.5}
+            />
           </button>
-
         </div>
       </header>
 
-      {/* Mobile Overlay */}
+      {/* =========================================
+          MOBILE OVERLAY
+      ========================================= */}
       <div
-        className={`menu-overlay ${menuOpen ? "show" : ""}`}
+        className={`menu-overlay ${
+          menuOpen ? "show" : ""
+        }`}
         onClick={closeMenu}
       ></div>
 
-      {/* Mobile Side Drawer */}
-      <aside className={`mobile-drawer ${menuOpen ? "open" : ""}`}>
+      {/* =========================================
+          MOBILE SIDE DRAWER
+      ========================================= */}
+      <aside
+        className={`mobile-drawer ${
+          menuOpen ? "open" : ""
+        }`}
+        aria-hidden={!menuOpen}
+      >
 
+        {/* =====================================
+            DRAWER TOP
+        ===================================== */}
         <div className="drawer-header">
 
+          {/* Same Logo As Desktop */}
           <Link
             to="/"
-            className="navbar-logo drawer-logo"
-            onClick={closeMenu}
+            className="drawer-logo"
+            onClick={handleLogoClick}
           >
-            <span className="logo-main">
-              Lead<span>NXT</span>
-            </span>
-
-            <span className="logo-tagline">
-              SCIENCE • INNOVATION • TECHNOLOGY
-            </span>
+            <div className="drawer-logo-main">
+              <img
+                src={require("../assets/leadNext-logo.png")}
+                alt="LeadNXT"
+              />
+            </div>
           </Link>
 
+          {/* Close Button */}
           <button
             className="drawer-close"
             onClick={closeMenu}
             aria-label="Close menu"
+            type="button"
           >
-            <X size={25} strokeWidth={1.5} />
+            <X
+              size={25}
+              strokeWidth={1.5}
+            />
           </button>
-
         </div>
 
-        <nav className="mobile-nav">
-
+        {/* =====================================
+            MOBILE NAVIGATION
+        ===================================== */}
+        <nav
+          className="mobile-nav"
+          aria-label="Mobile navigation"
+        >
           {navLinks.map((link, index) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              onClick={closeMenu}
+            <button
+              key={link.target}
+              type="button"
+              onClick={() =>
+                scrollToSection(link.target)
+              }
               className="mobile-nav-link"
               style={{
                 transitionDelay: menuOpen
@@ -128,38 +245,44 @@ const Navbar = () => {
                   : "0s",
               }}
             >
+              {/* Number */}
               <span className="mobile-link-number">
                 0{index + 1}
               </span>
 
-              <span>{link.name}</span>
+              {/* Label */}
+              <span className="mobile-link-label">
+                {link.name}
+              </span>
 
+              {/* Arrow */}
               <ArrowUpRight
                 className="mobile-link-arrow"
                 size={18}
               />
-            </Link>
+            </button>
           ))}
-
         </nav>
 
+        {/* =====================================
+            DRAWER FOOTER
+        ===================================== */}
         <div className="drawer-footer">
 
-          <Link
-            to="/contact"
+          <button
+            type="button"
             className="drawer-contact-btn"
-            onClick={closeMenu}
+            onClick={handleContactClick}
           >
             <span>GET IN TOUCH</span>
+
             <ArrowUpRight size={17} />
-          </Link>
+          </button>
 
           <p>
             SCIENCE • INNOVATION • TECHNOLOGY
           </p>
-
         </div>
-
       </aside>
     </>
   );

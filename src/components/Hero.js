@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import submarineBg from '../assets/submarine.png';
 import sonarImg from '../assets/sonar.png';
 import navalGunImg from '../assets/naval gun.png';
+import heroVideo from "../assets/video/hero_bg.mp4";
 import './Hero.css';
 
 const slides = [
@@ -113,6 +114,7 @@ const imageSlideVariants = {
 
 export default function Herosection() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -126,22 +128,30 @@ export default function Herosection() {
 
   return (
     <section className="nxt-hero-fullscreen" aria-label="NXTTECH Defence Systems Hero">
-      {/* ── FULLSCREEN SUBMARINE BACKGROUND ── */}
+      {/* ── FULLSCREEN VIMEO BACKGROUND ── */}
       <div className="nxt-hero-bg-container">
-        <motion.img
+        {/* Poster image — shown until the Vimeo player finishes loading,
+            so there's no flash of black on first paint */}
+        <img
           src={submarineBg}
-          alt="NXTTECH Stealth Submarine Background"
-          className="nxt-hero-bg-image"
-          initial={{ scale: 1.06, opacity: 0 }}
-          animate={{
-            scale: [1.06, 1.02, 1.06],
-            opacity: 1,
-          }}
-          transition={{
-            opacity: { duration: 1.2, ease: 'easeOut' },
-            scale: { duration: 16, repeat: Infinity, ease: 'easeInOut' },
-          }}
+          alt=""
+          className={`nxt-hero-bg-poster ${videoLoaded ? 'is-hidden' : ''}`}
+          aria-hidden="true"
         />
+
+        <div className="nxt-hero-bg-video-wrap">
+         <video
+  className="nxt-hero-bg-video"
+  src={heroVideo}
+  autoPlay
+  loop
+  muted
+  playsInline
+  controls={false}
+  onLoadedData={() => setVideoLoaded(true)}
+  aria-hidden="true"
+/>
+        </div>
 
         {/* Cinematic Overlays & Gradients */}
         <div className="nxt-bg-overlay-dark" />

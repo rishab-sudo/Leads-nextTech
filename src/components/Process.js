@@ -78,7 +78,7 @@ const processData = [
 
 const Process = () => {
   return (
-    <section className="process-section container">
+    <section className="process-section container" id="Process">
 
       {/* =========================
           HEADING - OUTSIDE BOX

@@ -10,6 +10,7 @@ import StrategicPartnership from "./StrategicPartnership";
 import Infrastructure from "./Infrastructure";
 import Herosection from "./Hero";
 import DualFocusSection from "./DualFocusSection";
+import MakeInIndiaHero from "./MakeinIndia";
 
 const sectionVariants = {
   hidden: {
@@ -53,6 +54,11 @@ const Home = () => {
 
       <RevealSection>
         <StrengthCards />
+      </RevealSection>
+
+
+  <RevealSection>
+        <MakeInIndiaHero />
       </RevealSection>
 
       <RevealSection>

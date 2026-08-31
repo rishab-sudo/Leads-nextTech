@@ -3,7 +3,7 @@ import "./Infrastructure.css";
 
 const Infrastructure = () => {
   return (
-    <section className="infrastructure-section container">
+    <section className="infrastructure-section container" id="Infrastructure">
       {/* ================= SECTION HEADING ================= */}
      <div className="infrastructure-header">
   <span className="infrastructure-eyebrow eyebrow-text OUR STRENGTH">

@@ -39,7 +39,7 @@
 
   display: grid;
   grid-template-columns:
-    minmax(210px, 1.7fr)
+    minmax(220px, 1.7fr)
     repeat(5, minmax(125px, 1fr));
 
   column-gap: 48px;

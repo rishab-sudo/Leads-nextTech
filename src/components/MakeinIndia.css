@@ -1,0 +1,350 @@
+/* =========================================
+   MAIN HERO
+========================================= */
+
+.mii-hero {
+  position: relative;
+  isolation: isolate;
+margin-top: 3.5%;
+  width: 100%;
+  min-height: 640px;
+
+  display: flex;
+  align-items: flex-end;
+
+  overflow: hidden;
+
+  background: #0a1420;
+
+  font-family: "Source Sans 3", system-ui, sans-serif;
+}
+
+
+/* =========================================
+   BACKGROUND IMAGE
+========================================= */
+
+.mii-hero__bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center 60%;
+
+  z-index: 0;
+}
+
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.mii-hero__scrim {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(6, 12, 22, 0.94) 0%,
+      rgba(8, 16, 28, 0.82) 30%,
+      rgba(8, 16, 28, 0.35) 58%,
+      rgba(8, 16, 28, 0.15) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(5, 10, 18, 0.9) 0%,
+      rgba(5, 10, 18, 0.15) 45%,
+      rgba(5, 10, 18, 0.05) 100%
+    );
+}
+
+
+/* =========================================
+   MAKE IN INDIA LOGO
+========================================= */
+
+.mii-hero__mark {
+  position: absolute;
+
+  top: 28px;
+  right: 32px;
+
+  z-index: 2;
+
+  width: clamp(120px, 16vw, 210px);
+  height: auto;
+
+  display: block;
+
+  filter: drop-shadow(
+    0 2px 10px rgba(0, 0, 0, 0.45)
+  );
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.mii-hero__content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 720px;
+
+  padding: 56px 6vw 64px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   YELLOW TOP LINE
+========================================= */
+
+.mii-hero__rule {
+  display: block;
+
+  width: 64px;
+  height: 4px;
+
+  margin-bottom: 22px;
+
+  background: #f2b705;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.mii-hero__title {
+  margin: 0 0 18px;
+
+  font-family: "Oswald", system-ui, sans-serif;
+
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  font-weight: 600;
+
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+
+  color: #f5f7f9;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.mii-hero__body {
+  margin: 0 0 30px;
+
+  max-width: 58ch;
+
+  font-family: "Source Sans 3", system-ui, sans-serif;
+
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  color: #c9d3dc;
+}
+
+
+/* =========================================
+   BOTTOM TRAIL
+========================================= */
+
+.mii-hero__trail {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-family: "Oswald", system-ui, sans-serif;
+
+  font-size: 0.82rem;
+  font-weight: 500;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.06em;
+
+  color: #9fb0c0;
+}
+
+
+/* =========================================
+   TRAIL DIVIDERS
+========================================= */
+
+.mii-hero__trail i {
+  display: inline-block;
+
+  width: 28px;
+  height: 1px;
+
+  flex-shrink: 0;
+
+  background: #f2b705;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+  .mii-hero {
+    min-height: 600px;
+  }
+
+  .mii-hero__content {
+    max-width: 650px;
+
+    padding: 50px 5vw 55px;
+  }
+
+  .mii-hero__mark {
+    top: 24px;
+    right: 25px;
+
+    width: clamp(110px, 18vw, 170px);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+
+  .mii-hero {
+    min-height: 560px;
+
+    align-items: flex-end;
+  }
+
+  .mii-hero__bg {
+    object-position: center center;
+  }
+
+  .mii-hero__mark {
+    top: 18px;
+    right: 18px;
+
+    width: 96px;
+  }
+
+  .mii-hero__content {
+    width: 100%;
+    max-width: none;
+
+    padding: 40px 22px 40px;
+  }
+
+  .mii-hero__rule {
+    width: 52px;
+    height: 3px;
+
+    margin-bottom: 18px;
+  }
+
+  .mii-hero__title {
+    margin-bottom: 15px;
+
+    font-size: clamp(2rem, 10vw, 2.6rem);
+  }
+
+  .mii-hero__body {
+    margin-bottom: 24px;
+
+    font-size: 1rem;
+
+    line-height: 1.55;
+  }
+
+  .mii-hero__trail {
+    flex-wrap: wrap;
+
+    row-gap: 8px;
+
+    font-size: 0.78rem;
+  }
+
+  .mii-hero__trail i {
+    width: 20px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .mii-hero {
+    min-height: 540px;
+  }
+
+  .mii-hero__content {
+    padding: 35px 18px 32px;
+  }
+
+  .mii-hero__mark {
+    top: 15px;
+    right: 15px;
+
+    width: 82px;
+  }
+
+  .mii-hero__title {
+    font-size: 2rem;
+  }
+
+  .mii-hero__body {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* =========================================
+   ENTRY ANIMATION
+========================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  .mii-hero__content {
+    animation: mii-rise 0.6s ease-out both;
+  }
+}
+
+
+@keyframes mii-rise {
+
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
