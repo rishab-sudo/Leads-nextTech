@@ -52,22 +52,22 @@ const Home = () => {
         <Stats />
       </RevealSection>
 
-      <RevealSection>
-        <StrengthCards />
-      </RevealSection>
-
 
   <RevealSection>
         <MakeInIndiaHero />
       </RevealSection>
 
-      <RevealSection>
-        <DualFocusSection />
-      </RevealSection>
 
       <RevealSection>
         <Process />
       </RevealSection>
+
+      
+      <RevealSection>
+        <DualFocusSection />
+      </RevealSection>
+
+
 
 <WaterTech/>
 
@@ -78,6 +78,12 @@ const Home = () => {
       <RevealSection>
         <Infrastructure />
       </RevealSection>
+
+
+      <RevealSection>
+        <StrengthCards />
+      </RevealSection>
+
 
       <RevealSection>
         <StrategicPartnership />

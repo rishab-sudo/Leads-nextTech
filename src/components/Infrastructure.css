@@ -4,7 +4,8 @@
 
 .infrastructure-section {
   margin-top: 3.5%;
-padding:45px 32px;
+
+  padding: 45px 32px;
   background: #061114;
   color: #ffffff;
   overflow: hidden;
@@ -13,15 +14,17 @@ padding:45px 32px;
 
 /* =========================================================
    SECTION HEADER
-   Heading is OUTSIDE the cards
 ========================================================= */
+
 .infrastructure-header {
   position: relative;
   width: 100%;
   margin-bottom: 40px;
 }
 
+
 /* LEFT SIDE */
+
 .infrastructure-header .infrastructure-eyebrow {
   display: block;
   margin-bottom: 8px;
@@ -33,13 +36,13 @@ padding:45px 32px;
 
 
 /* RIGHT SIDE SUBHEADING */
+
 .infrastructure-header .section-subHeading {
   position: absolute;
-
   right: 0;
   bottom: 0;
 
-  margin: 0;
+
 
   text-align: left;
 
@@ -48,17 +51,21 @@ padding:45px 32px;
   line-height: 1.6;
 }
 
+
 /* =========================================================
    MAIN GRID
+   ONLY ONE CARD — FULL WIDTH
 ========================================================= */
 
 .infrastructure-grid {
   width: 100%;
-
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 1.25fr 1fr;
+
+  /* Facility card takes complete container width */
+  grid-template-columns: 1fr;
+
   gap: 16px;
 }
 
@@ -70,7 +77,9 @@ padding:45px 32px;
 .infrastructure-card {
   position: relative;
 
-  min-height: 440px;
+  min-height: 600px;
+
+  width: 100%;
 
   border: 1px solid rgba(87, 132, 141, 0.45);
 
@@ -89,12 +98,15 @@ padding:45px 32px;
 
 .infrastructure-card::before {
   content: "";
+
   position: absolute;
   inset: 4px;
 
   border: 1px solid rgba(255, 255, 255, 0.025);
 
   pointer-events: none;
+
+  z-index: 10;
 }
 
 
@@ -111,11 +123,14 @@ padding:45px 32px;
   z-index: 5;
 
   font-family: Arial, sans-serif;
-  font-size: 8px;
-  font-weight: 600;
+
+  font-size: 12px;
+  font-weight: 700;
+
   letter-spacing: 1.1px;
 
   color: #4d9eac;
+
   text-transform: uppercase;
 }
 
@@ -129,12 +144,17 @@ padding:45px 32px;
 
   top: 29px;
   left: 14px;
- z-index: 5;
- margin: 0;
-font-family: Arial, sans-serif;
+
+  z-index: 5;
+
+  margin-top: 8px !important;
+
+  font-family: Arial, sans-serif;
+
   font-size: 16px;
   font-weight: 600;
- color: #e9edef;
+
+  color: #e9edef;
 }
 
 
@@ -144,18 +164,30 @@ font-family: Arial, sans-serif;
 
 .facility-card {
   padding: 0;
+
+  width: 100%;
 }
+
+
+/* =========================================================
+   FACILITY CONTENT
+========================================================= */
 
 .facility-content {
   position: absolute;
 
-  top: 73px;
+  top: 100px;
   left: 9px;
   right: 9px;
   bottom: 9px;
 
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 158px;
+
+  /*
+    IMAGE = approx 73%
+    FEATURE BOXES = approx 27%
+  */
+  grid-template-columns: minmax(0, 3fr) minmax(260px, 1.1fr);
 
   gap: 8px;
 }
@@ -169,10 +201,12 @@ font-family: Arial, sans-serif;
   position: relative;
 
   min-width: 0;
+
   height: 100%;
 
   overflow: hidden;
 }
+
 
 .facility-image {
   width: 100%;
@@ -184,6 +218,7 @@ font-family: Arial, sans-serif;
 
   transition: transform 0.7s ease;
 }
+
 
 .facility-image-wrap:hover .facility-image {
   transform: scale(1.035);
@@ -216,6 +251,8 @@ font-family: Arial, sans-serif;
 .facility-features {
   height: 100%;
 
+  width: 100%;
+
   border: 1px solid rgba(70, 112, 121, 0.5);
 
   background: rgba(9, 24, 28, 0.85);
@@ -224,6 +261,11 @@ font-family: Arial, sans-serif;
   flex-direction: column;
 }
 
+
+/* =========================================================
+   FEATURE BOX
+========================================================= */
+
 .facility-feature {
   position: relative;
 
@@ -231,7 +273,11 @@ font-family: Arial, sans-serif;
 
   min-height: 0;
 
-  padding: 10px 8px 8px 10px;
+  /*
+    Increased horizontal spacing
+    because feature panel is now wider
+  */
+  padding: 14px 38px 14px 16px;
 
   display: flex;
   align-items: flex-start;
@@ -243,12 +289,14 @@ font-family: Arial, sans-serif;
     padding-left 0.3s ease;
 }
 
+
 .facility-feature:last-child {
   border-bottom: none;
 }
 
+
 .facility-feature:hover {
-  padding-left: 13px;
+  padding-left: 20px;
 
   background: rgba(48, 105, 116, 0.1);
 }
@@ -259,10 +307,10 @@ font-family: Arial, sans-serif;
 ========================================================= */
 
 .feature-icon {
-  width: 19px;
-  height: 19px;
+  width: 24px;
+  height: 24px;
 
-  margin-right: 8px;
+  margin-right: 12px;
 
   flex-shrink: 0;
 
@@ -271,11 +319,12 @@ font-family: Arial, sans-serif;
   justify-content: center;
 
   border: 1px solid rgba(67, 148, 163, 0.5);
+
   border-radius: 50%;
 
   color: #5aaaba;
 
-  font-size: 8px;
+  font-size: 9px;
 }
 
 
@@ -285,25 +334,34 @@ font-family: Arial, sans-serif;
 
 .feature-content {
   min-width: 0;
+
+  flex: 1;
 }
 
+
 .feature-content h4 {
-  margin: 1px 0 4px;
+  margin: 1px 0 6px;
 
   font-family: Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.2;
+
+  font-size: 15px;
+
+  line-height: 1.25;
+
   font-weight: 700;
 
   color: #dbe4e6;
 }
 
+
 .feature-content p {
   margin: 0;
 
   font-family: Arial, sans-serif;
-  font-size: 8px;
-  line-height: 1.35;
+
+  font-size: 10px;
+
+  line-height: 1.45;
 
   color: #71868b;
 }
@@ -316,10 +374,10 @@ font-family: Arial, sans-serif;
 .feature-arrow {
   position: absolute;
 
-  right: 8px;
-  top: 12px;
+  right: 14px;
+  top: 17px;
 
-  font-size: 11px;
+  font-size: 12px;
 
   color: #678b92;
 
@@ -328,8 +386,10 @@ font-family: Arial, sans-serif;
     color 0.3s ease;
 }
 
+
 .facility-feature:hover .feature-arrow {
   color: #76c3d0;
+
   transform: translateX(3px);
 }
 
@@ -350,6 +410,7 @@ font-family: Arial, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+
   gap: 16px;
 
   border: 1px solid rgba(214, 230, 233, 0.75);
@@ -359,9 +420,10 @@ font-family: Arial, sans-serif;
   color: #ffffff;
 
   font-family: Arial, sans-serif;
-  font-size: 12.5px;
-  font-weight: 500;
 
+  font-size: 12.5px;
+
+  font-weight: 500;
 
   cursor: pointer;
 
@@ -371,17 +433,22 @@ font-family: Arial, sans-serif;
     transform 0.3s ease;
 }
 
+
 .infrastructure-btn span {
   font-size: 11px;
+
   line-height: 1;
 
   transition: transform 0.3s ease;
 }
 
+
 .infrastructure-btn:hover {
   background: #102d33;
+
   border-color: #69b5c2;
 }
+
 
 .infrastructure-btn:hover span {
   transform: translateX(4px);
@@ -399,74 +466,34 @@ font-family: Arial, sans-serif;
 
 
 /* =========================================================
-   AI CARD
+   LARGE DESKTOP
 ========================================================= */
 
-.ai-card {
-  min-height: 440px;
+@media (min-width: 1400px) {
+
+  .facility-content {
+    grid-template-columns:
+      minmax(0, 3.15fr)
+      minmax(300px, 1.15fr);
+  }
+
+  .facility-feature {
+    padding: 16px 42px 16px 18px;
+  }
+
+  .feature-content h4 {
+    font-size: 16px;
+  }
+
+  .feature-content p {
+    font-size: 10px;
+  }
+
 }
 
 
 /* =========================================================
-   AI IMAGE
-========================================================= */
-
-.ai-image-wrap {
-  position: absolute;
-
-  inset: 0;
-
-  overflow: hidden;
-}
-
-.ai-image {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  transition: transform 0.8s ease;
-}
-
-.ai-image-wrap:hover .ai-image {
-  transform: scale(1.025);
-}
-
-
-/* dark overlay to make heading readable */
-
-.ai-image-wrap::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5, 17, 20, 0.38) 0%,
-      rgba(5, 17, 20, 0.02) 35%,
-      rgba(5, 17, 20, 0.32) 100%
-    );
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   AI BUTTON
-========================================================= */
-
-.ai-btn {
-  left: 17px;
-  bottom: 15px;
-}
-
-
-/* =========================================================
-   RESPONSIVE
+   TABLET / MEDIUM
 ========================================================= */
 
 @media (max-width: 1000px) {
@@ -479,9 +506,26 @@ font-family: Arial, sans-serif;
     grid-template-columns: 1fr;
   }
 
-  .facility-card,
-  .ai-card {
-    min-height: 420px;
+  .facility-card {
+    min-height: 460px;
+  }
+
+  .facility-content {
+    grid-template-columns:
+      minmax(0, 2.3fr)
+      minmax(220px, 1fr);
+  }
+
+  .facility-feature {
+    padding: 12px 30px 12px 13px;
+  }
+
+  .feature-content h4 {
+    font-size: 14px;
+  }
+
+  .feature-content p {
+    font-size: 9px;
   }
 
 }
@@ -518,13 +562,36 @@ font-family: Arial, sans-serif;
     gap: 12px;
   }
 
-  .facility-card,
-  .ai-card {
-    min-height: 500px;
+  .facility-card {
+    min-height: 620px;
   }
 
+  /*
+    Image gets more width on tablet
+  */
   .facility-content {
-    grid-template-columns: minmax(0, 1fr) 145px;
+    grid-template-columns:
+      minmax(0, 1.8fr)
+      minmax(190px, 1fr);
+  }
+
+  .facility-feature {
+    padding: 11px 28px 10px 11px;
+  }
+
+  .feature-icon {
+    width: 21px;
+    height: 21px;
+
+    margin-right: 9px;
+  }
+
+  .feature-content h4 {
+    font-size: 12px;
+  }
+
+  .feature-content p {
+    font-size: 8px;
   }
 
 }
@@ -559,17 +626,25 @@ font-family: Arial, sans-serif;
   }
 
 
-  /* Facility card */
+  /* ================= FACILITY CARD ================= */
 
   .facility-card {
     min-height: auto;
+
     padding-bottom: 12px;
   }
 
+
   .infrastructure-card h3 {
     font-size: 13px;
+
     top: 30px;
   }
+
+
+  /*
+    Stack image + feature boxes
+  */
 
   .facility-content {
     position: relative;
@@ -582,48 +657,59 @@ font-family: Arial, sans-serif;
     margin-top: 68px;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 8px;
   }
 
+
   .facility-image-wrap {
     height: 260px;
   }
+
 
   .facility-features {
     height: auto;
   }
 
+
   .facility-feature {
-    min-height: 70px;
+    min-height: 75px;
+
     flex: none;
+
+    padding: 13px 35px 13px 13px;
   }
+
+
+  .feature-icon {
+    width: 22px;
+    height: 22px;
+
+    margin-right: 10px;
+  }
+
+
+  .feature-content h4 {
+    font-size: 13px;
+  }
+
+
+  .feature-content p {
+    font-size: 9px;
+  }
+
+
+  .feature-arrow {
+    right: 13px;
+    top: 17px;
+  }
+
 
   .facility-btn {
     bottom: 13px;
     left: 13px;
-  }
-
-
-  /* AI card */
-
-  .ai-card {
-    min-height: 400px;
-  }
-
-  .ai-card h3 {
-    font-size: 13px;
-  }
-
-  .ai-image-wrap {
-    position: absolute;
-    inset: 0;
-  }
-
-  .ai-btn {
-    bottom: 14px;
-    left: 14px;
   }
 
 }
@@ -652,12 +738,20 @@ font-family: Arial, sans-serif;
     min-height: auto;
   }
 
-  .ai-card {
-    min-height: 350px;
-  }
-
   .facility-content {
     margin-top: 65px;
+  }
+
+  .facility-feature {
+    min-height: 70px;
+  }
+
+  .feature-content h4 {
+    font-size: 12px;
+  }
+
+  .feature-content p {
+    font-size: 8px;
   }
 
 }
