@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { X, ArrowUpRight } from "lucide-react";
 import Swal from "sweetalert2";
 import "./ContactPopup.css";
@@ -14,6 +13,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const queryRef = useRef(null);
 
   /* -----------------------------------------
      INPUT CHANGE
@@ -31,6 +31,21 @@ const ContactPopup = ({ isOpen, onClose }) => {
         ...prev,
         [name]: "",
       }));
+    }
+
+    if (name === "query" && queryRef.current) {
+      const el = queryRef.current;
+      el.style.height = "auto";
+
+      const maxHeight = 200;
+
+      if (el.scrollHeight > maxHeight) {
+        el.style.height = maxHeight + "px";
+        el.style.overflowY = "auto";
+      } else {
+        el.style.height = el.scrollHeight + "px";
+        el.style.overflowY = "hidden";
+      }
     }
   };
 
@@ -156,6 +171,12 @@ const ContactPopup = ({ isOpen, onClose }) => {
         });
 
         setErrors({});
+
+        if (queryRef.current) {
+          queryRef.current.style.height = "auto";
+          queryRef.current.style.overflowY = "hidden";
+        }
+
         onClose();
       } else {
         Swal.fire({
@@ -314,11 +335,12 @@ const ContactPopup = ({ isOpen, onClose }) => {
             <textarea
               id="contact-query"
               name="query"
+              ref={queryRef}
               placeholder="Tell us how we can help you..."
               value={formData.query}
               onChange={handleChange}
               maxLength={1000}
-              rows={5}
+              rows={3}
             />
 
             <div className="contact-query-bottom">
