@@ -35,7 +35,7 @@ const StrategicPartnership = () => {
 
         <div className="strategic-content">
 
-          <div className="strategic-eyebrow eyebrow-text">
+          <div className="strategic-eyebrow eyebrow-text eyebrow">
             <span>✦</span>
             CRAFTED BY
           </div>
@@ -79,7 +79,7 @@ const StrategicPartnership = () => {
 
           <div className="cta-content">
 
-            <h3>
+            <h3 className="section-heading">
               LET'S BUILD THE FUTURE OF DEFENCE
             </h3>
 

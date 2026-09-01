@@ -124,13 +124,29 @@ export default function Herosection() {
     return () => clearInterval(timer);
   }, []);
 
+  // Kick off the video download the instant this component mounts —
+  // don't wait for the <video> tag to be parsed/hydrated. This is what
+  // removes the "delay before it starts playing" on first paint.
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'video';
+    link.href = heroVideo;
+    link.type = 'video/mp4';
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   const slide = slides[currentSlide];
 
   return (
     <section className="nxt-hero-fullscreen" aria-label="NXTTECH Defence Systems Hero">
       {/* ── FULLSCREEN VIMEO BACKGROUND ── */}
       <div className="nxt-hero-bg-container">
-        {/* Poster image — shown until the Vimeo player finishes loading,
+        {/* Poster image — shown until the video finishes loading,
             so there's no flash of black on first paint */}
         <img
           src={submarineBg}
@@ -140,17 +156,21 @@ export default function Herosection() {
         />
 
         <div className="nxt-hero-bg-video-wrap">
-         <video
-  className="nxt-hero-bg-video"
-  src={heroVideo}
-  autoPlay
-  loop
-  muted
-  playsInline
-  controls={false}
-  onLoadedData={() => setVideoLoaded(true)}
-  aria-hidden="true"
-/>
+          <video
+            className="nxt-hero-bg-video"
+            src={heroVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            controls={false}
+            preload="auto"
+            // @ts-ignore — fetchpriority isn't in older React typings but is a valid DOM attr
+            fetchpriority="high"
+            onCanPlay={() => setVideoLoaded(true)}
+            onLoadedData={() => setVideoLoaded(true)}
+            aria-hidden="true"
+          />
         </div>
 
         {/* Cinematic Overlays & Gradients */}

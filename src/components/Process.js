@@ -84,8 +84,8 @@ const Process = () => {
           HEADING - OUTSIDE BOX
       ========================== */}
       <div className="process-heading">
-        <div className="process-eyebrow eyebrow-text">
-          <span className="eyebrow-dot"></span>
+        <div className="process-eyebrow eyebrow-text eyebrow">
+          <span className="eyebrow-dot "></span>
           OUR PROCESS
         </div>
 

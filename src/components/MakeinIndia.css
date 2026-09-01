@@ -230,10 +230,10 @@ margin-top: 3.5%;
    MOBILE
 ========================================= */
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
 
   .mii-hero {
-    min-height: 560px;
+    min-height: 500px;
 
     align-items: flex-end;
   }
@@ -272,7 +272,7 @@ margin-top: 3.5%;
   .mii-hero__body {
     margin-bottom: 24px;
 
-    font-size: 1rem;
+font-size: 18px !important;
 
     line-height: 1.55;
   }
@@ -282,7 +282,7 @@ margin-top: 3.5%;
 
     row-gap: 8px;
 
-    font-size: 0.78rem;
+    font-size: 16px;
   }
 
   .mii-hero__trail i {

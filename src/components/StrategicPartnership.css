@@ -5,8 +5,7 @@
 .strategic-section {
  /* background: #061114; */
  color: #ffffff;
-background-color: #f0f3f3;
-  overflow: hidden;
+overflow: hidden;
   margin: 3.5% auto 3.5% auto;
 
 }
@@ -265,13 +264,7 @@ margin-top: 25px;
 
   color: #dce2e2;
 
-  font-size: 18px;
-
-  line-height: 1.05;
-
-  font-weight: 700;
-
-  letter-spacing: 0.1px;
+  
 }
 
 
@@ -383,7 +376,7 @@ margin-top: 25px;
    MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 767px) {
 
   .strategic-section {
     padding:
@@ -414,9 +407,9 @@ margin-top: 25px;
   }
 
   .strategic-content h2 {
-    font-size: 18px;
+ 
 
-    line-height: 1.2;
+  line-height: 1.2;
   }
 
 
@@ -488,54 +481,3 @@ margin-top: 25px;
 
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 420px) {
-
-  .strategic-section {
-    padding:
-      25px 10px;
-  }
-
-  .strategic-content {
-    padding:
-      16px 14px;
-  }
-
-  .strategic-eyebrow {
-    font-size: 8px;
-  }
-
-  .strategic-content h2 {
-    font-size: 16px;
-  }
-
-  .capabilities-list {
-    column-gap: 10px;
-
-    row-gap: 13px;
-  }
-
-  .capability-item {
-    gap: 7px;
-  }
-
-  .capability-icon {
-    width: 22px;
-    height: 22px;
-
-    flex-basis: 22px;
-  }
-
-  .capability-text span {
-    font-size: 6px;
-  }
-
-  .cta-content h3 {
-    font-size: 17px;
-  }
-
-}

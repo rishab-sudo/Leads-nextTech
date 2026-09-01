@@ -124,7 +124,7 @@ function DualFocusBox({ section, onNavigate }) {
       </div>
 
       <div className="df-box-body">
-        <p className="df-box-label">{section.label}</p>
+        <p className="df-box-label eyebrow">{section.label}</p>
         <h3 className="df-box-heading">{section.heading}</h3>
         {section.intro && <p className="df-box-intro">{section.intro}</p>}
         <ul className="df-box-list">
@@ -151,8 +151,12 @@ export default function DualFocusSection({ onNavigate }) {
       <div className="df-inner container g-0">
         <div className="df-header">
           <div className="df-eyebrow-block">
-            <p className="df-eyebrow">Our Dual Focus</p>
-            <h2 className="cards-title section heading">
+               
+            <div className="process-eyebrow eyebrow-text eyebrow">
+          <span className="eyebrow-dot "></span>
+          OUR Focus
+        </div>
+            <h2 className="section-heading">
               Engineering Superior Systems
               <br />
               Above and Below the Surface

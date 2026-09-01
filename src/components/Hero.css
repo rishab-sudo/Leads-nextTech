@@ -263,7 +263,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 32px;
+  margin-top: 16px; /* was 32px — tightened gap between paragraph and indicators */
 }
 
 .nxt-indicator-bar {
@@ -459,7 +459,7 @@
 @media (max-width: 1080px) {
   .nxt-hero-main-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px; /* was 40px — tightened the space between the left block and the image */
     padding: 120px 32px 60px;
   }
 
@@ -479,11 +479,18 @@
   .nxt-slide-indicators {
     justify-content: center;
   }
+
+  /* the fixed min-height was leaving empty space above the image
+     (content was centered inside a taller box than it needed) */
+  .nxt-hero-right-wrapper {
+    min-height: 300px;
+  }
 }
 
 @media (max-width: 768px) {
   .nxt-hero-main-container {
     padding: 100px 20px 50px;
+    gap: 32px; /* was 12px — the image was overlapping the indicator line above it, give it room */
   }
 
   .nxt-slide-viewport {
@@ -496,6 +503,11 @@
 
   .nxt-hero-description {
     font-size: 1rem;
+  }
+
+  .nxt-hero-right-wrapper {
+    min-height: 240px;
+    margin-top: 0; /* was -20px — that negative pull was causing the overlap with the indicator */
   }
 
   .nxt-showcase-img {

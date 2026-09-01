@@ -100,7 +100,8 @@ color: #f4f7f8;
 
 .strength-intro p {
   margin: 0 0 9px;
- color: #64777d;
+ /* color: #64777d; */
+   color: #fbfbfb;
 text-align: left;
 }
 

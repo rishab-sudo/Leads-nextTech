@@ -16,11 +16,6 @@
   color: #4fd8d1;
 }
 
-.cards-title {
-  margin: 0;
-  color: #f4faf9 !important;
-  text-transform: uppercase;
-}
 
 /* --- Stack of two boxes --- */
 
@@ -198,9 +193,6 @@
 
 .df-box-label {
   margin: 0 0 10px;
-  font-family: "Inter", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(79, 216, 209, 0.75);
@@ -210,14 +202,15 @@
   margin: 0 0 14px;
   border-bottom: 1px solid rgba(79, 216, 209, 0.25);
   padding-bottom: 12px;
-  color: #f4faf9;
+  color: #fbfbfb;
 }
 
 .df-box-intro {
   margin: 0 0 18px;
   font-size: 18px !important;
   line-height: 1.55;
-  color: rgba(244, 250, 249, 0.7);
+  /* color: rgba(244, 250, 249, 0.7); */
+  color: #fbfbfb;
 }
 
 .df-box-outro {
@@ -226,7 +219,8 @@
   font-size: 0.82rem;
   font-style: italic;
   line-height: 1.5;
-  color: rgba(244, 250, 249, 0.55);
+  /* color: rgba(244, 250, 249, 0.55); */
+    color: #fbfbfb;
 }
 
 .df-box-list {
@@ -246,7 +240,8 @@
   font-family: "Inter", sans-serif;
   font-size: 16px !important;
   line-height: 1.45;
-  color: rgba(244, 250, 249, 0.85);
+  /* color: rgba(244, 250, 249, 0.85); */
+    color: #fbfbfb;
 }
 
 .df-tick {
@@ -291,10 +286,12 @@
   }
 }
 
-@media (max-width: 860px) {
-  .df-box {
+
+
+@media (max-width: 767px) { 
+   .df-box {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left;
   }
   .df-box-water .df-box-media,
   .df-box-water .df-box-body,
@@ -312,32 +309,17 @@
   .df-box-heading,
   .df-box-intro,
   .df-box-outro {
-    text-align: center;
+    text-align: left !important;
   }
   .df-box-list li {
-    justify-content: center;
+    justify-content: flex-start;
     text-align: left;
   }
+
+
 }
 
-@media (max-width: 640px) {
-  .df-inner {
-    padding: 0 20px;
-  }
-  .df-box {
-    padding: 24px;
-    border-radius: 4px;
-  }
-  .df-gun-image,
-  .df-water-media {
-    max-width: 260px;
-  }
-  .df-radar-badge {
-    min-width: 48px;
-  }
-}
-
-@media (max-width: 420px) {
+/* @media (max-width: 420px) {
   .df-container-fluid {
     padding: 32px 0;
   }
@@ -348,4 +330,4 @@
     width: 100%;
     justify-content: center;
   }
-}
+} */

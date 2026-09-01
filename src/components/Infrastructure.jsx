@@ -9,9 +9,12 @@ const Infrastructure = () => {
     >
       {/* ================= SECTION HEADING ================= */}
       <div className="infrastructure-header">
-        <span className="infrastructure-eyebrow eyebrow-text OUR STRENGTH">
+      
+  <div className="process-eyebrow eyebrow-text eyebrow">
+          <span className="eyebrow-dot "></span>
           OUR INFRASTRUCTURE
-        </span>
+        </div>
+
 
         <h2 className="section-heading">
           BUILT FOR INNOVATION.

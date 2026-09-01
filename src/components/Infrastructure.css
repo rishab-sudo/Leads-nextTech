@@ -350,7 +350,7 @@
 
   font-weight: 700;
 
-  color: #dbe4e6;
+  color: #fbfbfb;
 }
 
 
@@ -363,7 +363,7 @@
 
   line-height: 1.45;
 
-  color: #71868b;
+  color: #fbfbfb;
 }
 
 
@@ -601,10 +601,10 @@
    MOBILE
 ========================================================= */
 
-@media (max-width: 520px) {
+@media (max-width: 767px) {
 
   .infrastructure-section {
-    padding: 60px 12px;
+    padding: 45px 12px;
   }
 
   .infrastructure-header {
@@ -617,7 +617,7 @@
   }
 
   .infrastructure-header p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.6;
   }
 
@@ -636,7 +636,7 @@
 
 
   .infrastructure-card h3 {
-    font-size: 13px;
+    font-size: 18px;
 
     top: 30px;
   }
@@ -654,13 +654,13 @@
     right: auto;
     bottom: auto;
 
-    margin-top: 68px;
+    margin-top: 90px;
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 8px;
+    gap: 15px;
   }
 
 
@@ -679,7 +679,7 @@
 
     flex: none;
 
-    padding: 13px 35px 13px 13px;
+    padding: 15px 35px 15px 13px;
   }
 
 

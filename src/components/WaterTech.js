@@ -205,7 +205,7 @@ export default function UnderwaterScrollSection({
 
           <div className="uw-content">
             <div ref={headingRef} className="uw-heading-block">
-              {eyebrow && <p className="uw-eyebrow">{eyebrow}</p>}
+              {eyebrow && <p className="uw-eyebrow eyebrow">{eyebrow}</p>}
               {title && <h2 className="uw-title">{title}</h2>}
             </div>
 

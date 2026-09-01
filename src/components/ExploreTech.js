@@ -126,7 +126,7 @@ const ExploreTech = () => {
         <div className="explore-tech-brand">
           <span className="brand-dot">✦</span>
 
-          <span className="eyebrow-text">
+          <span className="eyebrow-text eyebrow">
             EXPLORE TECHNOLOGY
           </span>
         </div>
