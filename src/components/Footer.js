@@ -1,112 +1,128 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const quickLinks = [
+    { name: "Make In India", target: "MakeinIndia" },
+    { name: "Process", target: "Process" },
+    { name: "Technology", target: "DualFocusSection" },
+    { name: "Infrastructure", target: "Infrastructure" },
+  ];
+
+  const solutions = [
+    { name: "Gun Systems", target: "DualFocusSection" },
+    { name: "Sonar Systems", target: "DualFocusSection" },
+    { name: "UAV Systems", target: "DualFocusSection" },
+    { name: "Surveillance", target: "DualFocusSection" },
+    { name: "Communication", target: "DualFocusSection" },
+  ];
+
+  const support = [
+
+  ];
+
+  const scrollToSection = (targetId) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const section = document.getElementById(targetId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    } else {
+      const section = document.getElementById(targetId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   return (
     <footer className="footer">
-      <div className="footer-container ">
+      <div className="footer-container">
 
-        {/* Brand Section */}
+        {/* Brand Section — logo on top, tagline below (3 lines) */}
         <div className="footer-brand">
-           <Link to="/" className="navbar-logo">
+          <Link to="/" className="navbar-logo footer-logo-link">
             <div className="logo-main">
-          <img src={require("../assets/leadNext-logo.png")}alt=""/>
+              <img src={require("../assets/leadNext-logo.png")} alt="LeadNXT" />
             </div>
           </Link>
 
-          <p className="footer-tagline">
-            Engineering the future of defense with
-            <br />
-            innovative solutions, advanced systems
-            <br />
-            and unmatched commitment.
-          </p>
-
-          <div className="footer-socials">
-            <a href="/contact" aria-label="LinkedIn">
-              in
-            </a>
-
-            <a href="/contact" aria-label="YouTube">
-              ▶
-            </a>
-
-            <a href="/contact" aria-label="X">
-              X
-            </a>
+          <div className="footer-brand-info">
+            <p className="footer-tagline">
+              Engineering the future of defense with
+              <br />
+              innovative solutions, advanced systems
+              <br />
+              and unmatched commitment.
+            </p>
           </div>
         </div>
 
-        {/* Company */}
+        {/* Quick Links — mirrors navbar links, scrolls to section */}
         <div className="footer-column">
-          <h4>COMPANY</h4>
-
+          <h4>QUICK LINKS</h4>
           <ul>
-            <li><a href="/contact">About Us</a></li>
-            <li><a href="/contact">Careers</a></li>
-            <li><a href="/contact">News &amp; Media</a></li>
-            <li><a href="/contact">Contact Us</a></li>
+            {quickLinks.map((link) => (
+              <li key={link.target}>
+                <button
+                  type="button"
+                  className="footer-link-btn"
+                  onClick={() => scrollToSection(link.target)}
+                >
+                  {link.name}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Capabilities */}
-        <div className="footer-column">
-          <h4>CAPABILITIES</h4>
-
-          <ul>
-            <li><a href="/contact">Air</a></li>
-            <li><a href="/contact">Land</a></li>
-            <li><a href="/contact">Naval</a></li>
-            <li><a href="/contact">Underwater</a></li>
-            <li><a href="/contact">AI &amp; Autonomy</a></li>
-          </ul>
-        </div>
-
-        {/* Solutions */}
+        {/* Solutions — all route into the DualFocusSection */}
         <div className="footer-column">
           <h4>SOLUTIONS</h4>
-
           <ul>
-            <li><a href="/contact">Gun Systems</a></li>
-            <li><a href="/contact">Sonar Systems</a></li>
-            <li><a href="/contact">UAV Systems</a></li>
-            <li><a href="/contact">Surveillance</a></li>
-            <li><a href="/contact">Communication</a></li>
+            {solutions.map((link, i) => (
+              <li key={`${link.target}-${i}`}>
+                <button
+                  type="button"
+                  className="footer-link-btn"
+                  onClick={() => scrollToSection(link.target)}
+                >
+                  {link.name}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Technologies */}
+        {/* Support — first 2 points + social links */}
         <div className="footer-column">
-          <h4>TECHNOLOGIES</h4>
-
+          <h4>Social Links</h4>
           <ul>
-            <li><a href="/contact">Fire Control</a></li>
-            <li><a href="/contact">Acoustic Warfare</a></li>
-            <li><a href="/contact">Sensor Fusion</a></li>
-            <li><a href="/contact">Autonomous Systems</a></li>
-            <li><a href="/contact">AI/ML</a></li>
+            {support.map((item) => (
+              <li key={item.name}>
+                <a href="/contact">{item.name}</a>
+              </li>
+            ))}
           </ul>
-        </div>
 
-        {/* Support */}
-        <div className="footer-column">
-          <h4>SUPPORT</h4>
-
-          <ul>
-            <li><a href="/contact">24/7 On-cycle Support</a></li>
-            <li><a href="/contact">Training</a></li>
-            <li><a href="/contact">Documentation</a></li>
-            <li><a href="/contact">Customer Portal</a></li>
-          </ul>
+          <div className="footer-socials">
+            <a href="/contact" aria-label="LinkedIn">in</a>
+            <a href="/contact" aria-label="YouTube">▶</a>
+            <a href="/contact" aria-label="X">X</a>
+          </div>
         </div>
       </div>
 
       {/* Bottom Footer */}
       <div className="footer-bottom">
-        <p>
-          © 2024 LeadNXT Defence &amp; Underwater Technologies. All Rights Reserved.
-        </p>
+        <p>© 2026 LeadNXT Defence &amp; Underwater Technologies. All Rights Reserved.</p>
 
         <div className="footer-legal">
           <a href="/contact">Privacy Policy</a>

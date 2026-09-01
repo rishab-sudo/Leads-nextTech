@@ -1,0 +1,364 @@
+
+/* =========================================
+   CONTACT POPUP OVERLAY
+========================================= */
+
+.contact-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+
+  animation: contactOverlayIn 0.25s ease;
+}
+
+
+/* =========================================
+   POPUP
+========================================= */
+
+.contact-popup {
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 32px;
+
+  background: #ffffff;
+  border-radius: 16px;
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+
+  animation: contactPopupIn 0.3s ease;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.contact-popup-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.contact-popup-eyebrow {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #4fd8d1;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.contact-popup-header h2 {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.contact-popup-close {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #111111;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.contact-popup-close:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.contact-popup-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.contact-popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-popup-field {
+  width: 100%;
+}
+
+.contact-popup-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #171717;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.contact-popup-field label span {
+  color: #e5484d;
+}
+
+.contact-popup-field input,
+.contact-popup-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid #dddddd;
+  border-radius: 7px;
+
+  outline: none;
+
+  padding: 13px 15px;
+
+  background: #ffffff;
+  color: #111111;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+.contact-popup-field input {
+  height: 48px;
+}
+
+.contact-popup-field textarea {
+  min-height: 120px;
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+.contact-popup-field input::placeholder,
+.contact-popup-field textarea::placeholder {
+  color: #999999;
+}
+
+.contact-popup-field input:focus,
+.contact-popup-field textarea:focus {
+  border-color: #111111;
+
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.contact-popup-field small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #d92d20;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   QUERY COUNTER
+========================================= */
+
+.contact-query-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.contact-query-bottom > span:last-child {
+  margin-top: 6px;
+
+  flex-shrink: 0;
+
+  color: #999999;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   SUBMIT
+========================================= */
+
+.contact-popup-submit {
+  width: 100%;
+  min-height: 50px;
+
+  margin-top: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #1595a5;;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.contact-popup-submit:hover:not(:disabled) {
+  background: #010306;
+  transform: translateY(-1px);
+}
+
+.contact-popup-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   LOADER
+========================================= */
+
+.contact-submit-spinner {
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation: contactSpinner 0.7s linear infinite;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes contactOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contactPopupIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes contactSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .contact-popup-overlay {
+    padding: 12px;
+  }
+
+  .contact-popup {
+    max-height: 92vh;
+    padding: 24px 20px;
+    border-radius: 13px;
+  }
+
+  .contact-popup-header {
+    margin-bottom: 22px;
+  }
+
+  .contact-popup-header h2 {
+    font-size: 24px;
+  }
+
+  .contact-popup-close {
+    width: 34px;
+    height: 34px;
+  }
+
+  .contact-popup-form {
+    gap: 16px;
+  }
+
+  .contact-popup-field input {
+    height: 46px;
+  }
+
+  .contact-popup-field textarea {
+    min-height: 110px;
+  }
+}
+

@@ -4,8 +4,7 @@
 
 .infrastructure-section {
   margin-top: 3.5%;
-
-  padding: 45px 32px;
+ padding: 45px 32px;
   background: #061114;
   color: #ffffff;
   overflow: hidden;
@@ -502,6 +501,20 @@
     padding: 90px 24px;
   }
 
+  /*
+    iPad-range fix: widths between 767px and 1000px (iPad portrait
+    is 768px) were only hitting THIS breakpoint, not the 700px/767px
+    ones below — so the subheading's absolute position:0/bottom:0
+    was never overridden here and it kept overlapping the heading.
+  */
+  .infrastructure-header .section-subHeading {
+    position: static;
+
+    max-width: 100%;
+
+    margin-top: 14px;
+  }
+
   .infrastructure-grid {
     grid-template-columns: 1fr;
   }
@@ -556,6 +569,18 @@
 
   .infrastructure-header p {
     font-size: 13px;
+  }
+
+  /*
+    Below the heading now stacks below it instead of sitting
+    absolutely positioned on top of it — that was the overlap.
+  */
+  .infrastructure-header .section-subHeading {
+    position: static;
+
+    max-width: 100%;
+
+    margin-top: 14px;
   }
 
   .infrastructure-grid {
@@ -623,6 +648,22 @@
 
   .infrastructure-header p br {
     display: none;
+  }
+
+  /*
+    Same fix repeated at the mobile breakpoint: the subheading
+    para was absolutely positioned (right:0; bottom:0) with no
+    override here, so it sat on top of the heading text instead
+    of flowing underneath it.
+  */
+  .infrastructure-header .section-subHeading {
+    position: static;
+
+    max-width: 100%;
+
+    margin-top: 12px;
+
+    text-align: left;
   }
 
 

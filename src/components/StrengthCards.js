@@ -310,13 +310,13 @@ const StrengthCards = () => {
                     {card.description}
                   </p>
 
-                  <Link
+                  {/* <Link
                     to="/contact"
                     className="strength-card-link"
                   >
                     VIEW SOLUTIONS
                     <span>→</span>
-                  </Link>
+                  </Link> */}
 
                 </div>
 

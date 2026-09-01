@@ -1,10 +1,13 @@
+
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import ContactPopup from "./ContactPopup";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showContactPopup, setShowContactPopup] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,7 +26,7 @@ const Navbar = () => {
     },
     {
       name: "TECHNOLOGY",
-      target: "Technology",
+      target: "DualFocusSection",
     },
     {
       name: "INFRASTRUCTURE",
@@ -39,7 +42,22 @@ const Navbar = () => {
   };
 
   /* -----------------------------------------
-     SMOOTH SCROLL TO SECTION
+     OPEN CONTACT POPUP
+  ----------------------------------------- */
+  const openContactPopup = () => {
+    closeMenu();
+    setShowContactPopup(true);
+  };
+
+  /* -----------------------------------------
+     CLOSE CONTACT POPUP
+  ----------------------------------------- */
+  const closeContactPopup = () => {
+    setShowContactPopup(false);
+  };
+
+  /* -----------------------------------------
+     SMOOTH SCROLL
   ----------------------------------------- */
   const scrollToSection = (targetId) => {
     closeMenu();
@@ -70,7 +88,7 @@ const Navbar = () => {
   };
 
   /* -----------------------------------------
-     HANDLE LOGO CLICK
+     LOGO CLICK
   ----------------------------------------- */
   const handleLogoClick = () => {
     closeMenu();
@@ -83,14 +101,6 @@ const Navbar = () => {
     }
   };
 
-  /* -----------------------------------------
-     CONTACT PAGE
-  ----------------------------------------- */
-  const handleContactClick = () => {
-    closeMenu();
-    navigate("/contact");
-  };
-
   return (
     <>
       {/* =========================================
@@ -99,9 +109,7 @@ const Navbar = () => {
       <header className="navbar">
         <div className="navbar-container">
 
-          {/* =====================================
-              DESKTOP / MAIN LOGO
-          ===================================== */}
+          {/* LOGO */}
           <Link
             to="/"
             className="navbar-logo"
@@ -115,9 +123,7 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* =====================================
-              DESKTOP NAVIGATION
-          ===================================== */}
+          {/* DESKTOP NAVIGATION */}
           <nav
             className="desktop-nav"
             aria-label="Main navigation"
@@ -140,23 +146,19 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* =====================================
-              DESKTOP RIGHT ACTIONS
-          ===================================== */}
+          {/* DESKTOP ACTION */}
           <div className="navbar-actions">
             <button
               type="button"
               className="get-touch-btn"
-              onClick={handleContactClick}
+              onClick={openContactPopup}
             >
               <span>GET IN TOUCH</span>
               <ArrowUpRight size={15} />
             </button>
           </div>
 
-          {/* =====================================
-              MOBILE HAMBURGER
-          ===================================== */}
+          {/* MOBILE MENU */}
           <button
             className="mobile-menu-btn"
             onClick={() => setMenuOpen(true)}
@@ -171,6 +173,7 @@ const Navbar = () => {
         </div>
       </header>
 
+
       {/* =========================================
           MOBILE OVERLAY
       ========================================= */}
@@ -181,8 +184,9 @@ const Navbar = () => {
         onClick={closeMenu}
       ></div>
 
+
       {/* =========================================
-          MOBILE SIDE DRAWER
+          MOBILE DRAWER
       ========================================= */}
       <aside
         className={`mobile-drawer ${
@@ -191,12 +195,9 @@ const Navbar = () => {
         aria-hidden={!menuOpen}
       >
 
-        {/* =====================================
-            DRAWER TOP
-        ===================================== */}
+        {/* DRAWER HEADER */}
         <div className="drawer-header">
 
-          {/* Same Logo As Desktop */}
           <Link
             to="/"
             className="drawer-logo"
@@ -210,7 +211,6 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Close Button */}
           <button
             className="drawer-close"
             onClick={closeMenu}
@@ -224,9 +224,8 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* =====================================
-            MOBILE NAVIGATION
-        ===================================== */}
+
+        {/* MOBILE NAVIGATION */}
         <nav
           className="mobile-nav"
           aria-label="Mobile navigation"
@@ -245,17 +244,14 @@ const Navbar = () => {
                   : "0s",
               }}
             >
-              {/* Number */}
               <span className="mobile-link-number">
                 0{index + 1}
               </span>
 
-              {/* Label */}
               <span className="mobile-link-label">
                 {link.name}
               </span>
 
-              {/* Arrow */}
               <ArrowUpRight
                 className="mobile-link-arrow"
                 size={18}
@@ -264,15 +260,14 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* =====================================
-            DRAWER FOOTER
-        ===================================== */}
+
+        {/* DRAWER FOOTER */}
         <div className="drawer-footer">
 
           <button
             type="button"
             className="drawer-contact-btn"
-            onClick={handleContactClick}
+            onClick={openContactPopup}
           >
             <span>GET IN TOUCH</span>
 
@@ -284,8 +279,18 @@ const Navbar = () => {
           </p>
         </div>
       </aside>
+
+
+      {/* =========================================
+          CONTACT POPUP COMPONENT
+      ========================================= */}
+      <ContactPopup
+        isOpen={showContactPopup}
+        onClose={closeContactPopup}
+      />
     </>
   );
 };
 
 export default Navbar;
+

@@ -147,12 +147,11 @@ function DualFocusBox({ section, onNavigate }) {
 
 export default function DualFocusSection({ onNavigate }) {
   return (
-    <section className="df-container-fluid">
+    <section className="df-container-fluid" id="DualFocusSection">
       <div className="df-inner container g-0">
+        
         <div className="df-header">
-          <div className="df-eyebrow-block">
-               
-            <div className="process-eyebrow eyebrow-text eyebrow">
+           <div className="process-eyebrow eyebrow-text eyebrow">
           <span className="eyebrow-dot "></span>
           OUR Focus
         </div>
@@ -161,7 +160,7 @@ export default function DualFocusSection({ onNavigate }) {
               <br />
               Above and Below the Surface
             </h2>
-          </div>
+     
         </div>
 
         <div className="df-stack">

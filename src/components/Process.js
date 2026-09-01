@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useEffect, useRef } from "react";
 import "./Process.css";
 
 const processData = [
@@ -77,26 +78,77 @@ const processData = [
 ];
 
 const Process = () => {
-  return (
-    <section className="process-section container" id="Process">
+  const processBoxRef = useRef(null);
+  const currentSlide = useRef(0);
 
+  useEffect(() => {
+    const handleResize = () => {
+      // Auto slide only on mobile
+      if (window.innerWidth > 767) {
+        currentSlide.current = 0;
+      }
+    };
+
+    const autoSlide = setInterval(() => {
+      // Only run auto slide on mobile
+      if (window.innerWidth > 767 || !processBoxRef.current) {
+        return;
+      }
+
+      const box = processBoxRef.current;
+      const timeline = box.querySelector(".process-timeline");
+
+      if (!timeline) return;
+
+      const items = timeline.querySelectorAll(".process-item");
+
+      if (!items.length) return;
+
+      currentSlide.current =
+        (currentSlide.current + 1) % items.length;
+
+      const targetItem = items[currentSlide.current];
+
+      box.scrollTo({
+        left: targetItem.offsetLeft - 30,
+        behavior: "smooth",
+      });
+    }, 2500);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      clearInterval(autoSlide);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return (
+    <section
+      className="process-section container g-0"
+      id="Process"
+    >
       {/* =========================
-          HEADING - OUTSIDE BOX
+          HEADING
       ========================== */}
       <div className="process-heading">
         <div className="process-eyebrow eyebrow-text eyebrow">
-          <span className="eyebrow-dot "></span>
+          <span className="eyebrow-dot"></span>
           OUR PROCESS
         </div>
 
-        <h2 className="section-heading">FROM CONCEPT TO MISSION</h2>
+        <h2 className="section-heading">
+          FROM CONCEPT TO MISSION
+        </h2>
       </div>
 
       {/* =========================
           PROCESS RECTANGLE
       ========================== */}
-      <div className="process-box ">
-
+      <div
+        className="process-box"
+        ref={processBoxRef}
+      >
         {/* =========================
             TIMELINE
         ========================== */}
@@ -110,7 +162,6 @@ const Process = () => {
               className="process-item"
               key={item.number}
             >
-
               {/* ICON */}
               <div className="process-icon-wrapper">
                 <div className="process-icon">
@@ -125,19 +176,21 @@ const Process = () => {
 
               {/* TITLE + DESCRIPTION */}
               <div className="process-info">
-                <h3 className="cards-title">{item.title}</h3>
+                <h3 className="cards-title">
+                  {item.title}
+                </h3>
 
-                <p className="cards-descp ">{item.description}</p>
+                <p className="cards-descp">
+                  {item.description}
+                </p>
               </div>
-
             </div>
           ))}
-
         </div>
       </div>
-
     </section>
   );
 };
 
 export default Process;
+

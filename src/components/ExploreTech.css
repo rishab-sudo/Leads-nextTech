@@ -976,13 +976,11 @@
    EACH COLUMN = 95% WIDTH
 ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
   .explore-tech {
     width: 100%;
-
-    padding:
-      35px 0 45px;
+padding: 15px !important;
   }
 
   .explore-tech-heading {

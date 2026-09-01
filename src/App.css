@@ -19,6 +19,7 @@ body {
 
 .container{
   min-width: 90% !important;
+
 }
 /* =========================================
    LARGE DEVICE — 1200px+
@@ -98,7 +99,7 @@ body {
   font-size: 16px;
 }
   .section-heading {
-    font-size: 38px;
+    font-size: 24px !important;
     font-weight: 700;
   }
 

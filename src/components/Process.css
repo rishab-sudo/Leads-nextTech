@@ -4,35 +4,22 @@
 
 .process-section {
   height: fit-content;
-  padding-top: 50px;
-  padding-bottom: 50px;
-
-  /* Bootstrap container already controls width */
-  padding-left: 0;
-  padding-right: 0;
-
+  margin-top: 3.5%;
   overflow: hidden;
-
-
   color: #ffffff;
-
   box-sizing: border-box;
 }
 
 
 /* =====================================================
    HEADING
-   COMPLETELY OUTSIDE RECTANGLE
 ===================================================== */
 
 .process-heading {
   width: 100%;
   margin: 0 auto 35px auto;
-
   padding: 0 12px 9px;
-
   box-sizing: border-box;
-
   position: relative;
   z-index: 5;
 }
@@ -45,11 +32,8 @@
 .process-eyebrow {
   display: flex;
   align-items: center;
-
   gap: 5px;
-
   color: #36cde2;
-
   text-transform: uppercase;
 }
 
@@ -57,13 +41,9 @@
 .eyebrow-dot {
   width: 5px;
   height: 5px;
-
   display: inline-block;
-
   border-radius: 50%;
-
   background: #27d7ed;
-
   box-shadow:
     0 0 4px #27d7ed,
     0 0 9px rgba(39, 215, 237, 0.7);
@@ -76,42 +56,27 @@
 
 .process-heading h2 {
   margin: 3px 0 0;
-
   color: #f3f6f7;
 }
 
 
 /* =====================================================
    PROCESS RECTANGLE
-   EXACT SAME WIDTH AS CONTAINER
 ===================================================== */
 
 .process-box {
   width: 100%;
-
-  /* Do not add extra width */
   max-width: none;
-
   height: 250px;
-
   margin: 0;
-
   padding: 15px 30px;
-
   position: relative;
-
   box-sizing: border-box;
-
   border: 1px solid rgba(28, 94, 106, 0.65);
-
   background: rgba(6, 17, 20, 0.35);
-
   overflow: hidden;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 }
 
@@ -122,15 +87,10 @@
 
 .process-box::before {
   content: "";
-
   position: absolute;
-
   inset: -1px;
-
   pointer-events: none;
-
   z-index: 1;
-
   border: 2px solid transparent;
 
   background:
@@ -159,7 +119,6 @@
   -webkit-mask-composite: xor;
 
   background-size: 250% 100%;
-
   animation: processBorderShine 18s linear infinite;
 }
 
@@ -169,7 +128,6 @@
 ===================================================== */
 
 @keyframes processBorderShine {
-
   0% {
     background-position: 250% 0;
   }
@@ -177,7 +135,6 @@
   100% {
     background-position: -250% 0;
   }
-
 }
 
 
@@ -187,21 +144,15 @@
 
 .process-timeline {
   position: relative;
-
   width: 100%;
-
   height: 120px;
-
   margin: 0 auto;
 
   display: grid;
-
   grid-template-columns: repeat(6, 1fr);
 
   z-index: 3;
-
   box-sizing: border-box;
-
   flex-shrink: 0;
 }
 
@@ -212,16 +163,11 @@
 
 .process-connector {
   position: absolute;
-
   top: 26px;
-
   left: 7.5%;
   right: 7.5%;
-
   height: 1px;
-
   background: rgba(31, 119, 133, 0.7);
-
   z-index: 1;
 }
 
@@ -232,11 +178,8 @@
 
 .process-item {
   height: 120px;
-
   min-width: 0;
-
   position: relative;
-
   z-index: 3;
 }
 
@@ -247,13 +190,9 @@
 
 .process-icon-wrapper {
   position: absolute;
-
   top: 0;
-
   left: 50%;
-
   transform: translateX(-50%);
-
   z-index: 5;
 }
 
@@ -261,11 +200,9 @@
 .process-icon {
   width: 54px;
   height: 54px;
-
   position: relative;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -295,29 +232,20 @@
 
 .process-icon::before {
   content: "";
-
   position: absolute;
-
   width: 43px;
   height: 43px;
-
   border-radius: 50%;
-
   border: 1px solid rgba(33, 126, 141, 0.28);
 }
 
 
 .process-icon span {
   position: relative;
-
   z-index: 2;
-
   color: #4ed9eb;
-
   font-size: 20px;
-
   line-height: 1;
-
   opacity: 0.75;
 
   text-shadow:
@@ -331,11 +259,8 @@
 
 .process-number {
   position: absolute;
-
   top: 56px;
-
   left: 50%;
-
   transform: translateX(-50%);
 
   z-index: 6;
@@ -343,19 +268,13 @@
   padding: 0 4px;
 
   background: #061114;
-
   color: #1ed4e9;
 
   font-family: Arial, Helvetica, sans-serif;
-
-  font-size: 10px;
-
+  font-size: 14px;
   line-height: 1;
-
   font-weight: 700;
-
   letter-spacing: 0.3px;
-
   white-space: nowrap;
 }
 
@@ -366,17 +285,13 @@
 
 .process-info {
   position: absolute;
-
   top: 76px;
-
   left: 50%;
-
   transform: translateX(-50%);
 
   width: 90%;
 
   text-align: center;
-
   z-index: 4;
 }
 
@@ -387,9 +302,7 @@
 
 .process-info h3 {
   margin: 0 0 5px;
-
   color: #f4f6f7;
-
   white-space: nowrap;
 }
 
@@ -400,9 +313,7 @@
 
 .process-info p {
   margin: 0;
-
   color: rgba(201, 214, 217, 0.78);
-
   white-space: nowrap;
 }
 
@@ -429,7 +340,6 @@
     left: 8%;
     right: 8%;
   }
-
 }
 
 
@@ -440,42 +350,30 @@
 @media (max-width: 768px) {
 
   .process-section {
-    padding-top: 10px;
-    padding-bottom: 20px;
-
-    padding-left: 0;
-    padding-right: 0;
+    margin-top: 3.5%;
+    padding: 15px !important;
   }
 
 
-  /* ===================================================
-     HEADING
-  =================================================== */
+  /* HEADING */
 
   .process-heading {
     padding-left: 12px;
     padding-right: 12px;
-
     padding-bottom: 9px;
-
     margin-bottom: 20px;
   }
-
 
   .process-heading h2 {
     font-size: 21px;
   }
 
 
-  /* ===================================================
-     PROCESS BOX
-  =================================================== */
+  /* PROCESS BOX */
 
   .process-box {
     width: 100%;
-
     height: 150px;
-
     padding: 15px 30px;
 
     overflow-x: auto;
@@ -483,30 +381,26 @@
 
     scrollbar-width: none;
 
+    scroll-behavior: smooth;
+
     display: flex;
-
     align-items: center;
-
     justify-content: flex-start;
-  }
 
+    -webkit-overflow-scrolling: touch;
+  }
 
   .process-box::-webkit-scrollbar {
     display: none;
   }
 
 
-  /* ===================================================
-     FIXED TIMELINE
-  =================================================== */
+  /* TIMELINE */
 
   .process-timeline {
     width: 840px;
-
     min-width: 840px;
-
     height: 120px;
-
     margin: 0;
 
     grid-template-columns: repeat(6, 140px);
@@ -515,9 +409,7 @@
   }
 
 
-  /* ===================================================
-     CONNECTOR
-  =================================================== */
+  /* CONNECTOR */
 
   .process-connector {
     left: 70px;
@@ -525,14 +417,11 @@
   }
 
 
-  /* ===================================================
-     PROCESS INFO
-  =================================================== */
+  /* PROCESS INFO */
 
   .process-info {
     width: 135px;
   }
-
 }
 
 
@@ -540,44 +429,31 @@
    MOBILE
 ===================================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
 
   .process-section {
     padding-top: 9px;
     padding-bottom: 20px;
-
     padding-left: 0;
     padding-right: 0;
   }
 
 
-  /* ===================================================
-     HEADING
-  =================================================== */
+  /* HEADING */
 
   .process-heading {
     padding-left: 10px;
     padding-right: 10px;
-
     padding-bottom: 8px;
-
     margin-bottom: 18px;
   }
 
-  .process-heading h2 {
-    font-size: 19px;
-  }
 
-
-  /* ===================================================
-     PROCESS BOX
-  =================================================== */
+  /* PROCESS BOX */
 
   .process-box {
     width: 100%;
-
     height: 150px;
-
     padding: 15px 30px;
 
     overflow-x: auto;
@@ -585,30 +461,26 @@
 
     scrollbar-width: none;
 
+    scroll-behavior: smooth;
+
     display: flex;
-
     align-items: center;
-
     justify-content: flex-start;
-  }
 
+    -webkit-overflow-scrolling: touch;
+  }
 
   .process-box::-webkit-scrollbar {
     display: none;
   }
 
 
-  /* ===================================================
-     TIMELINE
-  =================================================== */
+  /* TIMELINE */
 
   .process-timeline {
     width: 810px;
-
     min-width: 810px;
-
     height: 120px;
-
     margin: 0;
 
     grid-template-columns: repeat(6, 135px);
@@ -617,27 +489,21 @@
   }
 
 
-  /* ===================================================
-     CONNECTOR
-  =================================================== */
+  /* CONNECTOR */
 
   .process-connector {
     top: 26px;
-
     left: 67.5px;
     right: 67.5px;
   }
 
 
-  /* ===================================================
-     ICON
-  =================================================== */
+  /* ICON */
 
   .process-icon {
     width: 52px;
     height: 52px;
   }
-
 
   .process-icon::before {
     width: 42px;
@@ -645,41 +511,29 @@
   }
 
 
-  /* ===================================================
-     NUMBER
-  =================================================== */
+  /* NUMBER */
 
   .process-number {
     top: 54px;
-
     font-size: 10px;
   }
 
 
-  /* ===================================================
-     TITLE + DESCRIPTION
-  =================================================== */
+  /* TITLE + DESCRIPTION */
 
   .process-info {
     top: 75px;
-
     width: 130px;
   }
 
-
   .process-info h3 {
-    font-size: 12px;
-
     margin-bottom: 5px;
   }
 
-
   .process-info p {
     font-size: 8.5px;
-
     line-height: 1.35;
   }
-
 }
 
 
@@ -694,7 +548,6 @@
     padding-right: 10px;
   }
 
-
   .process-heading h2 {
     font-size: 18px;
   }
@@ -702,7 +555,6 @@
 
   .process-timeline {
     width: 780px;
-
     min-width: 780px;
 
     grid-template-columns: repeat(6, 130px);
@@ -718,5 +570,5 @@
     left: 65px;
     right: 65px;
   }
-
 }
+
