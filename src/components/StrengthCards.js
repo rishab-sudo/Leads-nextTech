@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import { Link } from "react-router-dom";
+
 import "swiper/css";
 import "./StrengthCards.css";
 
