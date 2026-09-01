@@ -7,14 +7,14 @@ import "./StrengthCards.css";
 
 const strengthCards = [
   {
-    title: "AIR",
+    title: "MANUFACTURING",
     description: (
       <>
-        Aerial Surveillance,
+      State-of-the-Art Facility,
         <br />
-        Targeting &amp;
+        Being Established in &amp;
         <br />
-        Situational Awareness
+       Bareilly, Uttar Pradesh
       </>
     ),
     icon: (
@@ -28,14 +28,13 @@ const strengthCards = [
   },
 
   {
-    title: "LAND",
+    title: "AI AT THE CORE",
     description: (
       <>
-        Remote Weapon
+  From Acoustic       <br />
+Classification to
         <br />
-        Stations, Fire Control
-        <br />
-        &amp; Mobility Systems
+        &amp; Fire-Control Decision Support
       </>
     ),
     icon: (
@@ -52,14 +51,14 @@ const strengthCards = [
   },
 
   {
-    title: "NAVAL",
+    title: "MAKE IN INDIA",
     description: (
       <>
-        Sonar Systems,
+       Reducing Import,
         <br />
-        Underwater Vehicles &amp;
+       Dependence  &amp;
         <br />
-        Naval Electronics
+      Strengthening Sovereign Capability
       </>
     ),
     icon: (
@@ -74,14 +73,14 @@ const strengthCards = [
   },
 
   {
-    title: "UNDERWATER",
+    title: "  DUAL-DOMAIN FOCUS",
     description: (
       <>
-        Acoustic Warfare, UUVs
+       Across Gun Systems
         <br />
-        &amp; Underwater
+        &amp;  Underwater
         <br />
-        Communications
+        Sensing Technologies
       </>
     ),
     icon: (
@@ -95,14 +94,14 @@ const strengthCards = [
   },
 
   {
-    title: "AI & AUTONOMY",
+    title: "IN-HOUSE R&D",
     description: (
       <>
-        AI/ML, Sensor Fusion,
+   Dedicated Engineering,
         <br />
-        Edge Computing &amp;
+       Teams Driving ;
         <br />
-        Autonomy
+     Continuous Innovation
       </>
     ),
     icon: (
@@ -117,26 +116,7 @@ const strengthCards = [
     ),
   },
 
-  {
-    title: "UNDERWATER",
-    description: (
-      <>
-        Acoustic Warfare, UUVs
-        <br />
-        &amp; Underwater
-        <br />
-        Communications
-      </>
-    ),
-    icon: (
-      <svg viewBox="0 0 64 64">
-        <path d="M8 37H56L48 44H16Z" />
-        <path d="M18 37V31H46V37" />
-        <path d="M25 31L32 24L39 31" />
-        <path d="M13 51C19 47 25 55 31 51C37 47 43 55 51 51" />
-      </svg>
-    ),
-  },
+
 ];
 
 const StrengthCards = () => {

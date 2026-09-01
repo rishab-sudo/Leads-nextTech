@@ -4,34 +4,16 @@
 }
 
 .df-inner {
-  width: 100%;
   margin: 0 auto;
 }
 
-/* ================================
-   HEADER
-================================ */
-
 .df-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px;
-  margin-bottom: 48px;
-}
-
-.df-eyebrow-block {
-  width: 100%;
+  margin-bottom: 40px;
 }
 
 .df-eyebrow {
-  margin: 0 0 10px;
   text-transform: uppercase;
   color: #4fd8d1;
-  font-family: "Inter", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
 }
 
 .cards-title {
@@ -40,240 +22,263 @@
   text-transform: uppercase;
 }
 
+/* --- Stack of two boxes --- */
 
-/* ================================
-   CARDS WRAPPER
-================================ */
-
-.df-cards {
-  width: 100%;
+.df-stack {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
-
-/* ================================
-   INDIVIDUAL CARD
-================================ */
-
-.df-panel {
-  width: 100%;
-  min-height: 300px;
-
+.df-box {
+  position: relative;
   display: grid;
-  grid-template-columns: 45% 55%;
-
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-
+  gap: 48px;
   border: 1px solid rgba(79, 216, 209, 0.2);
-  border-radius: 4px;
-
-  padding: 28px;
-
-  background: transparent;
-
-  overflow: hidden;
-
-  transition:
-    border-color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.df-panel:hover {
-  border-color: rgba(79, 216, 209, 0.45);
-}
-
-
-/* ================================
-   IMAGE LEFT
-================================ */
-
-.df-panel-image-left {
-  grid-template-areas:
-    "image content";
-}
-
-
-/* ================================
-   IMAGE RIGHT
-================================ */
-
-.df-panel-image-right {
-  grid-template-areas:
-    "content image";
-}
-
-
-/* ================================
-   IMAGE
-================================ */
-
-.df-panel-image {
-  grid-area: image;
-
-  width: 100%;
-  height: 100%;
-
-  min-height: 240px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  border-radius: 6px;
+  padding: 36px;
   overflow: hidden;
 }
 
-.df-panel-image img {
-  width: 100%;
-  height: 100%;
+/* Faint full-bleed background art per box, kept behind all content */
+.df-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--df-box-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+}
 
-  max-height: 280px;
+.df-box-media,
+.df-box-body {
+  position: relative;
+  z-index: 1;
+}
 
-  object-fit: contain;
+/* underwater box: media on the right, copy on the left */
+.df-box-water .df-box-media {
+  order: 2;
+}
+.df-box-water .df-box-body {
+  order: 1;
+}
 
+/* --- Entrance: gun slides in from the left, water from the right --- */
+
+.df-box-gun .df-box-media {
+  opacity: 0;
+  transform: translateX(-56px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.df-box-water .df-box-media {
+  opacity: 0;
+  transform: translateX(56px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.df-box-body {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s;
+}
+
+.df-box-inview .df-box-media {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.df-box-inview .df-box-body {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .df-box-media,
+  .df-box-body {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* --- Gun media: plain, larger image, no frame --- */
+
+.df-gun-image {
   display: block;
-
-  border-radius: 2px;
-
-  transition: transform 0.35s ease;
-}
-
-.df-panel:hover .df-panel-image img {
-  transform: scale(1.03);
-}
-
-
-/* ================================
-   CONTENT
-================================ */
-
-.df-panel-body {
-  grid-area: content;
-
   width: 100%;
-
-  padding: 10px 32px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  max-width: 460px;
+  height: auto;
+  margin: 0 auto;
 }
 
+/* --- Water media: actual sonar photo, plain and matching gun's scale --- */
 
-/* ================================
-   HEADING
-================================ */
+.df-water-media {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+}
 
-.df-panel-heading {
-  margin: 0 0 16px;
+.df-water-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
+/* Small live-radar badge tucked into the bottom-right corner of the photo */
+
+.df-radar-badge {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 26%;
+  min-width: 64px;
+  max-width: 108px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #020a02;
+  box-shadow: 0 0 0 2px rgba(5, 9, 10, 0.9), 0 0 0 3px rgba(79, 216, 209, 0.5),
+    0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.df-radar-scope {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.df-radar-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(140, 255, 180, 0) 0deg,
+    rgba(140, 255, 180, 0.65) 14deg,
+    rgba(140, 255, 180, 0) 52deg,
+    rgba(140, 255, 180, 0) 360deg
+  );
+  mix-blend-mode: screen;
+  transform-origin: 50% 50%;
+  animation: df-radar-spin 4.5s linear infinite;
+  pointer-events: none;
+}
+
+.df-radar-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 14px rgba(46, 204, 113, 0.3);
+  pointer-events: none;
+}
+
+@keyframes df-radar-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .df-radar-sweep {
+    animation: none;
+  }
+}
+
+/* --- Box copy --- */
+
+.df-box-label {
+  margin: 0 0 10px;
   font-family: "Inter", sans-serif;
-
-  font-weight: 600;
-  font-size: 1rem;
-
-  letter-spacing: 0.04em;
-
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-
-  color: #4fd8d1;
-
-  border-bottom: 1px solid rgba(79, 216, 209, 0.25);
-
-  padding-bottom: 10px;
+  color: rgba(79, 216, 209, 0.75);
 }
 
+.df-box-heading {
+  margin: 0 0 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: #4fd8d1;
+  border-bottom: 1px solid rgba(79, 216, 209, 0.25);
+  padding-bottom: 12px;
+}
 
-/* ================================
-   POINTS
-================================ */
+.df-box-intro {
+  margin: 0 0 18px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(244, 250, 249, 0.7);
+}
 
-.df-panel-list {
+.df-box-outro {
+  margin: -6px 0 22px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(244, 250, 249, 0.55);
+}
+
+.df-box-list {
   list-style: none;
-
-  margin: 0 0 24px;
+  margin: 0 0 26px;
   padding: 0;
-
   display: flex;
   flex-direction: column;
-
-  gap: 10px;
+  gap: 12px;
 }
 
-.df-panel-list li {
+.df-box-list li {
   display: flex;
-  align-items: center;
-
+  align-items: flex-start;
   gap: 10px;
-
   font-family: "Inter", sans-serif;
-
-  font-size: 0.85rem;
-
-  line-height: 1.5;
-
+  font-size: 0.88rem;
+  line-height: 1.45;
   color: rgba(244, 250, 249, 0.85);
 }
 
-
-/* ================================
-   BULLET
-================================ */
-
 .df-tick {
   flex: 0 0 auto;
-
+  margin-top: 6px;
   width: 6px;
   height: 6px;
-
   border-radius: 50%;
-
   background: #4fd8d1;
-
-  box-shadow:
-    0 0 6px 1px rgba(79, 216, 209, 0.6);
+  box-shadow: 0 0 6px 1px rgba(79, 216, 209, 0.6);
 }
 
-
-/* ================================
-   CTA
-================================ */
-
 .df-cta {
-  width: fit-content;
-
   display: inline-flex;
   align-items: center;
-
   gap: 8px;
-
   padding: 10px 20px;
-
   background: transparent;
-
   border: 1px solid rgba(244, 250, 249, 0.35);
-
   border-radius: 2px;
-
   font-family: "Inter", sans-serif;
-
   font-size: 0.8rem;
-
   font-weight: 600;
-
   letter-spacing: 0.03em;
-
   text-transform: uppercase;
-
   color: #f4faf9;
-
   cursor: pointer;
-
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease,
-    background 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .df-cta:hover {
@@ -281,172 +286,70 @@
   color: #4fd8d1;
 }
 
+/* --- Responsive --- */
 
-/* ================================
-   LARGE TABLET
-================================ */
-
-@media (max-width: 1024px) {
-
-  .df-container-fluid {
-    padding: 40px 0;
-  }
-
-  .df-panel {
-    grid-template-columns: 45% 55%;
-    padding: 24px;
-  }
-
-  .df-panel-body {
-    padding: 10px 24px;
-  }
-
-  .df-panel-image {
-    min-height: 220px;
-  }
-
-  .df-panel-image img {
-    max-height: 240px;
+@media (max-width: 1100px) {
+  .df-box {
+    gap: 32px;
+    padding: 30px;
   }
 }
 
-
-/* ================================
-   TABLET
-================================ */
-
-@media (max-width: 768px) {
-
-  .df-container-fluid {
-    padding: 35px 0;
-  }
-
-  .df-inner {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .df-header {
-    margin-bottom: 32px;
-  }
-
-  .df-panel {
+@media (max-width: 860px) {
+  .df-box {
     grid-template-columns: 1fr;
-
-    min-height: auto;
-
-    padding: 22px;
+    text-align: center;
   }
-
-  /* First card */
-  .df-panel-image-left {
-    grid-template-areas:
-      "image"
-      "content";
+  .df-box-water .df-box-media,
+  .df-box-water .df-box-body,
+  .df-box-gun .df-box-media,
+  .df-box-gun .df-box-body {
+    order: unset;
   }
-
-  /* Second card */
-  .df-panel-image-right {
-    grid-template-areas:
-      "image"
-      "content";
+  .df-box-gun .df-box-media,
+  .df-box-water .df-box-media {
+    transform: translateY(24px);
   }
-
-  .df-panel-image {
-    min-height: 220px;
+  .df-box-inview .df-box-media {
+    transform: translateY(0);
   }
-
-  .df-panel-image img {
-    max-height: 230px;
+  .df-box-heading,
+  .df-box-intro,
+  .df-box-outro {
+    text-align: center;
   }
-
-  .df-panel-body {
-    padding: 24px 0 4px;
+  .df-box-list li {
+    justify-content: center;
+    text-align: left;
   }
 }
 
-
-/* ================================
-   MOBILE
-================================ */
-
-@media (max-width: 576px) {
-
-  .df-container-fluid {
-    padding: 30px 0;
-  }
-
+@media (max-width: 640px) {
   .df-inner {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 20px;
   }
-
-  .df-header {
-    margin-bottom: 28px;
-  }
-
-  .df-panel {
-    padding: 18px;
+  .df-box {
+    padding: 24px;
     border-radius: 4px;
   }
-
-  .df-cards {
-    gap: 18px;
+  .df-gun-image,
+  .df-water-media {
+    max-width: 260px;
   }
-
-  .df-panel-image {
-    min-height: 190px;
-  }
-
-  .df-panel-image img {
-    max-height: 200px;
-  }
-
-  .df-panel-body {
-    padding-top: 20px;
-  }
-
-  .df-panel-heading {
-    font-size: 0.95rem;
-    margin-bottom: 14px;
-  }
-
-  .df-panel-list {
-    gap: 9px;
-    margin-bottom: 20px;
-  }
-
-  .df-panel-list li {
-    font-size: 0.8rem;
-  }
-
-  .df-cta {
-    padding: 9px 16px;
-    font-size: 0.75rem;
+  .df-radar-badge {
+    min-width: 48px;
   }
 }
 
-
-/* ================================
-   SMALL MOBILE
-================================ */
-
-@media (max-width: 400px) {
-
-  .df-inner {
-    padding-left: 12px;
-    padding-right: 12px;
+@media (max-width: 420px) {
+  .df-container-fluid {
+    padding: 32px 0;
   }
-
-  .df-panel {
-    padding: 15px;
+  .df-stack {
+    gap: 24px;
   }
-
-  .df-panel-image {
-    min-height: 170px;
-  }
-
-  .df-panel-image img {
-    max-height: 180px;
+  .df-cta {
+    width: 100%;
+    justify-content: center;
   }
 }
