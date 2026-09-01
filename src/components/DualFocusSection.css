@@ -18,7 +18,7 @@
 
 .cards-title {
   margin: 0;
-  color: #f4faf9;
+  color: #f4faf9 !important;
   text-transform: uppercase;
 }
 
@@ -208,26 +208,21 @@
 
 .df-box-heading {
   margin: 0 0 14px;
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
-  color: #4fd8d1;
   border-bottom: 1px solid rgba(79, 216, 209, 0.25);
   padding-bottom: 12px;
+  color: #f4faf9;
 }
 
 .df-box-intro {
   margin: 0 0 18px;
-  font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
+  font-size: 18px !important;
   line-height: 1.55;
   color: rgba(244, 250, 249, 0.7);
 }
 
 .df-box-outro {
   margin: -6px 0 22px;
-  font-family: "Inter", sans-serif;
+  font-size: 15px !important;
   font-size: 0.82rem;
   font-style: italic;
   line-height: 1.5;
@@ -235,6 +230,7 @@
 }
 
 .df-box-list {
+
   list-style: none;
   margin: 0 0 26px;
   padding: 0;
@@ -248,7 +244,7 @@
   align-items: flex-start;
   gap: 10px;
   font-family: "Inter", sans-serif;
-  font-size: 0.88rem;
+  font-size: 16px !important;
   line-height: 1.45;
   color: rgba(244, 250, 249, 0.85);
 }
