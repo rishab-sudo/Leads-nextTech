@@ -41,7 +41,7 @@ const Infrastructure = () => {
 
           {/* CARD HEADING */}
           <h3>
-            5000+ SQ. M INTEGRATED FACILITY
+            XX+ SQ. M INTEGRATED FACILITY
           </h3>
 
           <div className="facility-content">

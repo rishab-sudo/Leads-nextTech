@@ -3,7 +3,7 @@ import "./Stats.css";
 
 const statsData = [
   {
-    value: "15+",
+    value: "XX",
     label: "YEARS OF EXCELLENCE",
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -14,7 +14,7 @@ const statsData = [
     ),
   },
   {
-    value: "5000+",
+    value: "XX",
     label: "SQ. M. INTEGRATED FACILITY",
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -26,7 +26,7 @@ const statsData = [
     ),
   },
   {
-    value: "150+",
+    value: "XX",
     label: "ENGINEERS & SCIENTISTS",
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -42,7 +42,7 @@ const statsData = [
     ),
   },
   {
-    value: "24/7",
+    value: "XX",
     label: "MISSION CRITICAL SUPPORT",
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">

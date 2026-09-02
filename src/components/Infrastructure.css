@@ -343,7 +343,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 16px !important;
+  font-size: 16px;
 
   line-height: 1.25;
 
@@ -358,7 +358,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 14px !important;
+  font-size: 14px;
 
   line-height: 1.45;
 
@@ -498,15 +498,9 @@
 @media (max-width: 1000px) {
 
   .infrastructure-section {
-    padding: 90px 24px;
+    padding: 70px 24px;
   }
 
-  /*
-    iPad-range fix: widths between 767px and 1000px (iPad portrait
-    is 768px) were only hitting THIS breakpoint, not the 700px/767px
-    ones below — so the subheading's absolute position:0/bottom:0
-    was never overridden here and it kept overlapping the heading.
-  */
   .infrastructure-header .section-subHeading {
     position: static;
 
@@ -530,15 +524,15 @@
   }
 
   .facility-feature {
-    padding: 12px 30px 12px 13px;
+    padding: 14px 30px 14px 14px;
   }
 
   .feature-content h4 {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .feature-content p {
-    font-size: 9px;
+    font-size: 13px;
   }
 
 }
@@ -551,30 +545,26 @@
 @media (max-width: 700px) {
 
   .infrastructure-section {
-    padding: 75px 16px;
+    padding: 60px 16px;
   }
 
   .infrastructure-header {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
   }
 
   .infrastructure-eyebrow {
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .infrastructure-header h2 {
-    font-size: 36px;
-    letter-spacing: -1.5px;
+    font-size: 32px;
+    letter-spacing: -1px;
   }
 
   .infrastructure-header p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
-  /*
-    Below the heading now stacks below it instead of sitting
-    absolutely positioned on top of it — that was the overlap.
-  */
   .infrastructure-header .section-subHeading {
     position: static;
 
@@ -588,35 +578,32 @@
   }
 
   .facility-card {
-    min-height: 620px;
+    min-height: auto;
   }
 
-  /*
-    Image gets more width on tablet
-  */
   .facility-content {
     grid-template-columns:
       minmax(0, 1.8fr)
-      minmax(190px, 1fr);
+      minmax(200px, 1fr);
   }
 
   .facility-feature {
-    padding: 11px 28px 10px 11px;
+    padding: 12px 28px 12px 12px;
   }
 
   .feature-icon {
-    width: 21px;
-    height: 21px;
+    width: 24px;
+    height: 24px;
 
-    margin-right: 9px;
+    margin-right: 10px;
   }
 
   .feature-content h4 {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .feature-content p {
-    font-size: 8px;
+    font-size: 12px;
   }
 
 }
@@ -629,7 +616,7 @@
 @media (max-width: 767px) {
 
   .infrastructure-section {
-    padding: 45px 12px;
+    padding: 40px 14px;
   }
 
   .infrastructure-header {
@@ -637,25 +624,19 @@
   }
 
   .infrastructure-header h2 {
-    font-size: 30px;
-    line-height: 1;
+    font-size: 28px;
+    line-height: 1.15;
   }
 
   .infrastructure-header p {
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
   .infrastructure-header p br {
     display: none;
   }
 
-  /*
-    Same fix repeated at the mobile breakpoint: the subheading
-    para was absolutely positioned (right:0; bottom:0) with no
-    override here, so it sat on top of the heading text instead
-    of flowing underneath it.
-  */
   .infrastructure-header .section-subHeading {
     position: static;
 
@@ -672,14 +653,16 @@
   .facility-card {
     min-height: auto;
 
-    padding-bottom: 12px;
+    padding-bottom: 16px;
   }
 
 
   .infrastructure-card h3 {
-    font-size: 18px;
+    font-size: 16px;
 
-    top: 30px;
+    top: 32px;
+    left: 14px;
+    right: 14px;
   }
 
 
@@ -695,18 +678,18 @@
     right: auto;
     bottom: auto;
 
-    margin-top: 90px;
+    margin-top: 75px;
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 15px;
+    gap: 12px;
   }
 
 
   .facility-image-wrap {
-    height: 260px;
+    height: 220px;
   }
 
 
@@ -716,41 +699,47 @@
 
 
   .facility-feature {
-    min-height: 75px;
+    min-height: auto;
 
     flex: none;
 
-    padding: 15px 35px 15px 13px;
+    padding: 14px 38px 14px 14px;
   }
 
 
   .feature-icon {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
 
-    margin-right: 10px;
+    margin-right: 12px;
   }
 
 
   .feature-content h4 {
-    font-size: 13px;
+    font-size: 15px;
+    margin-bottom: 4px;
   }
 
 
   .feature-content p {
-    font-size: 9px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .feature-content p br {
+    display: none;
   }
 
 
   .feature-arrow {
-    right: 13px;
-    top: 17px;
+    right: 14px;
+    top: 18px;
   }
 
 
   .facility-btn {
-    bottom: 13px;
-    left: 13px;
+    bottom: 14px;
+    left: 14px;
   }
 
 }
@@ -768,11 +757,11 @@
   }
 
   .infrastructure-header h2 {
-    font-size: 27px;
+    font-size: 24px;
   }
 
   .facility-image-wrap {
-    height: 220px;
+    height: 200px;
   }
 
   .facility-card {
@@ -780,19 +769,19 @@
   }
 
   .facility-content {
-    margin-top: 65px;
+    margin-top: 70px;
   }
 
   .facility-feature {
-    min-height: 70px;
+    padding: 12px 34px 12px 12px;
   }
 
   .feature-content h4 {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .feature-content p {
-    font-size: 8px;
+    font-size: 12px;
   }
 
 }
