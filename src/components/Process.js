@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./Process.css";
+import React, { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
 
-gsap.registerPlugin(ScrollTrigger);
+import "swiper/css";
+import "swiper/css/navigation";
+import "./Process.css";
 
 const processData = [
   {
@@ -73,103 +74,159 @@ const processData = [
   },
 ];
 
+const CARDS_VISIBLE = 3;
+const CYCLE_DELAY = 3000;
+
 const Process = () => {
-  const sectionRef = useRef(null);
-  const viewportRef = useRef(null);
-  const trackRef = useRef(null);
-  const progressFillRef = useRef(null);
-  const itemRefs = useRef([]);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      ScrollTrigger.matchMedia({
-        // Desktop / tablet: pinned horizontal scroll-jack
-        "(min-width: 768px)": function () {
-          const track = trackRef.current;
-          const viewport = viewportRef.current;
-          const items = itemRefs.current;
-
-          const getScrollAmount = () =>
-            track.scrollWidth - viewport.clientWidth;
-
-          gsap.set(progressFillRef.current, { scaleX: 0 });
-
-          const st = ScrollTrigger.create({
-            trigger: sectionRef.current,
-            start: "top top",
-            end: () => `+=${getScrollAmount()}`,
-            scrub: 1,
-            pin: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            onUpdate: (self) => {
-              gsap.set(track, { x: -self.progress * getScrollAmount() });
-              gsap.set(progressFillRef.current, { scaleX: self.progress });
-
-              const activeIndex = Math.round(
-                self.progress * (items.length - 1)
-              );
-              items.forEach((item, i) => {
-                if (item) item.classList.toggle("is-active", i === activeIndex);
-              });
-            },
-          });
-
-          return () => st.kill();
-        },
-
-        // Mobile: native horizontal swipe, no scroll-jacking
-        "(max-width: 767px)": function () {
-          gsap.set(trackRef.current, { x: 0, clearProps: "transform" });
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const swiperRef = useRef(null);
 
   return (
-    <section className="process-section container g-0" id="Process" ref={sectionRef}>
+    <section className="process-section container g-0" id="Process">
+      {/* =====================================================
+          HEADING
+      ===================================================== */}
+
       <div className="process-heading">
         <div className="process-eyebrow eyebrow-text eyebrow">
           <span className="eyebrow-dot"></span>
           OUR PROCESS
         </div>
 
-        <h2 className="section-heading">FROM CONCEPT TO PRODUCTION</h2>
+        <h2 className="section-heading">
+          FROM CONCEPT TO PRODUCTION
+        </h2>
+      </div>
 
-        <p className="process-subheading">
+      {/* =====================================================
+          TOP ROW
+      ===================================================== */}
+
+      <div className="process-top-row">
+        <p className="process-subheading section-subHeading">
           We bridge the gap between business challenges and scalable
-          technology — partnering with you at every stage, from raw
+          technology - partnering with you at every stage, from raw
           concepts to high-performing, market-ready deployments.
         </p>
+
+        <div className="process-nav-row">
+          <button
+            type="button"
+            className="process-nav-btn process-nav-prev"
+            ref={prevRef}
+            aria-label="Previous step"
+          >
+            ‹
+          </button>
+
+          <button
+            type="button"
+            className="process-nav-btn process-nav-next"
+            ref={nextRef}
+            aria-label="Next step"
+          >
+            ›
+          </button>
+        </div>
       </div>
 
-      <div className="process-progress-bar">
-        <div className="process-progress-fill" ref={progressFillRef}></div>
-      </div>
+      {/* =====================================================
+          PROCESS SLIDER
+      ===================================================== */}
 
-      <div className="process-track-viewport" ref={viewportRef}>
-        <div className="process-track" ref={trackRef}>
-          <div className="process-connector"></div>
+      <div className="process-track-viewport">
+        <div className="process-connector"></div>
 
-          {processData.map((item, index) => (
-            <div
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          spaceBetween={46}
+          slidesPerView={CARDS_VISIBLE}
+          centeredSlides={false}
+          speed={600}
+          loop={true}
+          autoplay={{
+            delay: CYCLE_DELAY,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+
+            swiperRef.current = swiper;
+          }}
+          breakpoints={{
+            /*
+             * MOBILE
+             * Each slide = 90% of viewport
+             * Active slide stays horizontally centered
+             */
+            0: {
+              slidesPerView: 0.9,
+              centeredSlides: true,
+              spaceBetween: 18,
+            },
+
+            /*
+             * TABLET
+             */
+            600: {
+              slidesPerView: 2,
+              centeredSlides: false,
+              spaceBetween: 30,
+            },
+
+            /*
+             * DESKTOP
+             */
+            1024: {
+              slidesPerView: CARDS_VISIBLE,
+              centeredSlides: false,
+              spaceBetween: 46,
+            },
+          }}
+          className="process-swiper"
+        >
+          {processData.map((item) => (
+            <SwiperSlide
               className="process-item"
               key={item.number}
-              ref={(el) => (itemRefs.current[index] = el)}
             >
+              {/* =====================================================
+                  ICON + NUMBER
+              ===================================================== */}
+
               <div className="process-icon-wrapper">
                 <div className="process-icon">
                   <span>{item.icon}</span>
                 </div>
-                <div className="process-number">{item.number}</div>
+
+                <div className="process-number">
+                  {item.number}
+                </div>
               </div>
 
+              {/* =====================================================
+                  CONTENT
+              ===================================================== */}
+
               <div className="process-info">
-                <h3 className="cards-title">{item.title}</h3>
-                <p className="cards-tagline">{item.tagline}</p>
-                <p className="cards-descp">{item.description}</p>
+                <h3 className="cards-title">
+                  {item.title}
+                </h3>
+
+                <p className="cards-tagline">
+                  {item.tagline}
+                </p>
+
+                <p className="cards-descp">
+                  {item.description}
+                </p>
 
                 <ul className="cards-focus">
                   {item.focus.map((point, i) => (
@@ -177,9 +234,9 @@ const Process = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );

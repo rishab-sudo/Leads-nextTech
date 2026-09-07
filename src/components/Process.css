@@ -4,34 +4,39 @@
 
 .process-section {
   height: fit-content;
-  margin-top: 3.5%;
+  margin-top: 3.5% !important;
   overflow: hidden;
   color: #ffffff;
   box-sizing: border-box;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 
 /* =====================================================
-   HEADING
+   HEADING BLOCK
 ===================================================== */
 
-.process-heading,
-.section-heading {
+.process-heading {
   width: 100%;
-  max-width: 720px;
-  margin: 0 auto 30px auto;
+  margin: 0;
   padding: 0 12px 9px;
   box-sizing: border-box;
   position: relative;
   z-index: 5;
-  text-align: center;
+  text-align: left;
 }
+
+
+/* =====================================================
+   EYEBROW
+===================================================== */
 
 .process-eyebrow,
 .eyebrow {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 5px;
   color: #36cde2;
   text-transform: uppercase;
@@ -48,49 +53,103 @@
     0 0 9px rgba(39, 215, 237, 0.7);
 }
 
-.process-heading h2,
-.section-heading h2 {
-  margin: 3px 0 14px;
-  color: #f3f6f7;
-}
 
-.process-subheading,
-.sub-heading {
-  margin: 0;
-  color: rgba(201, 214, 217, 0.78);
-  font-size: 14px;
-  line-height: 1.6;
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+  margin: 3px 0 14px;
+  padding: 0;
+  color: #f3f6f7;
+  text-align: left;
 }
 
 
 /* =====================================================
-   PROGRESS BAR (desktop scroll progress indicator)
+   TOP ROW
 ===================================================== */
 
-.process-progress-bar {
+.process-top-row {
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto 34px;
-  height: 2px;
-  border-radius: 2px;
-  background: rgba(31, 119, 133, 0.35);
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  margin-bottom: 30px;
 }
 
-.process-progress-fill {
-  position: absolute;
-  inset: 0;
-  transform-origin: left center;
-  transform: scaleX(0);
-  background: linear-gradient(90deg, #1ed4e9, #4ed9eb);
-  box-shadow: 0 0 8px rgba(30, 212, 233, 0.6);
+.process-subheading,
+.sub-heading {
+  flex: 1 1 auto;
+  max-width: 720px;
+  margin: 0;
+  padding: 0;
+  color: rgba(201, 214, 217, 0.78);
+ line-height: 1.6;
+  text-align: left;
 }
 
-@media (max-width: 767px) {
-  .process-progress-bar {
-    display: none;
-  }
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.process-nav-row {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  margin-left: auto;
+}
+
+.process-nav-btn {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at center,
+    #10282d 0%,
+    #07171b 63%,
+    #061114 100%
+  );
+
+  border: 1px solid rgba(30, 119, 134, 0.95);
+
+  color: #4ed9eb;
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.3s ease;
+
+  flex-shrink: 0;
+}
+
+.process-nav-btn:hover {
+  border-color: #4ed9eb;
+
+  box-shadow:
+    0 0 12px rgba(78, 217, 235, 0.5);
+}
+
+.process-nav-btn.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
 }
 
 
@@ -101,55 +160,43 @@
 .process-track-viewport {
   width: 100%;
   box-sizing: border-box;
-  padding: 15px 30px 25px;
-}
 
-.process-track {
+  padding: 25px 30px 40px;
+
   position: relative;
-  display: flex;
-  gap: 46px;
-  width: max-content;
-}
-
-/* Desktop: JS drives horizontal position, no native scrollbar */
-@media (min-width: 768px) {
-  .process-track-viewport {
-    overflow: hidden;
-  }
-}
-
-/* Mobile: native swipe */
-@media (max-width: 767px) {
-  .process-track-viewport {
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    padding: 10px 20px 20px;
-  }
-
-  .process-track-viewport::-webkit-scrollbar {
-    display: none;
-  }
-
-  .process-track {
-    scroll-snap-type: x mandatory;
-    gap: 24px;
-  }
+  overflow: hidden;
 }
 
 
 /* =====================================================
-   CONNECTING LINE (moves with the track)
+   SWIPER
+===================================================== */
+
+.process-swiper {
+  width: 100%;
+  overflow: visible;
+}
+
+.process-swiper .swiper-wrapper {
+  align-items: flex-start;
+}
+
+
+/* =====================================================
+   CONNECTING LINE
 ===================================================== */
 
 .process-connector {
   position: absolute;
-  top: 26px;
-  left: 0;
-  right: 0;
+
+  top: 51px;
+  left: 30px;
+  right: 30px;
+
   height: 1px;
+
   background: rgba(31, 119, 133, 0.55);
+
   z-index: 1;
 }
 
@@ -159,18 +206,15 @@
 ===================================================== */
 
 .process-item {
-  flex: 0 0 auto;
+  flex-shrink: 0;
+
   width: 320px;
+  max-width: 100%;
+
   position: relative;
   z-index: 3;
-  box-sizing: border-box;
-}
 
-@media (max-width: 767px) {
-  .process-item {
-    width: 260px;
-    scroll-snap-align: start;
-  }
+  box-sizing: border-box;
 }
 
 
@@ -182,74 +226,83 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   margin-bottom: 16px;
 }
 
 .process-icon {
   width: 54px;
   height: 54px;
+
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 50%;
+
   background: radial-gradient(
     circle at center,
     #10282d 0%,
     #07171b 63%,
     #061114 100%
   );
+
   border: 1px solid rgba(30, 119, 134, 0.95);
+
   box-shadow:
     0 0 0 6px rgba(4, 18, 22, 0.9),
     inset 0 0 13px rgba(33, 145, 160, 0.16);
+
   box-sizing: border-box;
-  transition: box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .process-icon::before {
   content: "";
+
   position: absolute;
+
   width: 43px;
   height: 43px;
+
   border-radius: 50%;
+
   border: 1px solid rgba(33, 126, 141, 0.28);
 }
 
 .process-icon span {
   position: relative;
   z-index: 2;
+
   color: #4ed9eb;
+
   font-size: 20px;
   line-height: 1;
-  opacity: 0.75;
-  text-shadow: 0 0 5px rgba(62, 220, 239, 0.55);
-  transition: opacity 0.35s ease;
+
+  opacity: 0.85;
+
+  text-shadow:
+    0 0 5px rgba(62, 220, 239, 0.55);
 }
 
 .process-number {
   margin-top: 10px;
+
   padding: 0 4px;
+
   background: #061114;
+
   color: #1ed4e9;
+
   font-family: Arial, Helvetica, sans-serif;
+
   font-size: 13px;
   line-height: 1;
+
   font-weight: 700;
+
   letter-spacing: 0.3px;
-}
-
-/* Active stage highlight (desktop scroll-triggered) */
-.process-item.is-active .process-icon {
-  border-color: #4ed9eb;
-  box-shadow:
-    0 0 0 6px rgba(4, 18, 22, 0.9),
-    0 0 16px rgba(78, 217, 235, 0.55),
-    inset 0 0 13px rgba(33, 145, 160, 0.28);
-}
-
-.process-item.is-active .process-icon span {
-  opacity: 1;
 }
 
 
@@ -259,59 +312,89 @@
 
 .process-info {
   text-align: center;
+
+  width: 100%;
+
+  box-sizing: border-box;
 }
 
 .process-info h3 {
   margin: 0 0 6px;
+
   color: #f4f6f7;
+
   font-size: 15px;
+
   letter-spacing: 0.3px;
 }
 
 .cards-tagline {
   margin: 0 0 8px;
+
   color: #4ed9eb;
+
   font-size: 12px;
+
   font-style: italic;
+
   opacity: 0.9;
 }
 
 .cards-descp {
   margin: 0 0 12px;
+
   color: rgba(201, 214, 217, 0.78);
+
   font-size: 12.5px;
+
   line-height: 1.55;
+
   text-align: justify;
 }
 
 .cards-focus {
   margin: 0;
   padding: 0;
+
   list-style: none;
+
   display: flex;
   flex-direction: column;
+
   gap: 6px;
+
   text-align: left;
 }
 
 .cards-focus li {
   position: relative;
+
   padding-left: 16px;
+
   color: rgba(201, 214, 217, 0.65);
+
   font-size: 11.5px;
+
   line-height: 1.4;
 }
 
 .cards-focus li::before {
   content: "";
+
   position: absolute;
+
   left: 0;
   top: 6px;
+
   width: 5px;
   height: 5px;
+
   border-radius: 50%;
+
   background: #27d7ed;
-  box-shadow: 0 0 4px #27d7ed;
+
+  box-shadow:
+    0 0 4px #27d7ed;
 }
 
 
@@ -320,28 +403,25 @@
 ===================================================== */
 
 @media (max-width: 1100px) {
-  .process-heading h2,
-  .section-heading h2 {
+  .section-heading {
     font-size: 22px;
   }
 }
 
+
+/* =====================================================
+   TABLET / SMALL SCREEN
+===================================================== */
+
 @media (max-width: 768px) {
   .process-section {
     margin-top: 3.5%;
-    padding: 15px !important;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
-  .process-heading,
   .section-heading {
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-bottom: 9px;
-    margin-bottom: 24px;
-  }
-
-  .process-heading h2,
-  .section-heading h2 {
     font-size: 21px;
   }
 }
@@ -352,25 +432,141 @@
 ===================================================== */
 
 @media (max-width: 767px) {
+
   .process-section {
-    padding-top: 9px;
-    padding-bottom: 20px;
+    width: 100%;
+
+    padding-top: 32px;
+    padding-bottom: 36px;
+
     padding-left: 0;
     padding-right: 0;
   }
 
+
+  /* -----------------------------------------------
+     HEADING
+  ----------------------------------------------- */
+
   .process-heading,
-  .section-heading {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 8px;
-    margin-bottom: 20px;
+  .process-top-row {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+
+  /* -----------------------------------------------
+     TOP CONTENT
+  ----------------------------------------------- */
+
+  .process-top-row {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 16px;
   }
 
   .process-subheading,
   .sub-heading {
     font-size: 13px;
   }
+
+
+  /* -----------------------------------------------
+     NAVIGATION
+  ----------------------------------------------- */
+
+  .process-nav-row {
+    align-self: flex-end;
+
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+
+  /* -----------------------------------------------
+     SLIDER VIEWPORT
+  ----------------------------------------------- */
+
+  .process-track-viewport {
+    width: 100%;
+
+    /*
+     * Keep enough horizontal space
+     * for the centered 90% slide
+     */
+    padding: 20px 0 30px;
+
+    overflow: hidden;
+  }
+
+
+  /* -----------------------------------------------
+     REMOVE CONNECTOR ON MOBILE
+  ----------------------------------------------- */
+
+  .process-connector {
+    display: none;
+  }
+
+
+  /* -----------------------------------------------
+     SWIPER MOBILE
+  ----------------------------------------------- */
+
+  .process-swiper {
+    width: 100%;
+
+    overflow: visible;
+  }
+
+
+  /*
+   * IMPORTANT:
+   * Swiper controls actual slide width using
+   * slidesPerView: 0.9 from Process.js.
+   *
+   * This gives every mobile slide approximately
+   * 90% of the available viewport width.
+   */
+
+  .process-swiper .swiper-slide {
+    box-sizing: border-box;
+  }
+
+
+  /* -----------------------------------------------
+     MOBILE PROCESS CARD
+  ----------------------------------------------- */
+
+  .process-item {
+    width: 100%;
+
+    max-width: none;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
+  }
+
+
+  /* -----------------------------------------------
+     MOBILE CONTENT
+  ----------------------------------------------- */
+
+  .cards-descp {
+    text-align: center;
+  }
+
+  .process-info h3 {
+    font-size: 13.5px;
+  }
+
+
+  /* -----------------------------------------------
+     MOBILE ICON
+  ----------------------------------------------- */
 
   .process-icon {
     width: 48px;
@@ -385,10 +581,6 @@
   .process-icon span {
     font-size: 18px;
   }
-
-  .process-info h3 {
-    font-size: 13.5px;
-  }
 }
 
 
@@ -397,12 +589,18 @@
 ===================================================== */
 
 @media (max-width: 360px) {
-  .process-heading h2,
-  .section-heading h2 {
+
+  .section-heading {
     font-size: 18px;
   }
 
+  .process-track-viewport {
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+
   .process-item {
-    width: 230px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

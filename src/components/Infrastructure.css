@@ -4,7 +4,7 @@
 
 .infrastructure-section {
   margin-top: 3.5%;
- padding: 45px 32px;
+ padding: 45px !important;
   background: #061114;
   color: #ffffff;
   overflow: hidden;
@@ -45,7 +45,7 @@
 
   text-align: left;
 
-  max-width: 430px;
+  max-width: 71%;
 
   line-height: 1.6;
 }
@@ -150,7 +150,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 
   color: #e9edef;
@@ -188,7 +188,7 @@
   */
   grid-template-columns: minmax(0, 3fr) minmax(260px, 1.1fr);
 
-  gap: 8px;
+  gap: 15px;
 }
 
 
@@ -341,13 +341,11 @@
 .feature-content h4 {
   margin: 1px 0 6px;
 
-  font-family: Arial, sans-serif;
-
-  font-size: 16px;
+  font-size: 18px !important;
 
   line-height: 1.25;
 
-  font-weight: 700;
+  font-weight: 600;
 
   color: #fbfbfb;
 }
@@ -356,9 +354,7 @@
 .feature-content p {
   margin: 0;
 
-  font-family: Arial, sans-serif;
-
-  font-size: 14px;
+ font-size: 15px !important;
 
   line-height: 1.45;
 

@@ -63,9 +63,12 @@ const Home = () => {
 
 
 
+       <RevealSection>
+       <Process />
+      </RevealSection>
 
 
-        <Process />
+    
 
 
       
