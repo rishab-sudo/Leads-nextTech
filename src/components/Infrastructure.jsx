@@ -10,7 +10,7 @@ const Infrastructure = () => {
       {/* ================= SECTION HEADING ================= */}
       <div className="infrastructure-header">
       
-  <div className="process-eyebrow eyebrow-text eyebrow">
+  <div className="process-eyebrow eyebrow-text ">
           <span className="eyebrow-dot "></span>
           OUR INFRASTRUCTURE
         </div>
@@ -35,7 +35,7 @@ const Infrastructure = () => {
         <div className="infrastructure-card facility-card">
 
           {/* CARD LABEL */}
-          <p className="card-top-label">
+          <p className="card-top-label ">
             OUR INFRASTRUCTURE
           </p>
 

@@ -179,7 +179,7 @@ const StrengthCards = () => {
 
             <div className="strength-eyebrow">
               <span className="eyebrow-dot"></span>
-              <span>OUR STRENGTH</span>
+              <span className="eyebrow-text">OUR STRENGTH</span>
             </div>
 
             <h2 className="section-heading">

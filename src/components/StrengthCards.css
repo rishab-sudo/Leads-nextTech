@@ -389,10 +389,11 @@ text-align: left;
 
   min-width: 100% !important;
 
-  color: #647a80;
+  color: #fbfbfb;
 
   position: relative;
   z-index: 1;
+  font-size: 16px;
 }
 
 
@@ -518,7 +519,7 @@ text-align: left;
   }
 
   .strength-intro p {
-    font-size: 8px;
+    font-size: 11px;
     line-height: 1.5;
 
     margin-bottom: 10px;
@@ -596,12 +597,13 @@ text-align: left;
   }
 
   .strength-card h3 {
-    font-size: 11px;
+    font-size: 16px;
     margin-bottom: 10px;
   }
 
   .strength-card p {
-    font-size: 7.5px;
+    text-align: left;
+    font-size: 14px;
     line-height: 1.55;
   }
 

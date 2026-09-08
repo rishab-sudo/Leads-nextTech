@@ -15,6 +15,8 @@ const Team = () => {
           TEAM &amp; LEADERSHIP
         </div>
 
+        
+
         {/* =========================
             SECTION HEADING
         ========================== */}
