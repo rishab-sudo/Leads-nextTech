@@ -38,48 +38,49 @@ const SECTIONS = [
     radarAlt: "Live sonar radar scope sweeping for underwater contacts",
     heading: "AI-Powered Underwater Sensing for the Modern Navy",
     intro:
-      "LeadNXT's core underwater capability is the indigenous manufacture of thin line arrays (Passive and Active) with AI-based acoustic classification, designed for deployment across multiple maritime platforms.",
+      "Our underwater warfare portfolio covers active and passive sonar systems engineered for high acoustic noise underwater environments.",
     points: [
-      "Ships",
-      "Submarines",
-      "Unmanned Underwater Vehicles (UUVs)",
-      "Unmanned Surface Vessels (USVs)",
+      "AI-driven acoustic signal processing for multi-target classification in littoral waters",
+      "Modular hydrophone arrays with low-noise digital pre-amplifiers",
+      "Integrated combat suite interface supporting NATO and Indian Navy data standards",
+      "Autonomous underwater vehicle (AUV) payload packages for mine countermeasures",
     ],
-    outro:
-      "Built to detect, classify, and support informed decisions in complex underwater environments.",
-    ctaLabel: "View All Underwater Systems",
-    ctaHref: "/navy-sonar-technologies",
+    outro: "",
+    ctaLabel: "View Underwater Systems",
+    ctaHref: "/underwater-technologies",
   },
 ];
 
-function useInView(options) {
+function useInView(options = {}) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
-    const node = ref.current;
-    if (!node) return undefined;
+    const el = ref.current;
+    if (!el) return;
 
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setInView(true);
-        observer.disconnect();
+        observer.unobserve(entry.target);
       }
-    }, options ?? { threshold: 0.25 });
+    }, options);
 
-    observer.observe(node);
-    return () => observer.disconnect();
+    observer.observe(el);
+
+    return () => {
+      if (el) observer.unobserve(el);
+    };
   }, [options]);
 
   return [ref, inView];
 }
 
 function DualFocusBox({ section, onNavigate }) {
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ threshold: 0.15 });
   const isWater = section.variant === "water";
 
-  const handleCta = (e) => {
-    e.stopPropagation();
+  const handleCta = () => {
     if (onNavigate) {
       onNavigate(section.ctaHref);
     } else {
@@ -151,16 +152,15 @@ export default function DualFocusSection({ onNavigate }) {
       <div className="df-inner container g-0">
         
         <div className="df-header">
-           <div className="process-eyebrow eyebrow-text eyebrow">
-          <span className="eyebrow-dot "></span>
-          OUR Focus
-        </div>
-            <h2 className="section-heading">
-              Engineering Superior Systems
-              <br />
-              Above and Below the Surface
-            </h2>
-     
+          <div className="eyebrow-text eyebrow df-eyebrow-wrapper">
+            <span className="eyebrow-dot"></span>
+            <span>OUR FOCUS</span>
+          </div>
+          <h2 className="section-heading">
+            Engineering Superior Systems
+            <br />
+            Above and Below the Surface
+          </h2>
         </div>
 
         <div className="df-stack">

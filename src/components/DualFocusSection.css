@@ -20,6 +20,25 @@
   text-transform: uppercase;
 }
 
+.df-eyebrow-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.df-header .eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16bfd8;
+  box-shadow: 0 0 8px rgba(22, 191, 216, 0.8);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
 
 /* =========================================
    STACK & BOX

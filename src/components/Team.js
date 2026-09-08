@@ -11,16 +11,15 @@ const Team = () => {
         {/* =========================
             EYEBROW
         ========================== */}
-        <div className="eyebrow-text">
-          TEAM &
-          LEADERSHIP
+        <div className="eyebrow-text eyebrow">
+          TEAM &amp; LEADERSHIP
         </div>
 
         {/* =========================
             SECTION HEADING
         ========================== */}
         <div className="mission-header section-heading">
-          <h1>
+          <h1 className="section-heading">
             Driven by Mission.
             <br />
             Engineered for Dominance.

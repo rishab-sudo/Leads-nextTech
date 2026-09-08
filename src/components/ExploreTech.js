@@ -159,7 +159,7 @@ export default function TechnologyExplorer() {
           <div className="tech-header-left">
             <span className="eyebrow-text">Our Technology</span>
 
-            <h2>
+            <h2 className="section-heading">
               Core technology
               <br />
               and engineering capabilities
