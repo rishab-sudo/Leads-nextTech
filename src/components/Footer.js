@@ -16,9 +16,9 @@ const Footer = () => {
   const solutions = [
     { name: "Gun Systems", target: "DualFocusSection" },
     { name: "Sonar Systems", target: "DualFocusSection" },
-    { name: "UAV Systems", target: "DualFocusSection" },
-    { name: "Surveillance", target: "DualFocusSection" },
-    { name: "Communication", target: "DualFocusSection" },
+    { name: "UAV Systems", target: "ExploreTech" },
+    { name: "Surveillance", target: "ExploreTech" },
+    { name: "Communication", target: "ExploreTech" },
   ];
 
   const support = [

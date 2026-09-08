@@ -152,7 +152,7 @@ export default function TechnologyExplorer() {
   };
 
   return (
-    <section className="tx-root">
+    <section className="tx-root" id="ExploreTech">
       <div className="container">
         {/* Header */}
         <div className="tech-header">
