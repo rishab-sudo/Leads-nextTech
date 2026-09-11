@@ -16,10 +16,7 @@ const Navbar = () => {
      NAVIGATION LINKS
   ----------------------------------------- */
   const navLinks = [
-    {
-      name: "MAKE IN INDIA",
-      target: "MakeinIndia",
-    },
+
     {
       name: "PROCESS",
       target: "Process",
@@ -31,6 +28,10 @@ const Navbar = () => {
     {
       name: "INFRASTRUCTURE",
       target: "Infrastructure",
+    },
+    {
+      name: "MAKE IN INDIA",
+      target: "MakeinIndia",
     },
   ];
 

@@ -57,7 +57,7 @@ const Team = () => {
               <p className="mission-card-text">
                 To bridge the gap between emerging operational challenges and
                 field-ready capabilities by delivering intelligent, sovereign,
-                and resilient defence systems — engineered from first
+                and resilient defence systems - engineered from first
                 principles and proven in production.
               </p>
 
@@ -152,7 +152,7 @@ const Team = () => {
                 </h3>
 
                 <p>
-                  In-house research, design, and integration — from AI-driven
+                  In-house research, design, and integration - from AI-driven
                   EO/IR fire control to autonomous towed-array acoustic
                   classification.
                 </p>
@@ -246,8 +246,8 @@ const Team = () => {
         {/* Main Statement */}
         <h2 className="commitment-banner-title">
           Our mandate at LNXТ is straightforward: we do not just
-          adapt to the future of multi-domain defence - 
-          <em>we build the platforms that define it.</em>{" "}
+          adapt to the future of multi-domain defence -  
+          <em> we build the platforms that define it.</em>{" "}
           From modernizing firepower on land to mastering acoustic
           intelligence underwater, our team is united by purpose,
           precision, and production excellence.
@@ -255,7 +255,7 @@ const Team = () => {
 
         {/* Attribution */}
         <div className="commitment-banner-attribution">
-          <span className="commitment-banner-dash">—</span>
+          <span className="commitment-banner-dash">-</span>
           <span>Executive Leadership, LNXТ</span>
         </div>
 
