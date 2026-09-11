@@ -1,10 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-import Stats from "./Stats";
 import StrengthCards from "./StrengthCards";
 import Process from "./Process";
-import WaterTech from "../components/WaterTech"
+// import WaterTech from "../components/WaterTech"
 import ExploreTech from "./ExploreTech";
 import StrategicPartnership from "./StrategicPartnership";
 import Infrastructure from "./Infrastructure";
@@ -50,10 +48,10 @@ const Home = () => {
       <Herosection />
 
     
-
+{/* 
       <RevealSection>
         <Stats />
-      </RevealSection>
+      </RevealSection> */}
 
 
        <RevealSection>
@@ -71,17 +69,19 @@ const Home = () => {
     
 
 
-      
-      <RevealSection>
-        <DualFocusSection />
-      </RevealSection>
 
 
 
-<WaterTech/>
+{/* 
+<WaterTech/> */}
 
       <RevealSection>
         <ExploreTech />
+      </RevealSection>
+
+            
+      <RevealSection>
+        <DualFocusSection />
       </RevealSection>
 
       <RevealSection>

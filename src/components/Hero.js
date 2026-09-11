@@ -9,7 +9,7 @@ import './Hero.css';
 const slides = [
   {
     id: 'gun-technologies',
-    domain: '01 // GUN TECHNOLOGIES',
+    domain: '01 // Land System',
     word1: 'GUARDING',
     word2: 'THE SKIES',
     gradientClass: 'nxt-gradient-gold',
@@ -22,7 +22,7 @@ const slides = [
   },
   {
     id: 'underwater-technologies',
-    domain: '02 // UNDERWATER TECH',
+    domain: '02 // UNDERWATER System',
     word1: 'RULING',
     word2: 'THE DEPTHS',
     gradientClass: 'nxt-gradient-cyan',
