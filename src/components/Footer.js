@@ -166,7 +166,7 @@ const Footer = () => {
 
           <span> |</span>
 
-          <a href="/contact">Terms of Use  </a>
+          <a href="/contact">Terms of Use </a>
         </div>
       </div>
     </footer>
