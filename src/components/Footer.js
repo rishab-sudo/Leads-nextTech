@@ -162,7 +162,7 @@ const Footer = () => {
         </p>
 
         <div className="footer-legal">
-          <a href="/contact">Privacy Policy</a>
+          <a href="/contact">Privacy Policy </a>
 
           <span> |</span>
 
