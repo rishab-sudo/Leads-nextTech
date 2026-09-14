@@ -1,0 +1,605 @@
+/* =========================================================
+   STRENGTH SECTION
+========================================================= */
+.strength-section {
+ padding: 20px 0 15px;
+  box-sizing: border-box;
+margin-top: 3.5%;
+  background-color: #010306;
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.strength-header {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 0 20px 21px;
+  box-sizing: border-box;
+
+  opacity: 0;
+  transform: translateX(70px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   COMPONENT ENTRY ANIMATION
+========================================================= */
+
+.strength-visible .strength-header {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.strength-visible .strength-swiper {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.strength-heading {
+  padding-top: 0;
+}
+
+
+
+.strength-heading h2 {
+  margin: 0;
+color: #f4f7f8;
+
+ 
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.strength-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  padding-top: 0;
+}
+
+.strength-intro p {
+  margin: 0 0 9px;
+ /* color: #64777d; */
+   color: #fbfbfb;
+text-align: left;
+}
+
+
+/* =========================================================
+   ARROWS
+========================================================= */
+
+.strength-arrows {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.strength-arrow {
+  width: 25px;
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #4d6971;
+
+  background: rgba(5, 25, 31, 0.65);
+
+  color: #dbe5e7;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.strength-arrow:hover {
+  color: #ffffff;
+
+  border-color: #0eb8d5;
+
+  background: rgba(0, 133, 160, 0.15);
+}
+
+.strength-arrow:active {
+  transform: scale(0.92);
+}
+
+.strength-arrow:focus-visible {
+  outline: 1px solid #0eb8d5;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   SLIDER WRAPPER
+========================================================= */
+
+.strength-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SWIPER
+========================================================= */
+
+.strength-swiper {
+  width: 100%;
+
+  overflow: visible !important;
+
+  opacity: 0;
+  transform: translateX(120px);
+
+  transition:
+    opacity 1.2s ease 0.15s,
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.strength-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.strength-swiper .swiper-slide {
+  height: auto;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.strength-card {
+  width: 100%;
+  height: 225px;
+
+  box-sizing: border-box;
+
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #193944;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 28, 34, 0.96),
+      rgba(4, 18, 23, 0.96)
+    );
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =========================================================
+   CARD TOP GLOW
+========================================================= */
+
+.strength-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(17, 176, 205, 0.35),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   CARD BACKGROUND GLOW
+========================================================= */
+
+.strength-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  top: -55px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(0, 165, 193, 0.035);
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.strength-card:hover {
+  border-color: #285765;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(9, 33, 40, 0.98),
+      rgba(4, 20, 26, 0.98)
+    );
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.strength-card-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 10px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 151, 183, 0.15),
+      rgba(0, 100, 125, 0.025) 70%
+    );
+
+  position: relative;
+  z-index: 1;
+}
+
+.strength-card-icon svg {
+  width: 35px;
+  height: 35px;
+
+  fill: none;
+
+  stroke: #10b9d4;
+
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  filter:
+    drop-shadow(
+      0 0 4px rgba(0, 184, 214, 0.22)
+    );
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.strength-card h3 {
+  margin: 0 0 8px;
+
+  color: #e8eef0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  position: relative;
+  z-index: 1;
+}
+
+.strength-card p {
+  margin: 0;
+
+  min-width: 100% !important;
+
+  color: #fbfbfb;
+
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   VIEW SOLUTIONS
+========================================================= */
+
+.strength-card-link {
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  width: fit-content;
+
+  color: #dce6e8;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  position: relative;
+  z-index: 2;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.strength-card-link span {
+  font-size: 11px;
+  line-height: 1;
+
+  transition: transform 0.2s ease;
+}
+
+.strength-card-link:hover {
+  color: #0fc1df;
+  gap: 7px;
+}
+
+.strength-card-link:hover span {
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .strength-section {
+    padding-top: 20px;
+    padding-bottom: 15px;
+  }
+
+  .strength-header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .strength-heading h2 {
+    font-size: 18px;
+  }
+
+  .strength-intro p {
+    font-size: 7px;
+  }
+
+  .strength-card {
+    height: 155px;
+  }
+
+  .strength-card-link {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .strength-section {
+    padding: 27px 0 20px;
+  }
+
+  .strength-header {
+    padding: 0 24px 24px;
+
+    display: block;
+
+    transform: translateX(50px);
+  }
+
+  .strength-heading h2 {
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .strength-intro {
+    margin-top: 15px;
+
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .strength-intro p {
+    font-size: 11px;
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+
+  /* =========================
+     MOBILE ARROWS
+  ========================= */
+
+  .strength-arrows {
+    align-self: flex-end;
+
+    margin-top: 2px;
+  }
+
+  .strength-arrow {
+    width: 30px;
+    height: 25px;
+
+    font-size: 14px;
+  }
+
+
+  /* =========================
+     MOBILE SWIPER
+  ========================= */
+
+  .strength-swiper {
+    padding: 0 0 3px;
+
+    transform: translateX(80px);
+  }
+
+  .strength-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  /* =========================
+     MOBILE CARD
+  ========================= */
+
+  .strength-card {
+    width: calc(100vw - 48px);
+
+    max-width: 360px;
+
+    height: 185px;
+
+    padding: 24px 25px 21px;
+
+    transform: none !important;
+  }
+
+  .strength-card:hover {
+    transform: none !important;
+  }
+
+  .strength-card-icon {
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 13px;
+  }
+
+  .strength-card-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .strength-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .strength-card p {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .strength-card-link {
+    font-size: 7px;
+  }
+
+  .strength-card-link span {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .strength-header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .strength-heading h2 {
+    font-size: 20px;
+  }
+
+  .strength-card {
+    width: calc(100vw - 40px);
+
+    height: 180px;
+
+    padding: 22px;
+  }
+}

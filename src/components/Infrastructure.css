@@ -1,0 +1,778 @@
+/* =========================================================
+   INFRASTRUCTURE SECTION
+========================================================= */
+
+.infrastructure-section {
+  margin-top: 3.5%;
+ padding: 45px !important;
+  background: #061114;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.infrastructure-header {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+
+/* LEFT SIDE */
+
+
+
+.infrastructure-header .section-heading {
+  margin: 0;
+}
+
+
+/* RIGHT SIDE SUBHEADING */
+
+.infrastructure-header .section-subHeading {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+
+
+  text-align: left;
+
+  max-width: 71%;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MAIN GRID
+   ONLY ONE CARD — FULL WIDTH
+========================================================= */
+
+.infrastructure-grid {
+  width: 100%;
+  margin: 0 auto;
+
+  display: grid;
+
+  /* Facility card takes complete container width */
+  grid-template-columns: 1fr;
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.infrastructure-card {
+  position: relative;
+
+  min-height: 600px;
+
+  width: 100%;
+
+  border: 1px solid rgba(87, 132, 141, 0.45);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(19, 37, 42, 0.8),
+      rgba(5, 17, 20, 0.95)
+    );
+
+  overflow: hidden;
+}
+
+
+/* subtle inner border */
+
+.infrastructure-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 4px;
+
+  border: 1px solid rgba(255, 255, 255, 0.025);
+
+  pointer-events: none;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   CARD LABEL
+========================================================= */
+
+.card-top-label {
+  position: absolute;
+
+  top: 11px;
+  left: 14px;
+
+  z-index: 5;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.1px;
+
+  color: #4d9eac;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.infrastructure-card h3 {
+  position: absolute;
+
+  top: 29px;
+  left: 14px;
+
+  z-index: 5;
+
+  margin-top: 8px !important;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #e9edef;
+}
+
+
+/* =========================================================
+   FACILITY CARD
+========================================================= */
+
+.facility-card {
+  padding: 0;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   FACILITY CONTENT
+========================================================= */
+
+.facility-content {
+  position: absolute;
+
+  top: 100px;
+  left: 9px;
+  right: 9px;
+  bottom: 9px;
+
+  display: grid;
+
+  /*
+    IMAGE = approx 73%
+    FEATURE BOXES = approx 27%
+  */
+  grid-template-columns: minmax(0, 3fr) minmax(260px, 1.1fr);
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   FACILITY IMAGE
+========================================================= */
+
+.facility-image-wrap {
+  position: relative;
+
+  min-width: 0;
+
+  height: 100%;
+
+  overflow: hidden;
+}
+
+
+.facility-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+
+.facility-image-wrap:hover .facility-image {
+  transform: scale(1.035);
+}
+
+
+/* image dark overlay */
+
+.facility-image-wrap::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.03) 30%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FEATURE LIST
+========================================================= */
+
+.facility-features {
+  height: 100%;
+
+  width: 100%;
+
+  border: 1px solid rgba(70, 112, 121, 0.5);
+
+  background: rgba(9, 24, 28, 0.85);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   FEATURE BOX
+========================================================= */
+
+.facility-feature {
+  position: relative;
+
+  flex: 1;
+
+  min-height: 0;
+
+  /*
+    Increased horizontal spacing
+    because feature panel is now wider
+  */
+  padding: 14px 38px 14px 16px;
+
+  display: flex;
+  align-items: flex-start;
+
+  border-bottom: 1px solid rgba(70, 112, 121, 0.38);
+
+  transition:
+    background 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+
+.facility-feature:last-child {
+  border-bottom: none;
+}
+
+
+.facility-feature:hover {
+  padding-left: 20px;
+
+  background: rgba(48, 105, 116, 0.1);
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.feature-icon {
+  width: 24px;
+  height: 24px;
+
+  margin-right: 12px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(67, 148, 163, 0.5);
+
+  border-radius: 50%;
+
+  color: #5aaaba;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+========================================================= */
+
+.feature-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.feature-content h4 {
+  margin: 1px 0 6px;
+
+  font-size: 18px !important;
+
+  line-height: 1.25;
+
+  font-weight: 600;
+
+  color: #fbfbfb;
+}
+
+
+.feature-content p {
+  margin: 0;
+
+ font-size: 15px !important;
+
+  line-height: 1.45;
+
+  color: #fbfbfb;
+}
+
+
+/* =========================================================
+   FEATURE ARROW
+========================================================= */
+
+.feature-arrow {
+  position: absolute;
+
+  right: 14px;
+  top: 17px;
+
+  font-size: 12px;
+
+  color: #678b92;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.facility-feature:hover .feature-arrow {
+  color: #76c3d0;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.infrastructure-btn {
+  position: absolute;
+
+  z-index: 4;
+
+  height: 35px;
+
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  border: 1px solid rgba(214, 230, 233, 0.75);
+
+  background: rgba(5, 20, 24, 0.9);
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12.5px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.infrastructure-btn span {
+  font-size: 11px;
+
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+
+.infrastructure-btn:hover {
+  background: #102d33;
+
+  border-color: #69b5c2;
+}
+
+
+.infrastructure-btn:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   FACILITY BUTTON
+========================================================= */
+
+.facility-btn {
+  left: 15px;
+  bottom: 14px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .facility-content {
+    grid-template-columns:
+      minmax(0, 3.15fr)
+      minmax(300px, 1.15fr);
+  }
+
+  .facility-feature {
+    padding: 16px 42px 16px 18px;
+  }
+
+  .feature-content h4 {
+    font-size: 16px;
+  }
+
+  .feature-content p {
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET / MEDIUM
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .infrastructure-section {
+    padding: 70px 24px;
+  }
+
+  .infrastructure-header .section-subHeading {
+    position: static;
+
+    max-width: 100%;
+
+    margin-top: 14px;
+  }
+
+  .infrastructure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-card {
+    min-height: 460px;
+  }
+
+  .facility-content {
+    grid-template-columns:
+      minmax(0, 2.3fr)
+      minmax(220px, 1fr);
+  }
+
+  .facility-feature {
+    padding: 14px 30px 14px 14px;
+  }
+
+  .feature-content h4 {
+    font-size: 15px;
+  }
+
+  .feature-content p {
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .infrastructure-section {
+    padding: 60px 16px;
+  }
+
+  .infrastructure-header {
+    margin-bottom: 28px;
+  }
+
+
+
+  .infrastructure-header h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .infrastructure-header p {
+    font-size: 14px;
+  }
+
+  .infrastructure-header .section-subHeading {
+    position: static;
+
+    max-width: 100%;
+
+    margin-top: 14px;
+  }
+
+  .infrastructure-grid {
+    gap: 12px;
+  }
+
+  .facility-card {
+    min-height: auto;
+  }
+
+  .facility-content {
+    grid-template-columns:
+      minmax(0, 1.8fr)
+      minmax(200px, 1fr);
+  }
+
+  .facility-feature {
+    padding: 12px 28px 12px 12px;
+  }
+
+  .feature-icon {
+    width: 24px;
+    height: 24px;
+
+    margin-right: 10px;
+  }
+
+  .feature-content h4 {
+    font-size: 14px;
+  }
+
+  .feature-content p {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .infrastructure-section {
+    padding: 40px 14px;
+  }
+
+  .infrastructure-header {
+    margin-bottom: 24px;
+  }
+
+  .infrastructure-header h2 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .infrastructure-header p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .infrastructure-header p br {
+    display: none;
+  }
+
+  .infrastructure-header .section-subHeading {
+    position: static;
+
+    max-width: 100%;
+
+    margin-top: 12px;
+
+    text-align: left;
+  }
+
+
+  /* ================= FACILITY CARD ================= */
+
+  .facility-card {
+    min-height: auto;
+
+    padding-bottom: 16px;
+  }
+
+
+  .infrastructure-card h3 {
+    font-size: 16px;
+
+    top: 32px;
+    left: 14px;
+    right: 14px;
+  }
+
+
+  /*
+    Stack image + feature boxes
+  */
+
+  .facility-content {
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    margin-top: 75px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+
+  .facility-image-wrap {
+    height: 220px;
+  }
+
+
+  .facility-features {
+    height: auto;
+  }
+
+
+  .facility-feature {
+    min-height: auto;
+
+    flex: none;
+
+    padding: 14px 38px 14px 14px;
+  }
+
+
+  .feature-icon {
+    width: 24px;
+    height: 24px;
+
+    margin-right: 12px;
+  }
+
+
+  .feature-content h4 {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+
+  .feature-content p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .feature-content p br {
+    display: none;
+  }
+
+
+  .feature-arrow {
+    right: 14px;
+    top: 18px;
+  }
+
+
+  .facility-btn {
+    bottom: 14px;
+    left: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .infrastructure-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .infrastructure-header h2 {
+    font-size: 24px;
+  }
+
+  .facility-image-wrap {
+    height: 200px;
+  }
+
+  .facility-card {
+    min-height: auto;
+  }
+
+  .facility-content {
+    margin-top: 70px;
+  }
+
+  .facility-feature {
+    padding: 12px 34px 12px 12px;
+  }
+
+  .feature-content h4 {
+    font-size: 14px;
+  }
+
+  .feature-content p {
+    font-size: 12px;
+  }
+
+}

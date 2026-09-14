@@ -1,0 +1,157 @@
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+/* ==============================
+   DOT WRAPPER
+================================= */
+
+.section-label-dot {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==============================
+   MAIN DOT
+================================= */
+
+.label-dot {
+  width: 7px;
+  height: 7px;
+  background: #00d9ff;
+  border-radius: 50%;
+  position: relative;
+  z-index: 10;
+
+  /* Reduced glow */
+  box-shadow:
+    0 0 3px rgba(0, 217, 255, 0.9),
+    0 0 7px rgba(0, 217, 255, 0.45);
+}
+
+/* ==============================
+   CIRCULAR RINGS
+================================= */
+
+.label-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  border: 1px solid rgba(0, 217, 255, 0.35);
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%) scale(0.4);
+
+  opacity: 0;
+
+  animation: labelRingPulse 3.5s ease-out infinite;
+}
+
+/* ==============================
+   RING SIZES
+================================= */
+
+.ring-1 {
+  width: 17px;
+  height: 17px;
+  animation-delay: 0s;
+}
+
+.ring-2 {
+  width: 27px;
+  height: 27px;
+  animation-delay: 0.5s;
+}
+
+.ring-3 {
+  width: 37px;
+  height: 37px;
+  animation-delay: 1s;
+}
+
+.ring-4 {
+  width: 47px;
+  height: 47px;
+  animation-delay: 1.5s;
+}
+
+/* ==============================
+   SUBTLE GLOW + ZOOM
+================================= */
+
+@keyframes labelRingPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0;
+    box-shadow: none;
+  }
+
+  20% {
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(0.75);
+    opacity: 0.28;
+
+    /* Very subtle glow */
+    box-shadow:
+      0 0 3px rgba(0, 217, 255, 0.25);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+
+    box-shadow:
+      0 0 5px rgba(0, 217, 255, 0.12);
+  }
+}
+
+/* ==============================
+   HEADING
+================================= */
+
+.section-label-title {
+  margin: 0;
+  color: #00d9ff;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ==============================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+  .section-label {
+    gap: 10px;
+  }
+
+  .section-label-title {
+    font-size: 16px;
+    letter-spacing: 1.2px;
+  }
+}
+
+/* ==============================
+   MOBILE
+================================= */
+
+@media (max-width: 480px) {
+  .section-label-title {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+}

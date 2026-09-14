@@ -1,0 +1,112 @@
+.App{
+    background-color: #010306;
+}
+html {
+  scroll-behavior: auto;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container{
+  min-width: 90% !important;
+
+}
+/* =========================================
+   LARGE DEVICE — 1200px+
+========================================= */
+
+.section-heading {
+  font-size: 32px !important;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fbfbfb !important;
+   margin-top: 15px !important;
+   text-transform: uppercase !important;
+}
+
+.section-subHeading {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+ 
+}
+
+.cards-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.cards-descp {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+
+
+
+/* =========================================
+   MEDIUM DEVICE — 768px to 1199px
+========================================= */
+
+@media (max-width: 1199px) {
+
+  .section-heading {
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  .section-subHeading {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .cards-title {
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  .cards-descp {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+
+/* =========================================
+   SMALL DEVICE — 767px and below
+========================================= ss*/
+
+@media (max-width: 767px) {
+
+  .section-heading {
+    font-size: 24px !important;
+    font-weight: 700;
+  }
+
+  .section-subHeading {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .cards-title {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .cards-descp {
+    font-size: 15px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,1275 @@
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+  margin: 0 auto;
+ /* background-color: #d2a029; */
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.mission.vision {
+  width: 100%;
+  min-height: fit-content;
+  padding: 45px 15px;
+  background: #000305;
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   EYEBROW TEXT
+========================================================= */
+
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.mission-header {
+  max-width: 75% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  margin-bottom: 35px !important;
+}
+
+.mission-header h1 {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   SUBHEADING
+========================================================= */
+
+.mission-subheading {
+  margin: 0;
+}
+
+
+/* =========================================================
+   CARDS WRAPPER
+========================================================= */
+
+.mission-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  gap: 55px;
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.mission-card {
+  min-width: 0;
+  box-sizing: border-box;
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+/* =========================================================
+   PRIMARY / MISSION CARD
+========================================================= */
+
+.mission-card-primary {
+  min-height: 300px;
+  background: #0b1115;
+  border-top: 2px solid #d69e18;
+}
+
+
+/* =========================================================
+   MISSION INNER
+========================================================= */
+
+.mission-card-inner {
+  min-height: 300px;
+  padding: 38px 40px 35px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MISSION TITLE ROW
+   QUOTE + HEADING IN SAME ROW
+========================================================= */
+
+.mission-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   QUOTE ICON
+========================================================= */
+
+.quote-mark {
+  flex-shrink: 0;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 60px;
+  line-height: 0.6;
+  font-weight: 700;
+  color: #d59b1c;
+}
+
+
+/* =========================================================
+   CORE MISSION LABEL
+========================================================= */
+
+.mission-card-label {
+  margin: 0;
+  color: #dca318;
+}
+
+.vision-heading {
+font-size: 24px !important;
+}
+
+
+/* =========================================================
+   MISSION TEXT
+========================================================= */
+
+.mission-card-text {
+  max-width: 850px;
+  margin: 0;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   VISION CARD
+========================================================= */
+
+.vision-card {
+  min-height: 300px;
+  background: transparent;
+  border-top: 2px solid transparent;
+}
+
+
+/* =========================================================
+   VISION HOVER
+========================================================= */
+
+.vision-card:hover {
+  background: #0b1115;
+  border-top-color: #d69e18;
+}
+
+
+/* =========================================================
+   VISION INNER
+========================================================= */
+
+.vision-card-inner {
+  min-height: 300px;
+  padding: 25px 15px;
+  box-sizing: border-box;
+  transition: padding 0.4s ease;
+}
+
+
+/*
+   On hover the content itself does NOT move.
+   Only background changes.
+*/
+
+.vision-card:hover .vision-card-inner {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+
+/* =========================================================
+   VISION TITLE ROW
+   QUOTE + HEADING IN SAME ROW
+========================================================= */
+
+.vision-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   VISION QUOTE
+========================================================= */
+
+.vision-quote-mark {
+  flex-shrink: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 60px;
+  line-height: 0.6;
+  font-weight: 700;
+  color: #dca318;
+}
+
+
+/* =========================================================
+   VISION HEADING
+========================================================= */
+
+.vision-heading-wrapper {
+  margin: 0;
+}
+
+.vision-card h2 {
+  margin: 0;
+  color: #dca318;
+}
+
+
+/* =========================================================
+   VISION TEXT
+========================================================= */
+
+.vision-card p {
+  max-width: 850px;
+}
+
+.vision-card p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .container {
+    padding: 0 45px;
+  }
+
+  .mission.vision {
+    padding-top: 55px;
+  }
+
+  .mission-header {
+    margin-bottom: 75px;
+  }
+
+  .mission-header h1 {
+    font-size: 44px;
+  }
+
+  .mission-cards {
+    gap: 35px;
+  }
+
+  .mission-card-inner {
+    padding: 32px;
+  }
+
+  .vision-card-inner {
+    padding: 48px 0 32px;
+  }
+
+  .vision-card:hover .vision-card-inner {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .mission-card-text {
+    font-size: 18px;
+  }
+
+  .mission-card-title-row,
+  .vision-card-title-row {
+    gap: 15px;
+  }
+
+  .quote-mark,
+  .vision-quote-mark {
+    font-size: 54px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .container {
+    padding: 0 28px;
+  }
+
+  .mission.vision {
+    min-height: auto;
+    padding: 50px 0 60px;
+  }
+
+  .eyebrow-text {
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .mission-header {
+    margin-bottom: 60px;
+  }
+
+  .mission-header h1 {
+    max-width: 600px;
+    margin-bottom: 22px;
+    font-size: 38px;
+    line-height: 1.08;
+    letter-spacing: -1.2px;
+  }
+
+  .mission-subheading {
+    max-width: 650px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+
+  /* Cards become vertical */
+
+  .mission-cards {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .mission-card-primary,
+  .vision-card {
+    min-height: auto;
+  }
+
+  .mission-card-inner,
+  .vision-card-inner {
+    min-height: auto;
+  }
+
+  .mission-card-inner {
+    padding: 30px;
+  }
+
+  .vision-card-inner {
+    padding: 30px;
+  }
+
+
+  /* On mobile no content movement */
+
+  .vision-card:hover .vision-card-inner {
+    padding: 30px;
+  }
+
+  .mission-card-text {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  .vision-card h2 {
+    font-size: 20px;
+  }
+
+  .vision-card p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .mission.vision {
+    padding: 42px 0 50px;
+  }
+
+  .eyebrow-text {
+    margin-bottom: 18px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .mission-header {
+    margin-bottom: 48px;
+  }
+
+  .mission-header h1 {
+    margin-bottom: 20px;
+    font-size: 31px;
+    line-height: 1.08;
+    letter-spacing: -0.8px;
+  }
+
+  .mission-subheading {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .mission-cards {
+    gap: 20px;
+  }
+
+  .mission-card-primary {
+    border-top-width: 1px;
+  }
+
+  .mission-card-inner {
+    padding: 25px 22px;
+  }
+
+  .vision-card-inner {
+    padding: 25px 22px;
+  }
+
+  .vision-card {
+    border-top-width: 1px;
+  }
+
+  .vision-card:hover .vision-card-inner {
+    padding: 25px 22px;
+  }
+
+
+  /* TITLE ROW */
+
+  .mission-card-title-row,
+  .vision-card-title-row {
+    gap: 12px;
+    margin-bottom: 23px;
+  }
+
+
+  /* QUOTE */
+
+  .quote-mark,
+  .vision-quote-mark {
+    font-size: 50px;
+  }
+
+
+  /* MISSION HEADING */
+
+  .mission-card-label {
+    font-size: 10px;
+  }
+
+  .mission-heading {
+    font-size: 19px;
+    line-height: 1.2;
+  }
+
+  .mission-card-text {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+
+  /* VISION HEADING */
+
+  .vision-card h2 {
+    margin-bottom: 0;
+    font-size: 19px;
+    line-height: 1.2;
+  }
+
+  .vision-card p {
+    margin-bottom: 15px;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .mission.vision {
+    padding-top: 35px;
+  }
+
+  .mission-header h1 {
+    font-size: 27px;
+  }
+
+  .mission-subheading {
+    font-size: 14px;
+  }
+
+  .mission-card-inner {
+    padding: 22px 18px;
+  }
+
+  .vision-card-inner {
+    padding: 22px 18px;
+  }
+
+  .vision-card:hover .vision-card-inner {
+    padding: 22px 18px;
+  }
+
+  .mission-card-text {
+    font-size: 16px;
+  }
+
+  .mission-heading {
+    font-size: 18px;
+  }
+
+  .vision-card h2 {
+    font-size: 18px;
+  }
+
+  .mission-card-title-row,
+  .vision-card-title-row {
+    gap: 10px;
+  }
+
+  .quote-mark,
+  .vision-quote-mark {
+    font-size: 45px;
+  }
+}
+
+
+/* =========================================================
+   COMMITMENT CSS
+========================================================= */
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+ margin: 0 auto;
+ 
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CORE COMMITMENTS
+========================================================= */
+
+.commitment {
+  width: 100%;
+  padding: 18px 0 70px;
+  background: #000305;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.commitment-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.commitment-heading h2 {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+
+  color: #f1f1f1;
+}
+
+
+/* =========================================================
+   COMMITMENT GRID
+========================================================= */
+
+.commitment-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   COMMON COMMITMENT BOX
+========================================================= */
+
+.commitment-box {
+  position: relative;
+
+  width: 100%;
+  min-height: 240px;
+
+  padding: 32px 36px;
+
+  box-sizing: border-box;
+
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+/* =========================================================
+   FIRST BOX / DEFAULT HIGHLIGHT
+========================================================= */
+
+.commitment-box-active {
+  background: #0d1318;
+
+  border-color: rgba(213, 155, 28, 0.55);
+  border-top-color: #d69d1d;
+}
+
+
+/* =========================================================
+   HOVER
+   ONLY HOVERED BOX BECOMES ACTIVE
+========================================================= */
+
+.commitment-box:hover {
+  background: #0d1318;
+
+  border-color: rgba(213, 155, 28, 0.55);
+  border-top-color: #d69d1d;
+}
+
+
+/* =========================================================
+   WHEN ANY BOX IS HOVERED
+   DEFAULT ACTIVE BOX BECOMES NORMAL
+========================================================= */
+
+.commitment-grid:has(.commitment-box:hover)
+  .commitment-box-active:not(:hover) {
+  background: transparent;
+
+  border-color: rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   BOX CONTENT
+========================================================= */
+
+.commitment-box-content {
+  width: 100%;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.commitment-number {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 400;
+
+  letter-spacing: 0.2px;
+
+  color: #d69d1d;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.commitment-box h3 {
+  margin: 0 0 12px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 600;
+
+  letter-spacing: -0.5px;
+
+  color: #ffffff;
+
+  transition: color 0.3s ease;
+}
+
+
+/* DEFAULT ACTIVE HEADING */
+
+.commitment-box-active h3 {
+  color: #d69d1d;
+}
+
+
+/* HOVERED HEADING */
+
+.commitment-box:hover h3 {
+  color: #d69d1d;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.commitment-box p {
+  max-width: 700px;
+
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 400;
+
+  color: #858d92;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.commitment-arrow {
+  position: absolute;
+
+  right: 25px;
+  bottom: 25px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+
+  color: #d69d1d;
+
+  opacity: 0;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* ACTIVE BOX ARROW */
+
+.commitment-box-active .commitment-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* HOVERED BOX ARROW */
+
+.commitment-box:hover .commitment-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .commitment {
+    padding: 18px 0 60px;
+  }
+
+  .commitment-grid {
+    gap: 12px;
+  }
+
+  .commitment-box {
+    min-height: 230px;
+    padding: 30px;
+  }
+
+  .commitment-box h3 {
+    font-size: 22px;
+  }
+
+  .commitment-box p {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .commitment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .commitment-box {
+    min-height: 210px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .commitment {
+    padding: 10px 0 50px;
+  }
+
+  .commitment-heading {
+    gap: 11px;
+    margin-bottom: 24px;
+  }
+
+  .commitment-heading h2 {
+    font-size: 17px;
+  }
+
+  .commitment-grid {
+    gap: 12px;
+  }
+
+  .commitment-box {
+    min-height: auto;
+
+    padding: 30px 22px;
+
+    align-items: flex-start;
+  }
+
+  .commitment-number {
+    margin-bottom: 13px;
+    font-size: 10px;
+  }
+
+  .commitment-box h3 {
+    margin-bottom: 11px;
+
+    font-size: 21px;
+    line-height: 1.2;
+  }
+
+  .commitment-box p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .commitment-arrow {
+    right: 18px;
+    bottom: 17px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .commitment-box {
+    padding: 27px 18px;
+  }
+
+  .commitment-box h3 {
+    font-size: 19px;
+  }
+
+  .commitment-box p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   COMMITMENT BANNER
+========================================================= */
+
+.commitment-banner {
+  position: relative;
+  min-width: 100% !important;
+  width: 100%;
+  min-height: 550px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
+
+.commitment-banner-overlay {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 12, 25, 0.68) 0%,
+      rgba(3, 13, 28, 0.74) 45%,
+      rgba(2, 10, 23, 0.88) 100%
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   OPTIONAL DARK SIDE VIGNETTE
+========================================================= */
+
+.commitment-banner::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 5, 15, 0.28) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(0, 5, 15, 0.28) 100%
+    );
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   CONTENT WRAPPER
+========================================================= */
+
+.commitment-banner-content {
+  position: relative;
+
+  z-index: 3;
+
+  width: 70%;
+
+  margin: 0 auto;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 50px 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.commitment-banner-eyebrow {
+  display: block;
+
+  margin-bottom: 24px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+
+  font-weight: 700;
+  letter-spacing: 2.2px;
+
+  color: #d6a126;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN TEXT
+========================================================= */
+
+.commitment-banner-title {
+  width: 100%;
+
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 32px;
+
+  line-height: 1.5;
+
+  font-weight: 400;
+
+  letter-spacing: -0.7px;
+
+  color: #f4f4f4;
+}
+
+
+/* =========================================================
+   GOLD / ITALIC HIGHLIGHT
+========================================================= */
+
+.commitment-banner-title em {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.02em;
+
+  font-weight: 400;
+
+  font-style: italic;
+
+  color: #d5a02a;
+}
+
+
+/* =========================================================
+   ATTRIBUTION
+========================================================= */
+
+.commitment-banner-attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: 27px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 15px;
+  line-height: 1.3;
+
+  font-weight: 600;
+
+  color: #d2a029;
+}
+
+
+/* =========================================================
+   ATTRIBUTION DASH
+========================================================= */
+
+.commitment-banner-dash {
+  font-size: 13px;
+  line-height: 1;
+  color: #d2a029;
+}
+
+
+/* =========================================================
+   BANNER TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .commitment-banner {
+    min-height: 500px;
+  }
+
+  .commitment-banner-content {
+    width: min(800px, calc(100% - 80px));
+    padding: 60px 0;
+  }
+
+  .commitment-banner-title {
+    font-size: clamp(25px, 3vw, 36px);
+    line-height: 1.48;
+  }
+}
+
+
+/* =========================================================
+   BANNER SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .commitment-banner {
+    min-height: 480px;
+
+    background-position: center center;
+  }
+
+  .commitment-banner-content {
+    width: calc(100% - 60px);
+    padding: 55px 0;
+  }
+
+  .commitment-banner-eyebrow {
+    margin-bottom: 20px;
+
+    font-size: 10px;
+    letter-spacing: 1.8px;
+  }
+
+  .commitment-banner-title {
+    font-size: clamp(23px, 4vw, 31px);
+    line-height: 1.5;
+
+    letter-spacing: -0.4px;
+  }
+
+  .commitment-banner-attribution {
+    margin-top: 23px;
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   BANNER MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .commitment-banner {
+    min-height: 500px;
+  }
+
+  .commitment-banner-content {
+    width: calc(100% - 40px);
+    padding: 50px 0;
+  }
+
+  .commitment-banner-eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 9px;
+    letter-spacing: 1.6px;
+  }
+
+  .commitment-banner-title {
+    font-size: 21px;
+    line-height: 1.55;
+
+    letter-spacing: -0.2px;
+  }
+
+  .commitment-banner-title em {
+    font-size: 1.02em;
+  }
+
+  .commitment-banner-attribution {
+    margin-top: 22px;
+
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   BANNER SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .commitment-banner {
+    min-height: 470px;
+  }
+
+  .commitment-banner-content {
+    width: calc(100% - 32px);
+    padding: 45px 0;
+  }
+
+  .commitment-banner-eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.4px;
+  }
+
+  .commitment-banner-title {
+    font-size: 19px;
+    line-height: 1.55;
+  }
+
+  .commitment-banner-attribution {
+    font-size: 8px;
+  }
+}
