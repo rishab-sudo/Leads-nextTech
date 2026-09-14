@@ -46,6 +46,31 @@ const Expertise = () => {
   const nextRef = useRef(null);
   const swiperRef = useRef(null);
   const sectionRef = useRef(null);
+  const autoplayTimeoutRef = useRef(null);
+
+  /*
+    ------------------------------------------
+    START AUTOPLAY AFTER 3500ms
+    ------------------------------------------
+  */
+  const startAutoplayAfterDelay = (swiper) => {
+    if (!swiper || swiper.destroyed) return;
+
+    // Clear any previous timer
+    if (autoplayTimeoutRef.current) {
+      clearTimeout(autoplayTimeoutRef.current);
+    }
+
+    // Stop autoplay while waiting
+    swiper.autoplay.stop();
+
+    // Start autoplay after 3500ms
+    autoplayTimeoutRef.current = setTimeout(() => {
+      if (swiper && !swiper.destroyed) {
+        swiper.autoplay.start();
+      }
+    }, CYCLE_DELAY);
+  };
 
   /*
     ------------------------------------------
@@ -60,22 +85,22 @@ const Expertise = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
+        const swiper = swiperRef.current;
 
-        if (entry.isIntersecting && swiperRef.current) {
-          const swiper = swiperRef.current;
-
-          // Stop current autoplay
+        if (entry.isIntersecting && swiper && !swiper.destroyed) {
+          // Stop autoplay immediately
           swiper.autoplay.stop();
 
-          // Always move back to first slide
+          // Clear existing timer
+          if (autoplayTimeoutRef.current) {
+            clearTimeout(autoplayTimeoutRef.current);
+          }
+
+          // Reset slider to first card
           swiper.slideToLoop(0, 0);
 
-          // Start autoplay after 3500ms
-          setTimeout(() => {
-            if (swiper && !swiper.destroyed) {
-              swiper.autoplay.start();
-            }
-          }, CYCLE_DELAY);
+          // Wait 3500ms, then start autoplay
+          startAutoplayAfterDelay(swiper);
         }
       },
       {
@@ -87,6 +112,10 @@ const Expertise = () => {
 
     return () => {
       observer.disconnect();
+
+      if (autoplayTimeoutRef.current) {
+        clearTimeout(autoplayTimeoutRef.current);
+      }
     };
   }, []);
 
@@ -161,18 +190,14 @@ const Expertise = () => {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
 
-            // Always initialize on first slide
+            // Always start from first card
             swiper.slideToLoop(0, 0);
 
             // Stop autoplay initially
             swiper.autoplay.stop();
 
             // Start autoplay after 3500ms
-            setTimeout(() => {
-              if (swiper && !swiper.destroyed) {
-                swiper.autoplay.start();
-              }
-            }, CYCLE_DELAY);
+            startAutoplayAfterDelay(swiper);
           }}
           breakpoints={{
             0: {
