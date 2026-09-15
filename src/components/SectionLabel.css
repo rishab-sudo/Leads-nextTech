@@ -30,7 +30,6 @@
   position: relative;
   z-index: 10;
 
-  /* Reduced glow */
   box-shadow:
     0 0 3px rgba(0, 217, 255, 0.9),
     0 0 7px rgba(0, 217, 255, 0.45);
@@ -45,7 +44,8 @@
   left: 50%;
   top: 50%;
 
-  border: 1px solid rgba(0, 217, 255, 0.35);
+  /* Increased color glowness */
+  border: 1px solid rgba(0, 217, 255, 0.65);
   border-radius: 50%;
 
   transform: translate(-50%, -50%) scale(0.4);
@@ -95,16 +95,20 @@
   }
 
   20% {
-    opacity: 0.45;
+    opacity: 0.65;
+    box-shadow:
+      0 0 5px rgba(0, 217, 255, 0.45),
+      0 0 10px rgba(0, 217, 255, 0.2);
   }
 
   50% {
     transform: translate(-50%, -50%) scale(0.75);
-    opacity: 0.28;
+    opacity: 0.42;
 
-    /* Very subtle glow */
+    /* Stronger cyan glow */
     box-shadow:
-      0 0 3px rgba(0, 217, 255, 0.25);
+      0 0 5px rgba(0, 217, 255, 0.5),
+      0 0 11px rgba(0, 217, 255, 0.28);
   }
 
   100% {
@@ -112,7 +116,8 @@
     opacity: 0;
 
     box-shadow:
-      0 0 5px rgba(0, 217, 255, 0.12);
+      0 0 7px rgba(0, 217, 255, 0.25),
+      0 0 14px rgba(0, 217, 255, 0.12);
   }
 }
 

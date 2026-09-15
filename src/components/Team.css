@@ -25,13 +25,6 @@
 
 
 /* =========================================================
-   EYEBROW TEXT
-========================================================= */
-
-
-
-
-/* =========================================================
    HEADER
 ========================================================= */
 
@@ -160,6 +153,7 @@ font-size: 24px !important;
   max-width: 850px;
   margin: 0;
   color: #ffffff;
+  font-size: 18px;
 }
 
 
@@ -254,6 +248,7 @@ font-size: 24px !important;
 
 .vision-card p {
   max-width: 850px;
+    font-size: 18px;
 }
 
 .vision-card p:last-child {
@@ -349,8 +344,8 @@ font-size: 24px !important;
   }
 
   .mission-subheading {
-    max-width: 650px;
-    font-size: 16px;
+
+    
     line-height: 1.55;
   }
 
@@ -435,7 +430,8 @@ font-size: 24px !important;
   }
 
   .mission-subheading {
-    font-size: 15px;
+  
+    
     line-height: 1.6;
   }
 
@@ -530,10 +526,6 @@ font-size: 24px !important;
 
   .mission-header h1 {
     font-size: 27px;
-  }
-
-  .mission-subheading {
-    font-size: 14px;
   }
 
   .mission-card-inner {
@@ -779,11 +771,11 @@ font-size: 24px !important;
 
 .commitment-box p {
   max-width: 700px;
-
+  font-size: 18px;
   margin: 0;
 
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+
   line-height: 1.55;
   font-weight: 400;
 
