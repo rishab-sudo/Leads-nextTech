@@ -89,7 +89,7 @@
   padding: 0 0 14px;
 
   color: var(--muted-light);
-  font-size: 16px;
+  /* font-size: 16px; */
   font-weight: 700;
 
   cursor: pointer;
@@ -287,7 +287,7 @@
   margin: 0 0 22px;
 text-transform: capitalize !important;
   color: var(--teal);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.03em;
 }
@@ -476,7 +476,7 @@ text-transform: capitalize !important;
 
   .tech-domains button {
     flex-shrink: 0;
-    font-size: 14px;
+    /* font-size: 14px; */
   }
 
 

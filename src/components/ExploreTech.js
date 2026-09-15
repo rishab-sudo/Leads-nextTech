@@ -176,7 +176,7 @@ export default function TechnologyExplorer() {
         </div>
 
         {/* Domain Switch */}
-        <div className="tech-domains">
+        <div className="tech-domains section-para">
           {DOMAINS.map((domainItem, index) => (
             <button
               key={domainItem.id}
