@@ -168,7 +168,7 @@ export default function TechnologyExplorer() {
           </div>
 
           <div className="tech-header-right">
-            <p>
+            <p className="section-subHeading">
               Advanced sensor, control, automation, and materials
          technologies for land and underwater defense systems-engineered for reliability and seamless integration.
             </p>

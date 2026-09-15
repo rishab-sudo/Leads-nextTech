@@ -13,7 +13,7 @@
   --glow: #5ce9f7;
 
   width: 100%;
-  padding: 70px 24px;
+  padding: 70px 2px;
   color: var(--text);
   background: transparent;
 }
@@ -30,6 +30,7 @@
 .container {
   width: 100%;
  margin: 0 auto;
+ margin-top: 3.5% !important;
 }
 
 
@@ -66,12 +67,7 @@
   letter-spacing: -0.02em;
 }
 
-.tech-header-right p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.75;
-}
+
 
 
 /* ================================

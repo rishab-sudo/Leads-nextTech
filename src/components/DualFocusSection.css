@@ -9,6 +9,7 @@
 
 .df-inner {
   margin: 0 auto;
+  padding: 0px !important;
 }
 
 .df-header {
