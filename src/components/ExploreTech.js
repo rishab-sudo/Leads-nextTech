@@ -189,16 +189,16 @@ export default function TechnologyExplorer() {
         </div>
 
         {/* Technology Points */}
-        <div className="tech-points">
+        <div className="tech-points ">
           {domain.items.map((technology, index) => (
-            <button
-              key={technology.code}
-              className={index === itemIdx ? "active" : ""}
-              onClick={() => setItemIdx(index)}
-            >
-              <span>{technology.code}</span>
-              <strong>{technology.name}</strong>
-            </button>
+          <button
+  key={technology.code}
+  className={`section-para ${index === itemIdx ? "active" : ""}`}
+  onClick={() => setItemIdx(index)}
+>
+  <span>{technology.code}</span>
+  <strong>{technology.name}</strong>
+</button>
           ))}
         </div>
 

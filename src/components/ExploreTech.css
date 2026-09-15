@@ -143,18 +143,18 @@
   color: var(--muted-light);
   cursor: pointer;
 
-  font-size: 15px;
+
   white-space: nowrap;
 }
 
 .tech-points button span {
   font-family: monospace;
-  font-size: 13px;
+
   color: var(--muted-light);
 }
 
 .tech-points button strong {
-  font-size: 15px;
+
   font-weight: 600;
   color: var(--text);
 }
@@ -498,11 +498,11 @@ text-transform: capitalize !important;
 
   .tech-points button {
     flex-shrink: 0;
-    font-size: 14px;
+    /* font-size: 14px; */
   }
 
   .tech-points button strong {
-    font-size: 14px;
+    /* font-size: 14px; */
   }
 
 
