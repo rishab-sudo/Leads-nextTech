@@ -38,7 +38,7 @@ export default function MakeinIndia({
           Make in India
         </h2>
 
-        <p className="mii-hero__body">
+        <p className="mii-hero__body section-para">
           Proudly Aatmanirbhar. From Bareilly to the battlefront and
           the deep seas, LeadNXT is advancing India&rsquo;s self-reliance
           in defence technology through indigenous design, engineering,

@@ -60,7 +60,7 @@ const Team = () => {
               </div>
 
               {/* MISSION TEXT */}
-              <p className="mission-card-text">
+              <p className="mission-card-text section-para">
                 To bridge the gap between emerging operational challenges and
                 field-ready capabilities by delivering intelligent, sovereign,
                 and resilient defence systems - engineered from first
@@ -95,7 +95,7 @@ const Team = () => {
               </div>
 
               {/* VISION TEXT */}
-              <p>
+              <p  className="section-para">
                 Modern warfare demands speed, intelligence, and survivability.
                 Our leadership has established a singular focus: transform
                 complex operational requirements into deployable,
@@ -103,7 +103,7 @@ const Team = () => {
                 development cycles.
               </p>
 
-              <p>
+            <p  className="section-para">
                 By combining cutting-edge artificial intelligence with robust
                 electromechanical engineering, advanced composite materials,
                 and acoustic sensor design, we empower armed forces with
@@ -154,7 +154,7 @@ const Team = () => {
           Mission-First Engineering
         </h3>
 
-        <p>
+   <p  className="section-para">
           Every line of code, circuit board, and composite shield is
           designed with the warfighter in mind. We build systems that
           perform reliably when failure is not an option.
@@ -182,7 +182,7 @@ const Team = () => {
           Sovereign Technological Depth
         </h3>
 
-        <p>
+    <p  className="section-para">
           In-house research, design, and integration - from AI-driven
           EO/IR fire control to autonomous towed-array acoustic
           classification.
@@ -210,7 +210,7 @@ const Team = () => {
           Agility, Problem to Deployment
         </h3>
 
-        <p>
+    <p  className="section-para">
           We reject bureaucratic development cycles. Agile teams move
           from prototype to qualified production fast.
         </p>
@@ -235,7 +235,7 @@ const Team = () => {
           Unwavering Defence Qualification
         </h3>
 
-        <p>
+ <p  className="section-para">
           Strict adherence to MIL-STD, rigorous environmental
           qualification, zero-compromise QA on every build.
         </p>

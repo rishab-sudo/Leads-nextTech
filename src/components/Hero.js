@@ -218,7 +218,7 @@ export default function Herosection() {
                 </motion.h1>
 
                 {/* Description */}
-                <motion.p className="nxt-hero-description" variants={childVariant}>
+                <motion.p className="nxt-hero-description section-para" variants={childVariant}>
                   {slide.desc}
                 </motion.p>
               </motion.div>

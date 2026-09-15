@@ -290,11 +290,11 @@ const Process = () => {
                   {item.tagline}
                 </p>
 
-                <p className="cards-descp">
+                <p className="cards-descp section-para">
                   {item.description}
                 </p>
 
-                <ul className="cards-focus">
+                <ul className="cards-focus section-para">
                   {item.focus.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}

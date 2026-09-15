@@ -372,10 +372,7 @@
   padding-left: 16px;
 
   color: rgba(201, 214, 217, 0.65);
-
-  font-size: 18px;
-
-  line-height: 1.4;
+ line-height: 1.4;
 }
 
 .cards-focus li::before {

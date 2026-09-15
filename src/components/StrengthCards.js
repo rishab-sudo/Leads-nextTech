@@ -304,7 +304,7 @@ const StrengthCards = () => {
                     {card.title}
                   </h3>
 
-                  <p className="cards-descp">
+                  <p className="cards-descp section-para">
                     {card.description}
                   </p>
 

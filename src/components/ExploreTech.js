@@ -215,9 +215,9 @@ export default function TechnologyExplorer() {
           <div className="tech-content" key={`${item.code}-content`}>
             <h3>{item.full}</h3>
 
-            <p className="tech-summary">{item.summary}</p>
+            <p className="tech-summary section-para">{item.summary}</p>
 
-            <p className="tech-description">{item.detail}</p>
+            <p className="tech-description section-para">{item.detail}</p>
           </div>
         </div>
 
@@ -229,7 +229,7 @@ export default function TechnologyExplorer() {
             {ENABLING.map((technology) => (
               <div className="enabling-item" key={technology.name}>
                 <h4>{technology.name}</h4>
-                <p>{technology.detail}</p>
+                <p className="section-para">{technology.detail}</p>
               </div>
             ))}
           </div>
@@ -239,7 +239,7 @@ export default function TechnologyExplorer() {
 
             <ul>
               {ADVANTAGES.map((advantage, index) => (
-                <li key={index}>{advantage}</li>
+                <li className="section-para" key={index}>{advantage}</li>
               ))}
             </ul>
           </div>

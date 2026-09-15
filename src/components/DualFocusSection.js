@@ -128,8 +128,8 @@ function DualFocusBox({ section, onNavigate }) {
       <div className="df-box-body">
         <p className="df-box-label eyebrow">{section.label}</p>
         <h3 className="df-box-heading">{section.heading}</h3>
-        {section.intro && <p className="df-box-intro">{section.intro}</p>}
-        <ul className="df-box-list">
+        {section.intro && <p className="df-box-intro section-para">{section.intro}</p>}
+        <ul className="df-box-list section-para">
           {section.points.map((point) => (
             <li key={point}>
               <span className="df-tick" aria-hidden="true" />
@@ -137,7 +137,7 @@ function DualFocusBox({ section, onNavigate }) {
             </li>
           ))}
         </ul>
-        {section.outro && <p className="df-box-outro">{section.outro}</p>}
+        {section.outro && <p className="df-box-outro section-para">{section.outro}</p>}
         <button type="button" className="df-cta" onClick={handleCta}>
           {section.ctaLabel}
           <span aria-hidden="true">→</span>

@@ -246,10 +246,8 @@ font-size: 24px !important;
    VISION TEXT
 ========================================================= */
 
-.vision-card p {
-  max-width: 850px;
-    font-size: 18px;
-}
+
+
 
 .vision-card p:last-child {
   margin-bottom: 0;
@@ -295,9 +293,6 @@ font-size: 24px !important;
     padding-right: 32px;
   }
 
-  .mission-card-text {
-    font-size: 18px;
-  }
 
   .mission-card-title-row,
   .vision-card-title-row {
@@ -328,7 +323,8 @@ font-size: 24px !important;
 
   .eyebrow-text {
     margin-bottom: 20px;
-    font-size: 12px;
+  
+    
   }
 
   .mission-header {
@@ -383,7 +379,8 @@ font-size: 24px !important;
   }
 
   .mission-card-text {
-    font-size: 18px;
+
+    
     line-height: 1.55;
   }
 
@@ -391,10 +388,7 @@ font-size: 24px !important;
     font-size: 20px;
   }
 
-  .vision-card p {
-    font-size: 13px;
-    line-height: 1.6;
-  }
+  
 }
 
 
@@ -412,11 +406,6 @@ font-size: 24px !important;
     padding: 42px 0 50px;
   }
 
-  .eyebrow-text {
-    margin-bottom: 18px;
-    font-size: 11px;
-    line-height: 1.4;
-  }
 
   .mission-header {
     margin-bottom: 48px;
@@ -489,7 +478,8 @@ font-size: 24px !important;
   }
 
   .mission-card-text {
-    font-size: 17px;
+  
+    
     line-height: 1.55;
   }
 
@@ -502,11 +492,8 @@ font-size: 24px !important;
     line-height: 1.2;
   }
 
-  .vision-card p {
-    margin-bottom: 15px;
-    font-size: 12px;
-    line-height: 1.65;
-  }
+
+  
 }
 
 
@@ -540,9 +527,8 @@ font-size: 24px !important;
     padding: 22px 18px;
   }
 
-  .mission-card-text {
-    font-size: 16px;
-  }
+
+  
 
   .mission-heading {
     font-size: 18px;
@@ -769,18 +755,8 @@ font-size: 24px !important;
    DESCRIPTION
 ========================================================= */
 
-.commitment-box p {
-  max-width: 700px;
-  font-size: 18px;
-  margin: 0;
 
-  font-family: Arial, Helvetica, sans-serif;
 
-  line-height: 1.55;
-  font-weight: 400;
-
-  color: #858d92;
-}
 
 
 /* =========================================================
@@ -848,9 +824,7 @@ font-size: 24px !important;
     font-size: 22px;
   }
 
-  .commitment-box p {
-    font-size: 14px;
-  }
+  
 }
 
 
@@ -913,10 +887,8 @@ font-size: 24px !important;
     line-height: 1.2;
   }
 
-  .commitment-box p {
-    font-size: 12px;
-    line-height: 1.6;
-  }
+
+  
 
   .commitment-arrow {
     right: 18px;
@@ -939,9 +911,7 @@ font-size: 24px !important;
     font-size: 19px;
   }
 
-  .commitment-box p {
-    font-size: 11px;
-  }
+  
 }
 
 

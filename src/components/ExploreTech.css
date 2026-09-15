@@ -243,7 +243,7 @@
   margin: 0 0 22px;
 
   color: var(--teal);
-  font-size: 18px;
+  /* font-size: 18px; */
   line-height: 1.6;
   font-weight: 500;
 }
@@ -254,7 +254,7 @@
   margin: 0;
 
   color: var(--muted);
-  font-size: 17px;
+  /* font-size: 17px; */
   line-height: 1.8;
 }
 
@@ -532,11 +532,11 @@ text-transform: capitalize !important;
   }
 
   .tech-summary {
-    font-size: 16px;
+    /* font-size: 16px; */
   }
 
   .tech-description {
-    font-size: 15px;
+    /* font-size: 15px; */
     line-height: 1.7;
   }
 
