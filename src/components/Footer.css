@@ -128,7 +128,7 @@
 
   color: rgba(255, 255, 255, 0.58);
 
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.85;
   font-weight: 400;
 
@@ -144,7 +144,7 @@
 
   color: #ffffff;
 
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1;
 
   font-weight: 700;
@@ -184,7 +184,7 @@
 
   text-decoration: none;
 
-  font-size: 16px;
+  font-size: 18px !important;
   line-height: 1.15;
 
   font-weight: 400;
@@ -219,7 +219,7 @@
 
   color: rgba(255, 255, 255, 0.57);
 
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.15;
 
   font-weight: 400;
@@ -271,7 +271,7 @@
 
   text-decoration: none;
 
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
 
   transition:

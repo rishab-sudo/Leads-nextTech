@@ -100,7 +100,7 @@ Classification to
       <>
    Dedicated Engineering,
         <br />
-       Teams Driving ;
+       Teams Driving,
         <br />
      Continuous Innovation
       </>

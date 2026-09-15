@@ -50,10 +50,10 @@ const Infrastructure = () => {
                 className="facility-image"
               />
 
-              <button className="infrastructure-btn facility-btn">
+              {/* <button className="infrastructure-btn facility-btn">
                 EXPLORE FACILITY
                 <span>→</span>
-              </button>
+              </button> */}
 
             </div>
 

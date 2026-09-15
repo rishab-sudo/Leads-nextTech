@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ContactPopup from "./ContactPopup";
 import "./StrategicPartnership.css";
+import SectionLabel from "./SectionLabel";
 
 const StrategicPartnership = () => {
   const [showContactPopup, setShowContactPopup] = useState(false);
@@ -26,10 +27,8 @@ const StrategicPartnership = () => {
 
           <div className="strategic-content">
 
-            <div className="strategic-eyebrow eyebrow-text">
-              <span>✦</span>
-              CRAFTED BY
-            </div>
+            <SectionLabel title="crafted by" />
+
 
             <h2 className="section-heading">
               STRATEGIC PARTNERSHIP &amp; CAPABILITIES
