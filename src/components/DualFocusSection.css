@@ -219,8 +219,8 @@
 
 .df-box-label {
   margin: 0 0 10px;
-
-  color: rgba(79, 216, 209, 0.75);
+font-size: 18px;
+color: #00d9ff;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
