@@ -26,7 +26,7 @@ const SECTIONS = [
     ],
     outro: "",
     ctaLabel: "View Land System",
-    ctaHref: "/gun-technologies",
+    ctaHref: "#ExploreTech",
   },
   {
     key: "water",
@@ -48,7 +48,7 @@ const SECTIONS = [
     ],
     outro: "",
     ctaLabel: "View Underwater Systems",
-    ctaHref: "/underwater-technologies",
+    ctaHref: "#ExploreTech",
   },
 ];
 
