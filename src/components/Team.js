@@ -25,7 +25,7 @@ const Team = () => {
           </h1>
 
           <p className="mission-subheading section-subHeading">
-            Behind LNXТ is a dedicated cadre of defence innovators, system
+            Behind LNXТ stands a dedicated cadre of defence innovators, system
             architects, AI researchers, and precision engineers committed to
             delivering uncompromised technological superiority across Land and
             Underwater domains.
@@ -96,19 +96,11 @@ const Team = () => {
 
               {/* VISION TEXT */}
               <p  className="section-para">
-                Modern warfare demands speed, intelligence, and survivability.
-                Our leadership has established a singular focus: transform
-                complex operational requirements into deployable,
-                next-generation platforms without the friction of legacy
-                development cycles.
+                Modern warfare demands speed, intelligence, and survivability. Our leadership has established a singular focus: transforming complex operational requirements into deployable, next-generation platforms without the friction of legacy development cycles.
               </p>
 
             <p  className="section-para">
-                By combining cutting-edge artificial intelligence with robust
-                electromechanical engineering, advanced composite materials,
-                and acoustic sensor design, we empower armed forces with
-                systems that act faster, detect farther, and withstand the
-                harshest environments.
+               By combining cutting-edge artificial intelligence with robust electromechanical engineering, advanced composite materials, and acoustic sensor design, we empower armed forces with systems that act faster, detect at greater distances, and withstand the harshest environments.
               </p>
 
             </div>
@@ -207,7 +199,7 @@ const Team = () => {
         </span>
 
         <h3>
-          Agility, Problem to Deployment
+          Agility: Problem to Deployment
         </h3>
 
     <p  className="section-para">
@@ -236,8 +228,8 @@ const Team = () => {
         </h3>
 
  <p  className="section-para">
-          Strict adherence to MIL-STD, rigorous environmental
-          qualification, zero-compromise QA on every build.
+        Strict adherence to MIL-STD requirements, rigorous environmental qualification, and zero-compromise QA on every build. 
+
         </p>
 
       </div>

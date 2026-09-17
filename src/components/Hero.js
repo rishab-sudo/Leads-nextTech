@@ -13,7 +13,7 @@ const slides = [
     word1: 'GUARDING',
     word2: 'THE SKIES',
     gradientClass: 'nxt-gradient-gold',
-    desc: 'Engineering next-generation gun systems and precision fire-control technologies, built for superior accuracy, stability, and mission readiness.',
+    desc: 'Engineering next-generation gun systems and precision fire-control technologies built for superior accuracy, stability, and mission readiness.',
     image: navalGunImg,
     alt: 'Precision Gun Technologies Platform',
     hudTag: 'KINETIC ARTILLERY // READY',
