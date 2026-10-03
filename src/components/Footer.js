@@ -124,31 +124,16 @@ const Footer = () => {
           {/* =========================
               SOCIAL LINKS
           ========================= */}
-          <div className="footer-column footer-social-column">
-            <h4>Social Links</h4>
+  <div className="footer-column footer-social-column">
+  <h4>Social Links</h4>
 
-            <ul>
-              {support.map((item) => (
-                <li key={item.name}>
-                  <a href="/contact">{item.name}</a>
-                </li>
-              ))}
-            </ul>
-
-            <div className="footer-socials">
-              <a href="/contact" aria-label="LinkedIn">
-                in
-              </a>
-
-              <a href="/contact" aria-label="YouTube">
-                ▶
-              </a>
-
-              <a href="/contact" aria-label="X">
-                X
-              </a>
-            </div>
-          </div>
+  <div className="footer-socials">
+    <a href="https://www.linkedin.com/company/leadsnextech/" aria-label="LinkedIn" className="linkedin-link">
+      <span>LinkedIn</span>
+      <span className="linkedin-icon">in</span>
+    </a>
+  </div>
+</div>
         </div>
       </div>
 
@@ -161,13 +146,13 @@ const Footer = () => {
           Reserved.
         </p>
 
-        <div className="footer-legal">
+        {/* <div className="footer-legal">
           <a href="/contact">Privacy Policy </a>
 
-          <span> |</span>
+          <span> | </span>
 
           <a href="/contact">Terms of Use </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

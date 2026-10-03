@@ -205,11 +205,11 @@ export default function TechnologyExplorer() {
         {/* Main Technology Content */}
         <div className="tech-main">
           <div className="tech-image">
-            <img
+            {/* <img
               key={item.code}
               src={item.image}
               alt={item.full}
-            />
+            /> */}
           </div>
 
           <div className="tech-content" key={`${item.code}-content`}>
